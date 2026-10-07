@@ -1,0 +1,94 @@
+{
+  "workflow_tag": "244132131119783402192012202015212340515196112524",
+  "items": [
+    {
+      "name": "dependency-version.json",
+      "url": "https://github.com/userdocs/qbt-workflow-files/releases/download/244132131119783402192012202015212340515196112524/dependency-version.json",
+      "expected": "sha256:5b13c287ff252bb34a277c62a7501b576dfb7202413ea716524ca6c4c7ebe1e4",
+      "sha256": "5b13c287ff252bb34a277c62a7501b576dfb7202413ea716524ca6c4c7ebe1e4",
+      "bytes": 328
+    },
+    {
+      "name": "iconv.tar.xz",
+      "url": "https://github.com/userdocs/qbt-workflow-files/releases/download/244132131119783402192012202015212340515196112524/iconv.tar.xz",
+      "expected": "sha256:384b8bd0e56db7b96def515b1ae21ace9c55a1a2a9f8cc1b01175c358b65d534",
+      "sha256": "384b8bd0e56db7b96def515b1ae21ace9c55a1a2a9f8cc1b01175c358b65d534",
+      "bytes": 2023068
+    },
+    {
+      "name": "double_conversion.tar.xz",
+      "url": "https://github.com/userdocs/qbt-workflow-files/releases/download/244132131119783402192012202015212340515196112524/double_conversion.tar.xz",
+      "expected": "sha256:806eceed5ac4287599d9da0a407edea90fa2e094381cbed06c6fd1cf9012be54",
+      "sha256": "806eceed5ac4287599d9da0a407edea90fa2e094381cbed06c6fd1cf9012be54",
+      "bytes": 5332252
+    },
+    {
+      "name": "libtorrent.2.0.15.tar.xz",
+      "url": "https://github.com/userdocs/qbt-workflow-files/releases/download/244132131119783402192012202015212340515196112524/libtorrent.2.0.15.tar.xz",
+      "expected": "sha256:d17c43b5774165c1bf6b351604c70bcfec5ee22364f815eca2cb57d2187cc788",
+      "sha256": "d17c43b5774165c1bf6b351604c70bcfec5ee22364f815eca2cb57d2187cc788",
+      "bytes": 8051872
+    },
+    {
+      "name": "icu.tar.xz",
+      "url": "https://github.com/userdocs/qbt-workflow-files/releases/download/244132131119783402192012202015212340515196112524/icu.tar.xz",
+      "expected": "sha256:ecf50ab0e33fe18297d5b441a725ef86ddcb655465476cccad42ef95cafc7984",
+      "sha256": "ecf50ab0e33fe18297d5b441a725ef86ddcb655465476cccad42ef95cafc7984",
+      "bytes": 15914768
+    },
+    {
+      "name": "qbittorrent.tar.xz",
+      "url": "https://github.com/userdocs/qbt-workflow-files/releases/download/244132131119783402192012202015212340515196112524/qbittorrent.tar.xz",
+      "expected": "sha256:714a102b8efb8b063ddf8d01613d69eba7185d4ffe263c2fce6ca55812496a56",
+      "sha256": "714a102b8efb8b063ddf8d01613d69eba7185d4ffe263c2fce6ca55812496a56",
+      "bytes": 5310892
+    },
+    {
+      "name": "qt6tools.tar.xz",
+      "url": "https://github.com/userdocs/qbt-workflow-files/releases/download/244132131119783402192012202015212340515196112524/qt6tools.tar.xz",
+      "expected": "sha256:9ea75af35c512f7e09e61c8c3af3997f13b4d43bb099cf43fcec470126b4041e",
+      "sha256": "9ea75af35c512f7e09e61c8c3af3997f13b4d43bb099cf43fcec470126b4041e",
+      "bytes": 10226452
+    },
+    {
+      "name": "zlib.tar.xz",
+      "url": "https://github.com/userdocs/qbt-workflow-files/releases/download/244132131119783402192012202015212340515196112524/zlib.tar.xz",
+      "expected": "sha256:32d84f5bdf1ade3027fa03ad25588710a3c6b9e5e8c55f0ed9676fe65ee88e2a",
+      "sha256": "32d84f5bdf1ade3027fa03ad25588710a3c6b9e5e8c55f0ed9676fe65ee88e2a",
+      "bytes": 1321844
+    },
+    {
+      "name": "qbittorrent-nox-static-build-scripts.tar.gz",
+      "url": "https://api.github.com/repos/userdocs/qbittorrent-nox-static/tarball/0f70ca9c49ec2795bd2cf29b2b5842170b235424",
+      "sha256": "22dad852c9ae090ec8407fc8e6333b4666d584ff46e7a10a423546626715607a",
+      "bytes": 1531000
+    },
+    {
+      "name": "openssl.tar.xz",
+      "url": "https://github.com/userdocs/qbt-workflow-files/releases/download/244132131119783402192012202015212340515196112524/openssl.tar.xz",
+      "expected": "sha256:7797991fb572ec8a77f9f1077ea0a685864caacb14a22686c3a763a464666032",
+      "sha256": "7797991fb572ec8a77f9f1077ea0a685864caacb14a22686c3a763a464666032",
+      "bytes": 43161680
+    },
+    {
+      "name": "boost.tar.xz",
+      "url": "https://github.com/userdocs/qbt-workflow-files/releases/download/244132131119783402192012202015212340515196112524/boost.tar.xz",
+      "expected": "sha256:ea7b982002cc9dfbe59b0b217b206f470dc75f3de0bb2973d844118934d82411",
+      "sha256": "ea7b982002cc9dfbe59b0b217b206f470dc75f3de0bb2973d844118934d82411",
+      "bytes": 52633196
+    },
+    {
+      "name": "linuxserver-build-scripts.tar.gz",
+      "url": "https://api.github.com/repos/linuxserver/docker-qbittorrent/tarball/6fc14590b2886c63a03bca8104297df32d29d3e0",
+      "sha256": "47df10a82920e459cf2f51d4e6d95244cdf6cf552c850e27782bc0b2137a70e5",
+      "bytes": 44774
+    },
+    {
+      "name": "qt6base.tar.xz",
+      "url": "https://github.com/userdocs/qbt-workflow-files/releases/download/244132131119783402192012202015212340515196112524/qt6base.tar.xz",
+      "expected": "sha256:5b2e00eccaf5a4d8c14134ffa0ea8dfd0a35ae1ffc7f8d87fa4305a1ed23cf22",
+      "sha256": "5b2e00eccaf5a4d8c14134ffa0ea8dfd0a35ae1ffc7f8d87fa4305a1ed23cf22",
+      "bytes": 50582668
+    }
+  ]
+}

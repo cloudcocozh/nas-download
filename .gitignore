@@ -1,0 +1,35 @@
+# Credentials and runtime state
+.env
+.env.*
+!*.example
+**/signing.properties
+*.jks
+*.keystore
+*.pem
+*.key
+*.p12
+*.pfx
+*.private.*
+*.sqlite*
+*.db
+/data/
+/engine-config/
+/downloads/
+/installer-backups/
+# Builds, test sessions and binary release assets
+__pycache__/
+*.pyc
+.pytest_cache/
+.gradle/
+build/
+out/
+local.properties
+*.log
+*.hprof
+/evidence/
+/outputs/
+android/app/src/main/assets/installer.tar.gz
+*.apk
+*.tar.gz
+*.zip
+.venv/

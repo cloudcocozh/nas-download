@@ -1,0 +1,506 @@
+[
+  {
+    "Package": "adduser",
+    "Architecture": "all",
+    "Version": "3.152"
+  },
+  {
+    "Package": "apt",
+    "Architecture": "amd64",
+    "Version": "3.0.3"
+  },
+  {
+    "Package": "base-files",
+    "Architecture": "amd64",
+    "Version": "13.8+deb13u7"
+  },
+  {
+    "Package": "base-passwd",
+    "Architecture": "amd64",
+    "Version": "3.6.7"
+  },
+  {
+    "Package": "bash",
+    "Architecture": "amd64",
+    "Source": "bash (5.2.37-2)",
+    "Version": "5.2.37-2+b10"
+  },
+  {
+    "Package": "bsdutils",
+    "Architecture": "amd64",
+    "Source": "util-linux (2.41.5-0+deb13u1)",
+    "Version": "1:2.41.5-0+deb13u1"
+  },
+  {
+    "Package": "ca-certificates",
+    "Architecture": "all",
+    "Version": "20250419"
+  },
+  {
+    "Package": "coreutils",
+    "Architecture": "amd64",
+    "Version": "9.7-3"
+  },
+  {
+    "Package": "dash",
+    "Architecture": "amd64",
+    "Version": "0.5.12-12"
+  },
+  {
+    "Package": "debconf",
+    "Architecture": "all",
+    "Version": "1.5.91"
+  },
+  {
+    "Package": "debian-archive-keyring",
+    "Architecture": "all",
+    "Version": "2025.1"
+  },
+  {
+    "Package": "debianutils",
+    "Architecture": "amd64",
+    "Version": "5.23.2"
+  },
+  {
+    "Package": "diffutils",
+    "Architecture": "amd64",
+    "Version": "1:3.10-4"
+  },
+  {
+    "Package": "dpkg",
+    "Architecture": "amd64",
+    "Version": "1.22.22"
+  },
+  {
+    "Package": "findutils",
+    "Architecture": "amd64",
+    "Version": "4.10.0-3"
+  },
+  {
+    "Package": "gcc-14-base",
+    "Architecture": "amd64",
+    "Source": "gcc-14",
+    "Version": "14.2.0-19"
+  },
+  {
+    "Package": "grep",
+    "Architecture": "amd64",
+    "Version": "3.11-4"
+  },
+  {
+    "Package": "gzip",
+    "Architecture": "amd64",
+    "Version": "1.13-1+deb13u1"
+  },
+  {
+    "Package": "hostname",
+    "Architecture": "amd64",
+    "Version": "3.25"
+  },
+  {
+    "Package": "init-system-helpers",
+    "Architecture": "all",
+    "Version": "1.69~deb13u1"
+  },
+  {
+    "Package": "libacl1",
+    "Architecture": "amd64",
+    "Source": "acl (2.3.2-2)",
+    "Version": "2.3.2-2+b1"
+  },
+  {
+    "Package": "libapt-pkg7.0",
+    "Architecture": "amd64",
+    "Source": "apt",
+    "Version": "3.0.3"
+  },
+  {
+    "Package": "libattr1",
+    "Architecture": "amd64",
+    "Source": "attr",
+    "Version": "1:2.5.2-3"
+  },
+  {
+    "Package": "libaudit-common",
+    "Architecture": "all",
+    "Source": "audit",
+    "Version": "1:4.0.2-2+deb13u1"
+  },
+  {
+    "Package": "libaudit1",
+    "Architecture": "amd64",
+    "Source": "audit",
+    "Version": "1:4.0.2-2+deb13u1"
+  },
+  {
+    "Package": "libblkid1",
+    "Architecture": "amd64",
+    "Source": "util-linux",
+    "Version": "2.41.5-0+deb13u1"
+  },
+  {
+    "Package": "libbsd0",
+    "Architecture": "amd64",
+    "Source": "libbsd",
+    "Version": "0.12.2-2"
+  },
+  {
+    "Package": "libbz2-1.0",
+    "Architecture": "amd64",
+    "Source": "bzip2",
+    "Version": "1.0.8-6"
+  },
+  {
+    "Package": "libc-bin",
+    "Architecture": "amd64",
+    "Source": "glibc",
+    "Version": "2.41-12+deb13u4"
+  },
+  {
+    "Package": "libc6",
+    "Architecture": "amd64",
+    "Source": "glibc",
+    "Version": "2.41-12+deb13u4"
+  },
+  {
+    "Package": "libcap-ng0",
+    "Architecture": "amd64",
+    "Source": "libcap-ng (0.8.5-4)",
+    "Version": "0.8.5-4+b1"
+  },
+  {
+    "Package": "libcap2",
+    "Architecture": "amd64",
+    "Source": "libcap2 (1:2.75-10+deb13u1)",
+    "Version": "1:2.75-10+deb13u1+b3"
+  },
+  {
+    "Package": "libcrypt1",
+    "Architecture": "amd64",
+    "Source": "libxcrypt",
+    "Version": "1:4.4.38-1"
+  },
+  {
+    "Package": "libdb5.3t64",
+    "Architecture": "amd64",
+    "Source": "db5.3",
+    "Version": "5.3.28+dfsg2-9"
+  },
+  {
+    "Package": "libdebconfclient0",
+    "Architecture": "amd64",
+    "Source": "cdebconf",
+    "Version": "0.280"
+  },
+  {
+    "Package": "libffi8",
+    "Architecture": "amd64",
+    "Source": "libffi",
+    "Version": "3.4.8-2"
+  },
+  {
+    "Package": "libgcc-s1",
+    "Architecture": "amd64",
+    "Source": "gcc-14",
+    "Version": "14.2.0-19"
+  },
+  {
+    "Package": "libgdbm6t64",
+    "Architecture": "amd64",
+    "Source": "gdbm",
+    "Version": "1.24-2"
+  },
+  {
+    "Package": "libgmp10",
+    "Architecture": "amd64",
+    "Source": "gmp",
+    "Version": "2:6.3.0+dfsg-3"
+  },
+  {
+    "Package": "libhogweed6t64",
+    "Architecture": "amd64",
+    "Source": "nettle",
+    "Version": "3.10.1-1"
+  },
+  {
+    "Package": "liblastlog2-2",
+    "Architecture": "amd64",
+    "Source": "util-linux",
+    "Version": "2.41.5-0+deb13u1"
+  },
+  {
+    "Package": "liblz4-1",
+    "Architecture": "amd64",
+    "Source": "lz4",
+    "Version": "1.10.0-4"
+  },
+  {
+    "Package": "liblzma5",
+    "Architecture": "amd64",
+    "Source": "xz-utils",
+    "Version": "5.8.1-1+deb13u1"
+  },
+  {
+    "Package": "libmd0",
+    "Architecture": "amd64",
+    "Source": "libmd (1.1.0-2)",
+    "Version": "1.1.0-2+b1"
+  },
+  {
+    "Package": "libmount1",
+    "Architecture": "amd64",
+    "Source": "util-linux",
+    "Version": "2.41.5-0+deb13u1"
+  },
+  {
+    "Package": "libncursesw6",
+    "Architecture": "amd64",
+    "Source": "ncurses",
+    "Version": "6.5+20250216-2"
+  },
+  {
+    "Package": "libnettle8t64",
+    "Architecture": "amd64",
+    "Source": "nettle",
+    "Version": "3.10.1-1"
+  },
+  {
+    "Package": "libpam-modules",
+    "Architecture": "amd64",
+    "Source": "pam",
+    "Version": "1.7.0-5"
+  },
+  {
+    "Package": "libpam-modules-bin",
+    "Architecture": "amd64",
+    "Source": "pam",
+    "Version": "1.7.0-5"
+  },
+  {
+    "Package": "libpam-runtime",
+    "Architecture": "all",
+    "Source": "pam",
+    "Version": "1.7.0-5"
+  },
+  {
+    "Package": "libpam0g",
+    "Architecture": "amd64",
+    "Source": "pam",
+    "Version": "1.7.0-5"
+  },
+  {
+    "Package": "libpcre2-8-0",
+    "Architecture": "amd64",
+    "Source": "pcre2",
+    "Version": "10.46-1~deb13u2"
+  },
+  {
+    "Package": "libreadline8t64",
+    "Architecture": "amd64",
+    "Source": "readline",
+    "Version": "8.2-6"
+  },
+  {
+    "Package": "libseccomp2",
+    "Architecture": "amd64",
+    "Source": "libseccomp",
+    "Version": "2.6.0-2"
+  },
+  {
+    "Package": "libselinux1",
+    "Architecture": "amd64",
+    "Source": "libselinux",
+    "Version": "3.8.1-1"
+  },
+  {
+    "Package": "libsemanage-common",
+    "Architecture": "all",
+    "Source": "libsemanage",
+    "Version": "3.8.1-1"
+  },
+  {
+    "Package": "libsemanage2",
+    "Architecture": "amd64",
+    "Source": "libsemanage",
+    "Version": "3.8.1-1"
+  },
+  {
+    "Package": "libsepol2",
+    "Architecture": "amd64",
+    "Source": "libsepol",
+    "Version": "3.8.1-1"
+  },
+  {
+    "Package": "libsmartcols1",
+    "Architecture": "amd64",
+    "Source": "util-linux",
+    "Version": "2.41.5-0+deb13u1"
+  },
+  {
+    "Package": "libsqlite3-0",
+    "Architecture": "amd64",
+    "Source": "sqlite3",
+    "Version": "3.46.1-7+deb13u2"
+  },
+  {
+    "Package": "libssl3t64",
+    "Architecture": "amd64",
+    "Source": "openssl",
+    "Version": "3.5.7-1~deb13u2"
+  },
+  {
+    "Package": "libstdc++6",
+    "Architecture": "amd64",
+    "Source": "gcc-14",
+    "Version": "14.2.0-19"
+  },
+  {
+    "Package": "libsystemd0",
+    "Architecture": "amd64",
+    "Source": "systemd",
+    "Version": "257.13-1~deb13u1"
+  },
+  {
+    "Package": "libtinfo6",
+    "Architecture": "amd64",
+    "Source": "ncurses",
+    "Version": "6.5+20250216-2"
+  },
+  {
+    "Package": "libudev1",
+    "Architecture": "amd64",
+    "Source": "systemd",
+    "Version": "257.13-1~deb13u1"
+  },
+  {
+    "Package": "libuuid1",
+    "Architecture": "amd64",
+    "Source": "util-linux",
+    "Version": "2.41.5-0+deb13u1"
+  },
+  {
+    "Package": "libxxhash0",
+    "Architecture": "amd64",
+    "Source": "xxhash",
+    "Version": "0.8.3-2"
+  },
+  {
+    "Package": "libzstd1",
+    "Architecture": "amd64",
+    "Source": "libzstd",
+    "Version": "1.5.7+dfsg-1"
+  },
+  {
+    "Package": "login",
+    "Architecture": "amd64",
+    "Source": "util-linux (2.41.5-0+deb13u1)",
+    "Version": "1:4.16.0-2+really2.41.5-0+deb13u1"
+  },
+  {
+    "Package": "login.defs",
+    "Architecture": "all",
+    "Source": "shadow",
+    "Version": "1:4.17.4-2"
+  },
+  {
+    "Package": "mawk",
+    "Architecture": "amd64",
+    "Version": "1.3.4.20250131-1"
+  },
+  {
+    "Package": "mount",
+    "Architecture": "amd64",
+    "Source": "util-linux",
+    "Version": "2.41.5-0+deb13u1"
+  },
+  {
+    "Package": "ncurses-base",
+    "Architecture": "all",
+    "Source": "ncurses",
+    "Version": "6.5+20250216-2"
+  },
+  {
+    "Package": "ncurses-bin",
+    "Architecture": "amd64",
+    "Source": "ncurses",
+    "Version": "6.5+20250216-2"
+  },
+  {
+    "Package": "netbase",
+    "Architecture": "all",
+    "Version": "6.5"
+  },
+  {
+    "Package": "openssl",
+    "Architecture": "amd64",
+    "Version": "3.5.7-1~deb13u2"
+  },
+  {
+    "Package": "openssl-provider-legacy",
+    "Architecture": "amd64",
+    "Source": "openssl",
+    "Version": "3.5.7-1~deb13u2"
+  },
+  {
+    "Package": "passwd",
+    "Architecture": "amd64",
+    "Source": "shadow",
+    "Version": "1:4.17.4-2"
+  },
+  {
+    "Package": "perl-base",
+    "Architecture": "amd64",
+    "Source": "perl",
+    "Version": "5.40.1-6+deb13u1"
+  },
+  {
+    "Package": "readline-common",
+    "Architecture": "all",
+    "Source": "readline",
+    "Version": "8.2-6"
+  },
+  {
+    "Package": "sed",
+    "Architecture": "amd64",
+    "Version": "4.9-2+deb13u1"
+  },
+  {
+    "Package": "sqv",
+    "Architecture": "amd64",
+    "Source": "rust-sequoia-sqv (1.3.0-3)",
+    "Version": "1.3.0-3+b2"
+  },
+  {
+    "Package": "sysvinit-utils",
+    "Architecture": "amd64",
+    "Source": "sysvinit",
+    "Version": "3.14-4"
+  },
+  {
+    "Package": "tar",
+    "Architecture": "amd64",
+    "Version": "1.35+dfsg-3.1"
+  },
+  {
+    "Package": "tini",
+    "Architecture": "amd64",
+    "Source": "tini (0.19.0-3)",
+    "Version": "0.19.0-3+b8"
+  },
+  {
+    "Package": "tzdata",
+    "Architecture": "all",
+    "Version": "2026c-0+deb13u1"
+  },
+  {
+    "Package": "util-linux",
+    "Architecture": "amd64",
+    "Version": "2.41.5-0+deb13u1"
+  },
+  {
+    "Package": "zlib1g",
+    "Architecture": "amd64",
+    "Source": "zlib (1:1.3.dfsg+really1.3.1-1)",
+    "Version": "1:1.3.dfsg+really1.3.1-1+b1"
+  }
+]

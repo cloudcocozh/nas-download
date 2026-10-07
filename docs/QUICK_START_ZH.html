@@ -1,0 +1,157 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>第一次使用，先看这里</title><style>
+:root{--ink:#172b3a;--muted:#566b79;--green:#086b5c;--line:#dce7e8;--paper:#fff;--bg:#f3f7f7}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+a{color:var(--green);text-underline-offset:3px;overflow-wrap:anywhere}button,input{font:inherit}button{cursor:pointer}header{background:#153f3b;color:white;padding:32px max(24px,calc((100vw - 1280px)/2));border-bottom:5px solid #60c7a9}header .tag{color:#bfe6da;font-size:12px;letter-spacing:2px}header strong{display:block;font-size:30px;line-height:1.4;margin-top:8px}header p{margin:8px 0 0;color:#dcece7}header a{color:#c2f5e5}nav.top{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}.top a,.top button{padding:6px 12px;border:1px solid #80a59c;border-radius:6px;background:transparent;color:white;text-decoration:none}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:32px;max-width:1280px;margin:30px auto;padding:0 24px 60px}aside{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;background:var(--paper);padding:20px;border:1px solid var(--line);border-radius:10px}aside label{font-weight:700;font-size:14px}input{width:100%;padding:10px;margin:8px 0;border:1px solid #b7cacc;border-radius:6px;font-size:14px}#result{font-size:13px;color:var(--muted)}aside ul{padding:0;list-style:none;margin:10px 0 0}aside a{display:block;font-size:14px;line-height:1.5;padding:8px 0;text-decoration:none;border-bottom:1px solid #edf2f2}main{min-width:0;background:white;padding:30px 38px;border:1px solid var(--line);border-radius:10px}h1{font-size:30px;line-height:1.5;margin-top:0}h2{font-size:24px;line-height:1.5;margin:38px 0 14px;border-top:1px solid var(--line);padding-top:24px;color:#075d51}h3{font-size:19px;line-height:1.6;margin:25px 0 10px}p{margin:12px 0}li{padding-left:2px;margin:8px 0}ul,ol{padding-left:25px}strong{font-weight:700}code{font:14px/1.65 ui-monospace,Consolas,monospace;background:#edf5f4;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}pre{overflow-x:auto;background:#15352f;color:#e7fff3;padding:18px;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere}pre code{background:none;padding:0;color:inherit}table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.75;table-layout:fixed;margin:18px 0}th{text-align:left;background:#edf5f3;color:#174d43}th,td{border:1px solid var(--line);padding:12px;vertical-align:top;overflow-wrap:anywhere}th:first-child{width:26%}tr:nth-child(even) td{background:#fafcfc}blockquote{margin:20px 0;padding:12px 20px;background:#edf7f3;border-left:4px solid #18826c}.route{display:flex;gap:10px;margin:22px 0;align-items:center;flex-wrap:wrap}.route span{padding:12px 18px;background:#ecf5f1;border:1px solid #c0ded0;border-radius:8px}.route b{color:#83a099}footer{margin:30px 0 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:20px}[hidden]{display:none!important}
+@media(max-width:850px){.layout{grid-template-columns:1fr;gap:16px;margin-top:16px;padding:0 12px 32px}aside{position:static;max-height:300px}main{padding:22px 18px}header{padding:24px 20px}header strong,h1{font-size:25px}h2{font-size:21px}table{font-size:13px}th,td{padding:8px}th:first-child{width:28%}}
+@media print{body{background:white;font-size:10pt}header{background:white;color:#172b3a;border-bottom:2px solid #086b5c;padding:0 0 12px}header .tag,header p{color:#566b79}nav.top,aside,.route{display:none}.layout{display:block;margin:0;padding:0}main{border:0;padding:10px 0}h1{font-size:21pt}h2{font-size:16pt;break-after:avoid}h3{font-size:12pt;break-after:avoid}p,li{orphans:3;widows:3}table{font-size:9pt;table-layout:auto}tr{break-inside:avoid}pre{background:#eef3f2;color:#172b3a}a{color:inherit}section[hidden]{display:block!important}}
+</style></head><body>
+<header><div class="tag">NAS DOWNLOAD / 1.3.0 测试版</div><strong>第一次使用，先看这里</strong><p>自己的 NAS 下载助手 · 内置下载引擎 · 手机与网页同步管理</p><nav class="top"><a href="QUICK_START_ZH.html">第一次使用</a><a href="USER_MANUAL_ZH.html">完整说明书</a><a href="ACCEPTANCE_1_3.html">测试范围</a><button id="print" type="button">打印 / 保存 PDF</button></nav></header>
+<div class="layout"><aside><label for="q">查找章节</label><input id="q" type="search" placeholder="输入：密码、下载目录、签到…"><div id="result" aria-live="polite">输入关键词筛选章节，例如：密码、文件、签到</div><ul><li data-section="section-1"><a href="#section-1">开始前，准备这 5 样</a></li><li data-section="section-2"><a href="#section-2">第 1 步：打开 App，点“自动安装”</a></li><li data-section="section-3"><a href="#section-3">第 2 步：照这个表填写，点“验证并安装”</a></li><li data-section="section-4"><a href="#section-4">第 3 步：创建软件账号，添加第一个下载</a></li><li data-section="section-5"><a href="#section-5">以后每天怎么用</a></li><li data-section="section-6"><a href="#section-6">遇到问题，先对照</a></li></ul></aside><main>
+<div class="route" aria-label="使用流程"><span>准备 NAS</span><b>→</b><span>安装并登录</span><b>→</b><span>添加第一个下载</span></div><h1>Nas Download 1.3.0：第一次使用，先看这里</h1>
+<p><strong>它是装在你自己 NAS 上的下载助手。</strong> 手机负责发指令，NAS 负责下载和保存文件。关掉手机后，NAS 只要继续开机，下载就能继续。软件自带 qB 下载引擎，第一次安装不需要再安装一个 qB。</p>
+<p>这是 <strong>1.3.0 测试版</strong>。适用于具备 Docker Compose 和 SSH 的 <strong>x86_64 Linux NAS</strong>；安卓安装包要求 <strong>Android 8.0 或以上</strong>。ARM NAS 暂不支持。本版没有 iPhone 原生安装包，可以在能访问 NAS 的浏览器里使用网页。</p>
+<section id="section-1"><h2 id="heading-1">开始前，准备这 5 样</h2>
+<table>
+<thead>
+<tr>
+<th>需要什么</th>
+<th>去哪里找 / 怎么确认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一台自己的 NAS</td>
+<td>必须开机，并且有足够的硬盘空间</td>
+</tr>
+<tr>
+<td>NAS 的局域网 IP</td>
+<td>在 NAS 的网络设置或路由器设备列表中找；例如 <code>192.168.50.20</code>，这只是示例</td>
+</tr>
+<tr>
+<td>NAS 的 SSH 账号、密码和端口</td>
+<td>在 NAS 设置中启用 SSH；默认端口通常是 <code>22</code>，以你自己的设置为准</td>
+</tr>
+<tr>
+<td>Docker 和 Docker Compose</td>
+<td>先在 NAS 上装好；用于 SSH 的账号必须有 Docker 操作权限</td>
+</tr>
+<tr>
+<td>安卓手机与 APK</td>
+<td>初次操作让手机和 NAS 连接同一家庭网络；打开 <code>Nas-Download-Standalone-1.3.0.apk</code> 安装</td>
+</tr>
+</tbody>
+</table>
+<p><strong>不知道 NAS 架构或 Docker 权限？</strong> 先请 NAS 管理员确认。App 不会替你开启 SSH、安装 Docker 或取得权限。只装手机 App 还不能让 NAS 开始下载。</p>
+</section><section id="section-2"><h2 id="heading-2">第 1 步：打开 App，点“自动安装”</h2>
+<p>手机如果提示“允许此来源安装应用”，只为你正在使用的文件管理器或浏览器允许这次安装即可。安装完成后打开 <strong>Nas Download</strong>，会看到“连接已有 NAS”和“自动安装”。第一次在这台 NAS 使用，选 <strong>自动安装</strong>。</p>
+<p>已经安装过服务？选 <strong>连接已有 NAS</strong>，不必再创建一套。不要卸载旧 App 来升级同签名的正式安装包。</p>
+</section><section id="section-3"><h2 id="heading-3">第 2 步：照这个表填写，点“验证并安装”</h2>
+<table>
+<thead>
+<tr>
+<th>App 字段</th>
+<th>新手怎么填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSH 主机（IP / 主机名）</td>
+<td>填自己的 NAS IP，例如 <code>192.168.50.20</code>；这里不加 <code>http://</code>，也不加 <code>:7120</code></td>
+</tr>
+<tr>
+<td>SSH 端口</td>
+<td>NAS 中设置的 SSH 端口，一般是 <code>22</code></td>
+</tr>
+<tr>
+<td>SSH 用户名 / SSH 密码</td>
+<td>NAS 的 SSH 登录账号和密码，<strong>不是后面新建的软件管理员账号</strong></td>
+</tr>
+<tr>
+<td>安装目录（绝对路径）</td>
+<td>选择这款软件专用的新目录；只有 NAS 确实有 <code>/volume1</code> 时，才使用默认 <code>/volume1/docker/nas-download</code></td>
+</tr>
+<tr>
+<td>服务监听地址</td>
+<td>一般保留 <code>0.0.0.0</code>；它表示允许局域网访问，不是以后输入浏览器的地址</td>
+</tr>
+<tr>
+<td>服务端口</td>
+<td>一般保留 <code>7120</code>；内置下载还会使用下一端口 <code>7121</code>。两个端口都不能被其他服务占用</td>
+</tr>
+<tr>
+<td>下载模式</td>
+<td>保留 <strong>内置下载（推荐）</strong></td>
+</tr>
+<tr>
+<td>下载保存目录（可留空）</td>
+<td>第一次可留空，文件存到安装目录下面的 <code>downloads</code>；想放另一块硬盘，填写那块盘上的真实完整目录</td>
+</tr>
+</tbody>
+</table>
+<p>安装目录不要选已有影视库、其他软件目录或整个硬盘根目录。NAS 品牌不同，目录不一定叫 <code>/volume1</code>；请在 NAS 文件管理器确认真实路径，不照抄不存在的目录。</p>
+<p>首次连接会弹出 <strong>“确认 NAS 的 SSH 指纹”</strong>。这是确认连接的是你的 NAS：请与 NAS 管理员提供的 SSH 主机公钥指纹核对，匹配后点 <strong>“已核对，信任”</strong>。不会核对时先取消，详见完整说明书的“安装失败怎么办”。</p>
+<p>安装会上传约 96 MB 的完整包并导入镜像。保持 App 在前台、网络连接不断开，等待进度更新，不要反复点安装。所需时间取决于 Wi-Fi 和 NAS 性能。</p>
+<p><strong>看到“创建管理员”就说明进入首次配置阶段了。</strong> 如果提示失败，保留完整错误文字，按说明书排查，不要换目录连续装多套。</p>
+</section><section id="section-4"><h2 id="heading-4">第 3 步：创建软件账号，添加第一个下载</h2>
+<ol>
+<li>“服务地址”一般已自动填好。示例是 <code>http://192.168.50.20:7120</code>，必须换成你自己的 NAS IP 和端口。</li>
+<li>自己取一个 <strong>管理员账号</strong>，设置至少 <strong>10 个字符</strong>的密码。安装生成的初始化码一般会自动填入。</li>
+<li>点 <strong>创建并进入</strong>，进入“下载任务”。没有任务是正常的。</li>
+<li>点 <strong>＋ 添加</strong>，选择内置下载器。粘贴一个 <code>magnet:</code> 磁力链接，或者点 <strong>选择 .torrent 文件</strong>。第一次只添加一项自己有权下载、仍有人做种的资源。</li>
+<li>“保存目录”先留空；不要勾选“添加后暂停”。点 <strong>添加</strong>，然后查看回执并刷新列表。</li>
+<li>看到进度增加，说明开始下载；进度达到 100% 后，到 NAS 的下载保存目录找文件。文件存在 NAS，不在手机。</li>
+</ol>
+<p><strong>没有 PT 账号也能用普通下载。</strong> 先不配置站点、签到和自动刷流，照样可以添加磁力或种子。</p>
+</section><section id="section-5"><h2 id="heading-5">以后每天怎么用</h2>
+<ul>
+<li>打开 App 查看任务，或用电脑浏览器访问同一个服务地址。</li>
+<li>点任务看详情；暂停、继续都在里面。</li>
+<li>删除时不勾选 <strong>“同时删除下载文件（不可恢复）”</strong>，只移除下载任务；勾选后才要求下载器删除文件。</li>
+<li>关掉手机不会停止 NAS 下载；NAS 关机、网络断开或容器停止会影响下载。</li>
+<li>显示“响应未知”时，先到 <strong>更多 → 操作记录与待确认回执</strong> 查询，别反复添加或删除。</li>
+</ul>
+</section><section id="section-6"><h2 id="heading-6">遇到问题，先对照</h2>
+<table>
+<thead>
+<tr>
+<th>看到的情况</th>
+<th>先做什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>连不上 SSH</td>
+<td>核对 NAS IP、SSH 开关、端口、账号密码，手机先回到同一网络</td>
+</tr>
+<tr>
+<td>没有 Docker 权限 / 缺少 Compose</td>
+<td>请 NAS 管理员完成安装和授权；App 不会自动提权</td>
+</tr>
+<tr>
+<td>端口被占用</td>
+<td>确认冲突服务；新安装可改用另一对空闲端口，例如 <code>7130</code> 和 <code>7131</code></td>
+</tr>
+<tr>
+<td>网站打不开</td>
+<td>输入自己的 NAS IP 与服务端口；不要输入 <code>0.0.0.0</code>、<code>localhost</code> 或 SSH 端口 <code>22</code></td>
+</tr>
+<tr>
+<td>能进 App，但速度为 0</td>
+<td>先看任务是否暂停、是否有可连接的做种者，再看任务详情里的 Tracker 信息</td>
+</tr>
+<tr>
+<td>找不到文件</td>
+<td>到 NAS 上找；默认位置是 <strong>安装目录/downloads</strong>，不是手机相册或手机“下载”目录</td>
+</tr>
+</tbody>
+</table>
+<p>更详细的功能介绍、填写示例、签到刷流、升级备份和故障处理，请看 <a href="USER_MANUAL_ZH.html">完整使用说明书</a>。实际测试范围见 <a href="ACCEPTANCE_1_3.html">验收记录</a>。</p>
+</section>
+<footer>本文件可离线阅读，无外部字体、脚本或统计请求。示例 IP 和路径须替换成自己的值。打印前会恢复显示全部章节。</footer></main></div><script>
+const box=document.querySelector('#q'),result=document.querySelector('#result');
+box.addEventListener('input',()=>{const q=box.value.trim().toLowerCase();let n=0;
+ document.querySelectorAll('main section').forEach(s=>{const hit=!q||s.textContent.toLowerCase().includes(q);s.hidden=!hit;if(hit)n++;const a=document.querySelector('[data-section="'+s.id+'"]');if(a)a.hidden=!hit;});
+ result.textContent=q?'找到 '+n+' 个相关章节':'输入关键词筛选章节，例如：密码、文件、签到';});
+document.querySelector('#print').addEventListener('click',()=>{box.value='';box.dispatchEvent(new Event('input'));window.print();});
+</script></body></html>

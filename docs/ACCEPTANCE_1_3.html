@@ -1,0 +1,78 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>已验证的功能与支持范围</title><style>
+:root{--ink:#172b3a;--muted:#566b79;--green:#086b5c;--line:#dce7e8;--paper:#fff;--bg:#f3f7f7}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+a{color:var(--green);text-underline-offset:3px;overflow-wrap:anywhere}button,input{font:inherit}button{cursor:pointer}header{background:#153f3b;color:white;padding:32px max(24px,calc((100vw - 1280px)/2));border-bottom:5px solid #60c7a9}header .tag{color:#bfe6da;font-size:12px;letter-spacing:2px}header strong{display:block;font-size:30px;line-height:1.4;margin-top:8px}header p{margin:8px 0 0;color:#dcece7}header a{color:#c2f5e5}nav.top{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}.top a,.top button{padding:6px 12px;border:1px solid #80a59c;border-radius:6px;background:transparent;color:white;text-decoration:none}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:32px;max-width:1280px;margin:30px auto;padding:0 24px 60px}aside{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;background:var(--paper);padding:20px;border:1px solid var(--line);border-radius:10px}aside label{font-weight:700;font-size:14px}input{width:100%;padding:10px;margin:8px 0;border:1px solid #b7cacc;border-radius:6px;font-size:14px}#result{font-size:13px;color:var(--muted)}aside ul{padding:0;list-style:none;margin:10px 0 0}aside a{display:block;font-size:14px;line-height:1.5;padding:8px 0;text-decoration:none;border-bottom:1px solid #edf2f2}main{min-width:0;background:white;padding:30px 38px;border:1px solid var(--line);border-radius:10px}h1{font-size:30px;line-height:1.5;margin-top:0}h2{font-size:24px;line-height:1.5;margin:38px 0 14px;border-top:1px solid var(--line);padding-top:24px;color:#075d51}h3{font-size:19px;line-height:1.6;margin:25px 0 10px}p{margin:12px 0}li{padding-left:2px;margin:8px 0}ul,ol{padding-left:25px}strong{font-weight:700}code{font:14px/1.65 ui-monospace,Consolas,monospace;background:#edf5f4;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}pre{overflow-x:auto;background:#15352f;color:#e7fff3;padding:18px;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere}pre code{background:none;padding:0;color:inherit}table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.75;table-layout:fixed;margin:18px 0}th{text-align:left;background:#edf5f3;color:#174d43}th,td{border:1px solid var(--line);padding:12px;vertical-align:top;overflow-wrap:anywhere}th:first-child{width:26%}tr:nth-child(even) td{background:#fafcfc}blockquote{margin:20px 0;padding:12px 20px;background:#edf7f3;border-left:4px solid #18826c}.route{display:flex;gap:10px;margin:22px 0;align-items:center;flex-wrap:wrap}.route span{padding:12px 18px;background:#ecf5f1;border:1px solid #c0ded0;border-radius:8px}.route b{color:#83a099}footer{margin:30px 0 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:20px}[hidden]{display:none!important}
+@media(max-width:850px){.layout{grid-template-columns:1fr;gap:16px;margin-top:16px;padding:0 12px 32px}aside{position:static;max-height:300px}main{padding:22px 18px}header{padding:24px 20px}header strong,h1{font-size:25px}h2{font-size:21px}table{font-size:13px}th,td{padding:8px}th:first-child{width:28%}}
+@media print{body{background:white;font-size:10pt}header{background:white;color:#172b3a;border-bottom:2px solid #086b5c;padding:0 0 12px}header .tag,header p{color:#566b79}nav.top,aside,.route{display:none}.layout{display:block;margin:0;padding:0}main{border:0;padding:10px 0}h1{font-size:21pt}h2{font-size:16pt;break-after:avoid}h3{font-size:12pt;break-after:avoid}p,li{orphans:3;widows:3}table{font-size:9pt;table-layout:auto}tr{break-inside:avoid}pre{background:#eef3f2;color:#172b3a}a{color:inherit}section[hidden]{display:block!important}}
+</style></head><body>
+<header><div class="tag">NAS DOWNLOAD / 1.3.0 测试版</div><strong>已验证的功能与支持范围</strong><p>自己的 NAS 下载助手 · 内置下载引擎 · 手机与网页同步管理</p><nav class="top"><a href="QUICK_START_ZH.html">第一次使用</a><a href="USER_MANUAL_ZH.html">完整说明书</a><a href="ACCEPTANCE_1_3.html">测试范围</a><button id="print" type="button">打印 / 保存 PDF</button></nav></header>
+<div class="layout"><aside><label for="q">查找章节</label><input id="q" type="search" placeholder="输入：密码、下载目录、签到…"><div id="result" aria-live="polite">输入关键词筛选章节，例如：密码、文件、签到</div><ul><li data-section="section-1"><a href="#section-1">已完成</a></li><li data-section="section-2"><a href="#section-2">实际验证</a></li><li data-section="section-3"><a href="#section-3">现有系统保护与收尾</a></li><li data-section="section-4"><a href="#section-4">支持范围</a></li></ul></aside><main>
+<div class="route" aria-label="使用流程"><span>准备 NAS</span><b>→</b><span>安装并登录</span><b>→</b><span>添加第一个下载</span></div><h1>NASDownload 1.3.0 验收记录</h1>
+<p>日期：2026-10-07。独立产品包名 <code>com.nasdownload.app</code>，版本码 6。</p>
+<section id="section-1"><h2 id="heading-1">已完成</h2>
+<ul>
+<li>默认单容器集成 qBittorrent 5.2.4；首次部署不需要另装、另配 qB。仍支持高级设置接入外部下载器。</li>
+<li>内置下载器接口仅监听容器回环地址并保留认证；服务端口和下载连接端口可配置。安装包包含 x86_64 离线 Docker 镜像，减少 NAS 首装拉取依赖。</li>
+<li>独立安装目录、安装互斥锁、路径/端口检查、升级期间维护门禁；先准备镜像，再停止所属实例并备份匹配的配置与状态。</li>
+<li>引擎故障有限重启、退出保存状态、停止期间禁止新业务变更；升级失败自动恢复旧镜像及对应状态，下载文件不倒退覆盖。</li>
+<li>保留无人值守的归属校验、观察期、删除前核验和补种记录；测试未连接用户 PT 账号或改动线上保种策略。</li>
+</ul>
+</section><section id="section-2"><h2 id="heading-2">实际验证</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>结果与边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linux 自动化测试</td>
+<td>145 项通过，无跳过；含安全边界、恢复和安装器测试</td>
+</tr>
+<tr>
+<td>网页与安装器</td>
+<td>三组网页检查通过；安装锁、路径冲突、部分停止失败、离线导入、回滚契约通过</td>
+</tr>
+<tr>
+<td>真实下载</td>
+<td>自建私有测试种子通过本地 HTTP webseed 下载；核对完整文件字节；暂停、恢复、删除均通过</td>
+</tr>
+<tr>
+<td>无人值守换种</td>
+<td>新种观察期保护通过；在独立测试进程模拟 7 小时年龄后，真实 qB 删除与文件消失、容量重读、补入并完成下载通过；不是持续运行 7 小时的证明</td>
+</tr>
+<tr>
+<td>故障恢复</td>
+<td>故意终止测试 qB 后自动恢复；完整容器停止/启动后会话、唯一任务及文件 SHA256 保持；正常退出码 0</td>
+</tr>
+<tr>
+<td>旧版升级</td>
+<td>实际 1.2.1 双容器副本迁移到 1.3.0 单容器；原登录、任务哈希、文件路径和 SHA256 保留；旧引擎停止</td>
+</tr>
+<tr>
+<td>强制回滚</td>
+<td>故意让升级健康验证失败，自动恢复 1.2.1 双容器和匹配状态；原任务、会话及文件仍完整</td>
+</tr>
+<tr>
+<td>Android</td>
+<td>原生页面、完整离线镜像 SSH/SFTP 安装流程、原签名 1.2.1 覆盖升级与持久会话通过；SSH 服务为本地测试 fixture，NAS 服务端验收另行完成</td>
+</tr>
+</tbody>
+</table>
+<p>首次真实下载发现一个仅在引擎出现任务后触发的健康检查缺陷，已修复并加入回归测试；以上结果来自修复后复测。</p>
+</section><section id="section-3"><h2 id="heading-3">现有系统保护与收尾</h2>
+<p>全部测试在专用目录和独立端口执行。原三合一及其下载器、M-Team、NAStool、Studio、OpenClaw 等七个服务逐一核对，容器 ID、启动时间不变，仍运行；原独立产品预览维持停止。</p>
+<p>本轮创建的三个测试容器、两个空测试网络已移除。隔离测试记录及回滚副本保留备查，没有删除用户下载或媒体文件，也未进行全局镜像清理。</p>
+</section><section id="section-4"><h2 id="heading-4">支持范围</h2>
+<p>本次验证环境是 Linux x86_64 NAS、Docker Compose、具有对应 Docker 权限的 SSH 账号，以及 Android 模拟器。ARM NAS 不在当前离线镜像支持范围。未完成多日 PT 持续运行、所有 NAS/手机型号兼容性或公网入站验证；容器减少本身不承诺提高上传速度。</p>
+<p>这是可交付的安装包与源码，公开测试发行入口为本仓库 Releases；未上传应用商店或公共镜像仓库。当前实际文件摘要见输出目录 SHA256-1.3.0.txt。</p>
+</section>
+<footer>本文件可离线阅读，无外部字体、脚本或统计请求。示例 IP 和路径须替换成自己的值。打印前会恢复显示全部章节。</footer></main></div><script>
+const box=document.querySelector('#q'),result=document.querySelector('#result');
+box.addEventListener('input',()=>{const q=box.value.trim().toLowerCase();let n=0;
+ document.querySelectorAll('main section').forEach(s=>{const hit=!q||s.textContent.toLowerCase().includes(q);s.hidden=!hit;if(hit)n++;const a=document.querySelector('[data-section="'+s.id+'"]');if(a)a.hidden=!hit;});
+ result.textContent=q?'找到 '+n+' 个相关章节':'输入关键词筛选章节，例如：密码、文件、签到';});
+document.querySelector('#print').addEventListener('click',()=>{box.value='';box.dispatchEvent(new Event('input'));window.print();});
+</script></body></html>

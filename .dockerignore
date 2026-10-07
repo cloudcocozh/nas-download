@@ -1,0 +1,11 @@
+android
+tests
+evidence
+docs
+**/__pycache__
+**/*.pyc
+data
+.env
+.env.*
+installer.tar.gz
+*.zip

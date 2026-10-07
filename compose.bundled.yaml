@@ -1,0 +1,15 @@
+services:
+  nas-download:
+    environment:
+      ND_ENGINE_MODE: embedded
+      ND_ENGINE_PASSWORD: "${ND_ENGINE_PASSWORD}"
+      ND_PEER_PORT: "${ND_PEER_PORT:-7121}"
+      ND_BRUSH_VERIFY_ROOT: /downloads
+      ND_BRUSH_VERIFY_MOUNT: /managed-downloads
+    volumes:
+      - ./engine-config:/config
+      - "${ND_DOWNLOADS}:/downloads"
+      - "${ND_DOWNLOADS}:/managed-downloads:ro"
+    ports:
+      - "${ND_PEER_PORT:-7121}:${ND_PEER_PORT:-7121}/tcp"
+      - "${ND_PEER_PORT:-7121}:${ND_PEER_PORT:-7121}/udp"

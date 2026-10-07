@@ -1,0 +1,801 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>安装与使用完整说明书</title><style>
+:root{--ink:#172b3a;--muted:#566b79;--green:#086b5c;--line:#dce7e8;--paper:#fff;--bg:#f3f7f7}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+a{color:var(--green);text-underline-offset:3px;overflow-wrap:anywhere}button,input{font:inherit}button{cursor:pointer}header{background:#153f3b;color:white;padding:32px max(24px,calc((100vw - 1280px)/2));border-bottom:5px solid #60c7a9}header .tag{color:#bfe6da;font-size:12px;letter-spacing:2px}header strong{display:block;font-size:30px;line-height:1.4;margin-top:8px}header p{margin:8px 0 0;color:#dcece7}header a{color:#c2f5e5}nav.top{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}.top a,.top button{padding:6px 12px;border:1px solid #80a59c;border-radius:6px;background:transparent;color:white;text-decoration:none}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:32px;max-width:1280px;margin:30px auto;padding:0 24px 60px}aside{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;background:var(--paper);padding:20px;border:1px solid var(--line);border-radius:10px}aside label{font-weight:700;font-size:14px}input{width:100%;padding:10px;margin:8px 0;border:1px solid #b7cacc;border-radius:6px;font-size:14px}#result{font-size:13px;color:var(--muted)}aside ul{padding:0;list-style:none;margin:10px 0 0}aside a{display:block;font-size:14px;line-height:1.5;padding:8px 0;text-decoration:none;border-bottom:1px solid #edf2f2}main{min-width:0;background:white;padding:30px 38px;border:1px solid var(--line);border-radius:10px}h1{font-size:30px;line-height:1.5;margin-top:0}h2{font-size:24px;line-height:1.5;margin:38px 0 14px;border-top:1px solid var(--line);padding-top:24px;color:#075d51}h3{font-size:19px;line-height:1.6;margin:25px 0 10px}p{margin:12px 0}li{padding-left:2px;margin:8px 0}ul,ol{padding-left:25px}strong{font-weight:700}code{font:14px/1.65 ui-monospace,Consolas,monospace;background:#edf5f4;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}pre{overflow-x:auto;background:#15352f;color:#e7fff3;padding:18px;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere}pre code{background:none;padding:0;color:inherit}table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.75;table-layout:fixed;margin:18px 0}th{text-align:left;background:#edf5f3;color:#174d43}th,td{border:1px solid var(--line);padding:12px;vertical-align:top;overflow-wrap:anywhere}th:first-child{width:26%}tr:nth-child(even) td{background:#fafcfc}blockquote{margin:20px 0;padding:12px 20px;background:#edf7f3;border-left:4px solid #18826c}.route{display:flex;gap:10px;margin:22px 0;align-items:center;flex-wrap:wrap}.route span{padding:12px 18px;background:#ecf5f1;border:1px solid #c0ded0;border-radius:8px}.route b{color:#83a099}footer{margin:30px 0 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:20px}[hidden]{display:none!important}
+@media(max-width:850px){.layout{grid-template-columns:1fr;gap:16px;margin-top:16px;padding:0 12px 32px}aside{position:static;max-height:300px}main{padding:22px 18px}header{padding:24px 20px}header strong,h1{font-size:25px}h2{font-size:21px}table{font-size:13px}th,td{padding:8px}th:first-child{width:28%}}
+@media print{body{background:white;font-size:10pt}header{background:white;color:#172b3a;border-bottom:2px solid #086b5c;padding:0 0 12px}header .tag,header p{color:#566b79}nav.top,aside,.route{display:none}.layout{display:block;margin:0;padding:0}main{border:0;padding:10px 0}h1{font-size:21pt}h2{font-size:16pt;break-after:avoid}h3{font-size:12pt;break-after:avoid}p,li{orphans:3;widows:3}table{font-size:9pt;table-layout:auto}tr{break-inside:avoid}pre{background:#eef3f2;color:#172b3a}a{color:inherit}section[hidden]{display:block!important}}
+</style></head><body>
+<header><div class="tag">NAS DOWNLOAD / 1.3.0 测试版</div><strong>安装与使用完整说明书</strong><p>自己的 NAS 下载助手 · 内置下载引擎 · 手机与网页同步管理</p><nav class="top"><a href="QUICK_START_ZH.html">第一次使用</a><a href="USER_MANUAL_ZH.html">完整说明书</a><a href="ACCEPTANCE_1_3.html">测试范围</a><button id="print" type="button">打印 / 保存 PDF</button></nav></header>
+<div class="layout"><aside><label for="q">查找章节</label><input id="q" type="search" placeholder="输入：密码、下载目录、签到…"><div id="result" aria-live="polite">输入关键词筛选章节，例如：密码、文件、签到</div><ul><li data-section="section-1"><a href="#section-1">1. 这是干什么的</a></li><li data-section="section-2"><a href="#section-2">2. 开始前需要准备什么</a></li><li data-section="section-3"><a href="#section-3">3. 用安卓手机安装到 NAS</a></li><li data-section="section-4"><a href="#section-4">4. 第一次登录，或者换手机连接</a></li><li data-section="section-5"><a href="#section-5">5. 完成第一个下载</a></li><li data-section="section-6"><a href="#section-6">6. 日常管理：查看、暂停、继续、删除</a></li><li data-section="section-7"><a href="#section-7">7. 可选：搜索自己的 PT / Torznab 站点</a></li><li data-section="section-8"><a href="#section-8">8. 可选：签到与账户检查</a></li><li data-section="section-9"><a href="#section-9">9. 可选：无人值守下载与自动清理</a></li><li data-section="section-10"><a href="#section-10">10. 在外面怎么访问</a></li><li data-section="section-11"><a href="#section-11">11. 高级：接入已经安装的下载器</a></li><li data-section="section-12"><a href="#section-12">12. 高级：不用手机，在 NAS 手动安装</a></li><li data-section="section-13"><a href="#section-13">13. 升级、备份、停用和移除</a></li><li data-section="section-14"><a href="#section-14">14. 出问题时对照这张表</a></li><li data-section="section-15"><a href="#section-15">15. 几个常见疑问</a></li></ul></aside><main>
+<div class="route" aria-label="使用流程"><span>准备 NAS</span><b>→</b><span>安装并登录</span><b>→</b><span>添加第一个下载</span></div><h1>Nas Download 1.3.0 完整使用说明书</h1>
+<p><strong>给第一次接触 NAS 下载的人。</strong> 按前五章操作，可以从准备设备一直做到第一个下载完成。后面的站点、签到、刷流是可选功能，不用一次全部设置。</p>
+<p>版本：1.3.0 测试版 · 文档日期：2026-10-07。按钮名称按此版本 Android App 核对；NAS 自带系统的菜单因品牌和版本不同而不同。</p>
+<section id="section-1"><h2 id="heading-1">1. 这是干什么的</h2>
+<p>Nas Download 把下载工作放在你自己的 NAS 上。你可以在手机或网页添加种子、查看进度、暂停和继续下载；真正的文件保存在 NAS 硬盘里。手机只是遥控器，不需要一直亮屏，也不需要让电脑一直开机。</p>
+<p><strong>工作方式：手机 / 网页 → 你自己的 NAS → NAS 硬盘。</strong> 默认安装一个产品容器，里面已经带 qBittorrent 下载引擎；不用另外给 qB 配一套地址和密码。</p>
+<table>
+<thead>
+<tr>
+<th>想做的事</th>
+<th>本版能做什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>普通下载</td>
+<td>添加磁力链接、种子下载地址、<code>.torrent</code> 文件</td>
+</tr>
+<tr>
+<td>管理下载</td>
+<td>查看进度、实时速度、状态、文件列表与 Tracker；暂停、继续、删除</td>
+</tr>
+<tr>
+<td>多设备操作</td>
+<td>安卓 App 与网页连接同一个 NAS 服务，共用任务；支持一次性配对码和撤销设备登录</td>
+</tr>
+<tr>
+<td>搜索自己的站点</td>
+<td>配置 M-Team 或 Torznab 站点后搜索、查看详情、主动添加下载</td>
+</tr>
+<tr>
+<td>每日任务</td>
+<td>配置 HDFans 签到模板、自定义 HTTP 签到或 M-Team 账户 API 检查</td>
+</tr>
+<tr>
+<td>无人值守下载</td>
+<td>按配置自动选择资源；满足保护与核验条件后，可清理低效任务并补入新任务</td>
+</tr>
+<tr>
+<td>接入已有下载器</td>
+<td>高级模式支持已有 qBittorrent 4/5、Transmission 4</td>
+</tr>
+</tbody>
+</table>
+<p>它不是资源站账号、网盘会员或视频播放器；不会给你提供 PT 邀请、API Key 或 Cookie。普通视频网页地址也不是种子下载地址。它不会自动把文件加入 NAS 影视中心合集，也不会接管你以前的 NAS-tools 任务。内置下载模式使用自己的引擎和配置。</p>
+<h3>版本范围</h3>
+<ul>
+<li>NAS：Linux，x86_64/amd64 架构；已安装 Docker 与 Docker Compose。ARM NAS 暂不支持本版离线镜像。</li>
+<li>手机：Android 8.0 及以上是安装门槛，不代表所有机型都已验证。iPhone 没有本版原生 App，可用浏览器访问服务。</li>
+<li>已验证：隔离 NAS 的真实下载、删补、故障恢复、旧版迁移和失败回滚，以及 Android 模拟器测试。</li>
+<li>未覆盖：真实手机到 NAS 的整条首次安装流程、多日持续运行、所有品牌和机型。首批按测试版分享使用，详细边界见 <a href="ACCEPTANCE_1_3.html">验收记录</a>。</li>
+</ul>
+</section><section id="section-2"><h2 id="heading-2">2. 开始前需要准备什么</h2>
+<h3>2.1 NAS 要先准备好</h3>
+<ol>
+<li><strong>开机并接入家庭网络。</strong> 初次操作让手机与 NAS 在同一网络，避免把远程网络故障混进安装流程。</li>
+<li><strong>确认处理器架构。</strong> NAS 系统信息中查看；找不到时请管理员在终端运行 <code>uname -m</code>，本版应是 <code>x86_64</code> 或 <code>amd64</code>。<code>aarch64</code>、<code>armv7l</code> 等不是当前支持架构。</li>
+<li><strong>安装 Docker / 容器管理功能与 Compose。</strong> NAS 各品牌名称不同，不把某个品牌的菜单套用到全部设备。</li>
+<li><strong>启用 SSH。</strong> SSH 是手机暂时登录 NAS 执行安装所用的通道；记录账号、端口和密码。</li>
+<li><strong>确认该账号能操作 Docker。</strong> NAS 网页能登录，不一定说明 SSH 可用或有容器权限。请管理员核对，而不是在 App 中不断尝试不同密码。</li>
+<li><strong>确定安装盘和下载盘。</strong> 安装目录保存配置与任务状态；下载目录保存实际文件。要留出镜像、配置、日志、升级备份和下载文件的空间。</li>
+</ol>
+<p>管理员可用以下只读命令检查准备情况，不会开启任务或修改配置：</p>
+<pre><code class="language-sh">uname -m
+docker compose version
+docker info
+</code></pre>
+<p>前三项检查中出现“不存在此命令”“没有权限”或连接不到 Docker，应先处理 NAS 环境。App 不会自动装 Docker、开 SSH 或提权。</p>
+<h3>2.2 分清这四类信息</h3>
+<table>
+<thead>
+<tr>
+<th>信息</th>
+<th>用途</th>
+<th>从哪里来</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NAS SSH 账号和密码</td>
+<td>把软件安装到 NAS</td>
+<td>NAS 的管理设置；此次连接使用，App 不保存 SSH 密码</td>
+</tr>
+<tr>
+<td>Nas Download 管理员账号和密码</td>
+<td>平时打开 App 或网页使用</td>
+<td>首次安装后，由你自己创建</td>
+</tr>
+<tr>
+<td>初始化码</td>
+<td>只用于首次创建管理员</td>
+<td>安装器生成；App 正常流程自动填入</td>
+</tr>
+<tr>
+<td>手机配对码</td>
+<td>让另一部设备加入已有服务</td>
+<td>已登录设备生成；5 分钟有效，只能使用一次</td>
+</tr>
+</tbody>
+</table>
+<p><strong>这四样不要混用。</strong> “登录失败”时，先确认自己正在登录 NAS 还是 Nas Download。</p>
+<h3>2.3 安装包里的文件怎么选</h3>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>谁使用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Nas-Download-Standalone-1.3.0.apk</code></td>
+<td>安卓用户，直接安装到手机；内含 NAS 安装所需的离线镜像</td>
+</tr>
+<tr>
+<td><code>Nas-Download-Standalone-1.3.0-install.tar.gz</code></td>
+<td>管理员手动在 NAS 上安装；手机自动安装成功后不必再装一次</td>
+</tr>
+<tr>
+<td><code>Nas-Download-Standalone-1.3.0-source.zip</code></td>
+<td>开发者查看与修改源码；普通用户不需要</td>
+</tr>
+<tr>
+<td><code>SHA256-1.3.0.txt</code></td>
+<td>检查收到的原始程序包是否完整；不是安装文件</td>
+</tr>
+</tbody>
+</table>
+<p>如果拿到“含说明书分享包”，先解压，打开根目录 <strong>“先看这里.html”</strong>。不要在压缩包预览窗口里直接安装或阅读跨文件链接。</p>
+</section><section id="section-3"><h2 id="heading-3">3. 用安卓手机安装到 NAS</h2>
+<h3>3.1 安装手机 App</h3>
+<p>把 APK 保存到手机，用手机文件管理器打开。系统可能要求允许当前文件管理器安装应用，按手机提示操作。安装完成后打开 <strong>Nas Download</strong>。</p>
+<p>主页面有两个入口：</p>
+<ul>
+<li><strong>自动安装</strong>：这台 NAS 还没有本产品服务时使用。</li>
+<li><strong>连接已有 NAS</strong>：NAS 已经装好服务，或换手机登录时使用。</li>
+</ul>
+<p>本产品包名是 <code>com.nasdownload.app</code>，与原来的三合一 App 不同。安装本 APK 不会把三合一 App 覆盖成新应用。</p>
+<h3>3.2 填写“自动安装”表单</h3>
+<p>下面统一用虚构示例 NAS <code>192.168.50.20</code>。请替换成你自己的值；不要把示例当作已经存在的服务器。</p>
+<table>
+<thead>
+<tr>
+<th>字段原名</th>
+<th>如何填写</th>
+<th>常见填错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSH 主机（IP / 主机名）</td>
+<td><code>192.168.50.20</code></td>
+<td>写成 <code>http://192.168.50.20:7120</code>；这是服务地址，不是 SSH 主机</td>
+</tr>
+<tr>
+<td>SSH 端口</td>
+<td>通常 <code>22</code>，以 NAS 设置为准</td>
+<td>填成网页服务端口 <code>7120</code></td>
+</tr>
+<tr>
+<td>SSH 用户名</td>
+<td>有 SSH 和 Docker 权限的 NAS 用户名</td>
+<td>填成尚未创建的软件管理员账号</td>
+</tr>
+<tr>
+<td>SSH 密码（只在内存使用）</td>
+<td>该 NAS 用户的密码</td>
+<td>填 API Key、配对码或初始化码</td>
+</tr>
+<tr>
+<td>安装目录（绝对路径）</td>
+<td>软件专用的新目录，如真实存在 <code>/volume1</code> 时可用 <code>/volume1/docker/nas-download</code></td>
+<td>填 Windows 盘符、共享文件夹显示名称、其他软件目录或硬盘根目录</td>
+</tr>
+<tr>
+<td>服务监听地址</td>
+<td>一般保留 <code>0.0.0.0</code></td>
+<td>将它当成登录网页用的地址</td>
+</tr>
+<tr>
+<td>服务端口（1024–65534）</td>
+<td>一般 <code>7120</code>；同时预留下一端口 <code>7121</code></td>
+<td>只检查 <code>7120</code>，忘记 <code>7121</code> 也不能冲突</td>
+</tr>
+<tr>
+<td>下载模式</td>
+<td><strong>内置下载（推荐）</strong></td>
+<td>没有已有下载器却选择高级模式</td>
+</tr>
+<tr>
+<td>下载保存目录（可留空）</td>
+<td>空：使用安装目录下的 <code>downloads</code>；或填写实际下载盘目录</td>
+<td>填在 <code>data</code>、<code>engine-config</code> 等程序状态目录里</td>
+</tr>
+</tbody>
+</table>
+<p>“绝对路径”就是从 <code>/</code> 开始的完整路径。NAS 网页里显示的“下载”或“共享文件夹”名称不一定是完整路径，请在 NAS 文件管理器属性中确认，或者让管理员确认。安装目录的各级路径不能是符号链接。</p>
+<p><strong>建议第一次使用独立的新下载目录。</strong> 这样容易找文件，也方便与你原有的下载系统区分。已有目录也必须对 SSH 账号可写，并符合安装器的路径检查。</p>
+<h3>3.3 核对 SSH 指纹</h3>
+<p>点 <strong>验证并安装</strong> 后，首次连接弹出 <strong>确认 NAS 的 SSH 指纹</strong>。SSH 指纹相当于 NAS 在这条连接里的“身份证号码”。请对照可信 NAS 终端或管理员提供的主机公钥指纹，匹配后再点 <strong>已核对，信任</strong>。</p>
+<p>管理员可以在 NAS 本地或已经信任的终端列出主机公钥指纹：</p>
+<pre><code class="language-sh">for key in /etc/ssh/ssh_host_*_key.pub; do
+  [ -f &quot;$key&quot; ] &amp;&amp; ssh-keygen -lf &quot;$key&quot; -E sha256
+done
+</code></pre>
+<p>对比 <code>SHA256:</code> 后的指纹；不同主机密钥算法会有不同指纹，核对弹窗对应的一条。不确定就取消并找管理员核对。后续指纹变化会拒绝连接；不要把关闭校验当作解决办法。</p>
+<h3>3.4 等待安装结束</h3>
+<p>完整包约 96 MB，进度包括连接、上传、解压、安装和验证。离线镜像减少 NAS 首次构建时下载依赖的需要，不代表日后下载、站点查询可以离线使用。</p>
+<p>安装期间保持手机前台和网络连接。不要重复点按钮，也不要看到短暂停顿就换一个目录重装。慢速 Wi-Fi 和较慢的 NAS 会增加等待时间；升级旧版时停止旧服务也可能需要等待。</p>
+<p>安装正常完成后通常进入 <strong>创建管理员</strong>。如果服务装好了但手机连接失败，先按第 4 章手动连接，不要默认又装一遍。</p>
+</section><section id="section-4"><h2 id="heading-4">4. 第一次登录，或者换手机连接</h2>
+<h3>4.1 首次创建管理员</h3>
+<ol>
+<li>核对服务地址，例如 <code>http://192.168.50.20:7120</code>。它使用 NAS 的 IP 和你选择的服务端口。</li>
+<li>填一个自己容易记住的管理员账号，密码至少 <strong>10 个字符</strong>。</li>
+<li>确认“安装生成的初始化码”已填入，然后点 <strong>创建并进入</strong>。</li>
+<li>看到“下载任务”，并能在下载器选择栏找到内置下载器，说明基本连接完成。</li>
+</ol>
+<p>如果没有自动跳转：从主页面点 <strong>连接已有 NAS</strong>，先填写服务地址，再点 <strong>首次安装：创建管理员</strong>。管理员可以在对应安装目录的 <code>.env</code> 中找到 <code>ND_SETUP_TOKEN</code>，只把该初始化码私下交给实际安装者，不要公开整个文件。初始化码仅在尚未创建管理员时有效；已有管理员时应登录，不要重复初始化。</p>
+<h3>4.2 已有账号登录</h3>
+<p>选择 <strong>连接已有 NAS</strong>，填写服务地址、Nas Download 管理员账号和密码，配对码留空，点 <strong>连接</strong>。不要输入 NAS SSH 密码，除非你自己碰巧给两个账号设置了同一个密码。</p>
+<p>本版本没有面向新手的一键“忘记密码”流程。忘记时先保留数据、联系服务管理员处理；不要为了重新创建账号而删除 <code>data</code> 文件夹。</p>
+<h3>4.3 让另一部手机加入</h3>
+<ol>
+<li>在已登录手机点 <strong>更多 → 手机配对码</strong>，或在已登录网页生成配对码。</li>
+<li>在新手机安装 App，点 <strong>连接已有 NAS</strong>。</li>
+<li>输入同一个服务地址，在“配对码（可代替账号密码）”里输入配对码，再连接。</li>
+<li>配对码 <strong>5 分钟有效、仅能用一次</strong>。过期就重新生成，不要反复尝试旧码。</li>
+</ol>
+<p>在 <strong>更多 → 已登录设备</strong> 可以撤销某个设备的登录权限。配对授予本服务的管理访问权限，不是只读访客模式；只给可信的人使用。</p>
+<h3>4.4 用电脑或 iPhone 浏览器</h3>
+<p>浏览器打开相同地址，例如 <code>http://192.168.50.20:7120</code>，登录同一管理员账号。网页与 Android 管理的是同一套 NAS 服务、下载任务和自动化配置。</p>
+<p>不要输入 <code>0.0.0.0</code> 或 <code>localhost</code>；在手机上，<code>localhost</code> 指手机自己，不是 NAS。App 的服务地址不要附加 <code>/api/v1</code> 等路径。</p>
+</section><section id="section-5"><h2 id="heading-5">5. 完成第一个下载</h2>
+<h3>5.1 用磁力链接或种子文件</h3>
+<ol>
+<li>在 <strong>下载任务</strong> 页面点 <strong>＋ 添加</strong>。</li>
+<li>选择内置下载器。若接了多个下载器，确认没有选错。</li>
+<li>在 <strong>磁力链接 / 种子 URL</strong> 粘贴完整链接，或者点 <strong>选择 .torrent 文件</strong>。两种方式选一种即可；本版手机选择的种子文件上限为 <strong>2 MB</strong>。</li>
+<li><strong>保存目录先留空</strong>，使用下载器默认目录。</li>
+<li>想立即开始，不要勾选 <strong>添加后暂停</strong>。点 <strong>添加</strong>。</li>
+<li>阅读弹出的操作回执，回到列表点 <strong>刷新</strong>。看到任务后点它查看进度、文件与 Tracker。</li>
+</ol>
+<p>第一次可以选自己有权下载、仍有活跃做种者的测试资源。这里只接受磁力或种子相关输入，不是粘贴任意电影网页就能下载。</p>
+<h3>5.2 怎样才算下载好了</h3>
+<p>添加成功只说明任务被接收，不表示文件下载完成。以列表里的进度、完成状态以及 NAS 上实际文件为准。磁力任务需要先取得种子信息，网络不好或没有对端时可能要等一段时间。</p>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>含义 / 该怎么做</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>下载中</td>
+<td>正在获取文件，观察进度是否增加</td>
+</tr>
+<tr>
+<td>做种中</td>
+<td>文件已完成，正向其他下载者提供数据；不是还没下完</td>
+</tr>
+<tr>
+<td>已完成</td>
+<td>文件已经下载完成，去 NAS 保存目录查看</td>
+</tr>
+<tr>
+<td>已暂停</td>
+<td>任务暂不传输；想运行，进详情点“继续”</td>
+</tr>
+<tr>
+<td>排队中</td>
+<td>下载器还没给它运行名额；不必重复添加</td>
+</tr>
+<tr>
+<td>校验中</td>
+<td>检查已有文件，重启恢复时也可能出现；等待检查结束</td>
+</tr>
+<tr>
+<td>错误</td>
+<td>点开详情查看具体原因，例如目录权限、磁盘或 Tracker 问题</td>
+</tr>
+</tbody>
+</table>
+<h3>5.3 文件到底存在哪里</h3>
+<p>假设安装目录是 <code>/volume1/docker/nas-download</code>：</p>
+<table>
+<thead>
+<tr>
+<th>安装时的选择</th>
+<th>在 NAS 上找文件的位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>下载保存目录留空</td>
+<td><code>/volume1/docker/nas-download/downloads</code></td>
+</tr>
+<tr>
+<td>下载保存目录填 <code>/volume2/Downloads</code></td>
+<td><code>/volume2/Downloads</code></td>
+</tr>
+<tr>
+<td>自动刷流添加的任务</td>
+<td>该下载根目录下的 <code>nd-brush/任务编号/信息哈希</code> 子目录</td>
+</tr>
+</tbody>
+</table>
+<p><strong>任务详情里显示 <code>/downloads</code> 是正常的。</strong> 那是下载器在容器内部看到的路径；安装器把它连接到你在 NAS 上选的下载目录。普通用户添加任务时留空即可。不要把 NAS 外部的 <code>/volume2/Downloads</code> 直接照抄进内置下载器的单任务保存目录。</p>
+<p>内置下载器若要手动分子目录，使用默认根目录之下的路径，例如 <code>/downloads/movies</code>；先确认需求。自动刷流的保存路径需要与下载器默认目录一致，建议保持空白。</p>
+</section><section id="section-6"><h2 id="heading-6">6. 日常管理：查看、暂停、继续、删除</h2>
+<ul>
+<li>列表的 <strong>全部 / 下载 / 完成 / 暂停</strong> 用于筛选，不会改变任务。</li>
+<li>上面的下载器选择栏可以切换单个下载器或全部；搜索框按任务名称查找。</li>
+<li>点任务打开详情，查看文件、保存目录和 Tracker，再选择暂停或继续。</li>
+<li><strong>Tracker</strong> 是帮助下载者互相找到对方的服务。它的报错能帮助判断站点认证或网络问题；截图反馈前遮住地址里的私人 passkey。</li>
+</ul>
+<h3>删除前一定分清两种操作</h3>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>删除任务，<strong>不勾选</strong>“同时删除下载文件（不可恢复）”</td>
+<td>从下载器移除任务，保留已下载文件；文件保留不等于仍在做种</td>
+</tr>
+<tr>
+<td>删除任务，<strong>勾选</strong>“同时删除下载文件（不可恢复）”</td>
+<td>要求下载器同时删除任务与文件；本 App 没有文件回收站恢复按钮</td>
+</tr>
+<tr>
+<td>更多 → 下载器管理 → 移除接入</td>
+<td>只移除本产品对该下载器的连接配置，不删除下载器本身和它的任务</td>
+</tr>
+</tbody>
+</table>
+<p>手动删除是你直接发出的指令，<strong>不要把自动刷流的保种保护当成手动删除的兜底</strong>。PT 任务先确认保种义务，再操作。</p>
+<h3>提交后超时，不要重复点</h3>
+<p>如果出现 <strong>响应未知 / 待确认 / uncertain</strong>，有可能请求已送达，只是返回消息没到手机。到 <strong>更多 → 操作记录与待确认回执</strong> 查询原编号，并检查实际列表。不要用新请求重复添加或删除。</p>
+<p><code>已登记</code>、<code>queued</code>、<code>running</code> 表示等待或执行中；应继续看结果，不把它们当成下载完成或文件已删除。</p>
+</section><section id="section-7"><h2 id="heading-7">7. 可选：搜索自己的 PT / Torznab 站点</h2>
+<p>不用站点搜索，也能使用第 5 章的普通下载。软件不内置别人的站点账号或密钥。</p>
+<h3>7.1 添加站点</h3>
+<p>进入 <strong>更多 → 站点配置 → ＋ 添加站点</strong>，填写名称、类型、API 地址和你自己的 API Key，然后保存。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>如何填写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M-Team</td>
+<td>在站点账号里取得自己的访问令牌，单独填入 API Key。当前 App 内置提示地址为 <code>https://api.m-team.cc/api</code>，代码也接受 <code>https://api.m-team.io/api</code>；它们是本版支持的配置值，不是对站点未来地址的保证</td>
+</tr>
+<tr>
+<td>Torznab / Jackett / Prowlarr</td>
+<td>从你自己配置好的索引器复制该站点完整 Torznab API 路径；API Key 单独填，地址不要带 <code>?apikey=...</code>、账号或密码</td>
+</tr>
+</tbody>
+</table>
+<p>保存配置只是保存输入，不等于站点一定可连接。真正搜索才能检查凭据和网络。HDFans 搜索通过已配置的 Torznab 来源接入，不是本产品直接提供的原生 HDFans 搜索 API。</p>
+<h3>7.2 搜索并下载</h3>
+<ol>
+<li>回“下载任务”，点 <strong>站点搜索</strong>。</li>
+<li>输入关键词，点 <strong>搜索</strong>。可用 <strong>停止当前搜索</strong> 取消当前查询。</li>
+<li>点结果的 <strong>详情 / 下载</strong>，看清资源，再点 <strong>选择下载器并下载</strong>。</li>
+<li>选下载器，保存目录通常留空，点 <strong>下载</strong>，回列表检查回执和实际任务。</li>
+</ol>
+<p>手动下载没有自动刷流的 FREE 筛选，是否计下载量应由你先确认。网页里已登录某站点，不表示这里的 API Key 自动可用；这是两种独立的登录方式。</p>
+</section><section id="section-8"><h2 id="heading-8">8. 可选：签到与账户检查</h2>
+<p>入口：<strong>更多 → 签到与刷流</strong>。任务保存在 NAS 服务里；启用后手机关闭也会按计划执行。新任务默认停用，不导入旧系统任务。</p>
+<h3>8.1 先认清三种功能</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>它实际做什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HDFans 签到</td>
+<td>使用你自己提供的 Cookie 访问签到入口；过期、验证码等会记录错误</td>
+</tr>
+<tr>
+<td>自定义站点签到</td>
+<td>按配置发出一个 HTTP 请求，并根据明确的返回文字判断成功</td>
+</tr>
+<tr>
+<td>M-Team 账户检查</td>
+<td>检查账户 API 和 VIP 到期；<strong>不是网页登录签到，也不是保号</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Cookie 是网站登录状态的一部分，不等于密码；浏览器已登录也不表示 App 已得到 Cookie。API Key、Cookie、初始化码和配对码都不要放进分享包或公开截图。</p>
+<h3>8.2 新手推荐操作顺序</h3>
+<ol>
+<li>选择要创建的任务类型，填写任务名称和本人的站点认证资料。</li>
+<li>保持 <strong>启用 NAS 后台定时任务</strong> 不勾选，先保存。</li>
+<li>点 <strong>只读预演（默认）</strong>，看配置检查结果。自定义 HTTP 签到的预演不会真的请求站点，因此不能证明登录有效或签到成功。</li>
+<li>核对没有与其他软件的同一签到任务重复，编辑并启用。</li>
+<li>想验证真实结果，点 <strong>实际运行</strong> 并确认；然后看 <strong>运行日志 / 刷新状态</strong>，并在需要时去站点核对。</li>
+</ol>
+<p>默认每天北京时间 <strong>08:00–10:00</strong> 窗口随机运行，可修改。每天最多一次真实签到尝试；结果不确定时不会自动重试。错过当天自动窗口会安排下一天，不会深夜补发；手动真实运行仍受每天一次限制。</p>
+<p>自定义签到需要准确的请求方法、地址、参数与成功标志。不了解这些字段时，请站点管理员提供适配方法，不要随机填写“成功”当作判断标准。需要验证码、动态令牌或复杂网页登录的站点不能靠这份单请求模板自动完成。</p>
+<p><strong>停止并停用</strong> 会禁止后续自动写操作；已经发出去的请求可能仍然完成，需查看日志。更新 Cookie 不会解除当天已使用的签到尝试限制。</p>
+</section><section id="section-9"><h2 id="heading-9">9. 可选：无人值守下载与自动清理</h2>
+<p>这是进阶功能，适合已经熟悉下载和站点规则的人。<strong>先手动完成一个下载，再开自动任务。</strong> 自动化是可配置的工具，不保证满速，也不保证达到某个上传量。</p>
+<h3>9.1 最稳妥的启用顺序</h3>
+<ol>
+<li>确认站点搜索可用，并确认选中的下载器正确。</li>
+<li>在 <strong>签到与刷流</strong> 新建刷流任务；保存目录先留空。</li>
+<li>先保持“仅 FREE”，自动清理和删除文件都不开；不会确认保种义务时选 <strong>未知：保持保护，不自动清理</strong>。</li>
+<li>审阅并发、容量和保留空间，保存后 <strong>只读预演</strong>，看候选和保留原因。</li>
+<li>核对无误后再启用。也可点 <strong>实际运行</strong>，然后在任务列表确认真实添加结果。</li>
+<li>稳定运行后，只有在你清楚站点保种要求并接受删除结果时，才配置清理条件。未知信息保持保护是正常行为。</li>
+</ol>
+<h3>9.2 本版常用字段说明</h3>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>默认值</th>
+<th>普通用户怎么理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>检查间隔</td>
+<td>10 分钟</td>
+<td>多久跑一次此任务；可填 2–1440 分钟</td>
+</tr>
+<tr>
+<td>全部未完成任务并发上限</td>
+<td>8</td>
+<td>作为选中下载器的自动添种准入上限；手动、暂停、排队的未完成任务也计入。不是把 qB 所有运行行为强行锁成 8 个</td>
+</tr>
+<tr>
+<td>保留磁盘空间</td>
+<td>100 GiB</td>
+<td>留给系统和其他用途；新增前还预留未完成任务需要的空间</td>
+</tr>
+<tr>
+<td>本任务容量上限</td>
+<td>500 GiB</td>
+<td>限制此自动任务管理的种子容量，不是整台 NAS 的总容量</td>
+</tr>
+<tr>
+<td>最低做种人数 / 最低下载人数</td>
+<td>2 / 3</td>
+<td>有足够人数证据的候选才考虑；不是速度保证</td>
+</tr>
+<tr>
+<td>清理前观察小时</td>
+<td>6 小时</td>
+<td>先观察新任务；未下载完成不会按低效种轮换</td>
+</tr>
+<tr>
+<td>低上传阈值</td>
+<td>32 KiB/s</td>
+<td>要有约一小时完整样本；当前上传或小时均速达到阈值仍保留</td>
+</tr>
+<tr>
+<td>低需求人数阈值</td>
+<td>0</td>
+<td>默认关闭该额外条件；开启后还需要连续样本支持</td>
+</tr>
+<tr>
+<td>仅 FREE / 促销白名单</td>
+<td>开启 / FREE</td>
+<td>只加入符合已验证促销条件的资源</td>
+</tr>
+<tr>
+<td>自动清理</td>
+<td>关闭</td>
+<td>开启后才可能移除满足全部条件的自有任务</td>
+</tr>
+<tr>
+<td>同时删除已验证文件</td>
+<td>关闭</td>
+<td>还须开启自动清理，且文件与目录核验通过</td>
+</tr>
+<tr>
+<td>新任务保种条件</td>
+<td>未知</td>
+<td>默认保持保护；明确规则后可声明无义务，或要求做种小时与分享率同时达标</td>
+</tr>
+</tbody>
+</table>
+<p>容量只用于安全核算，不做单种大小门槛或体积加分。默认优先下载人数，再看供需比。这里介绍的是本独立产品的默认规则，不会自动导入其他软件已有的刷流规则、任务池或动态并发设置。</p>
+<h3>9.3 VIP 和非免费资源</h3>
+<p>M-Team 非免费资源只有在你关闭“仅 FREE”、将促销加入白名单，并且程序当次确认 VIP 及未来到期时间时才允许新加入。到期或无法确认时回落免费。Torznab 不使用 M-Team 的 VIP 特权。</p>
+<p>这只是<strong>新任务加入条件</strong>，不保证资源整个下载期间都免费，也不代表 VIP 自动豁免保种。不要把“我是 VIP”当作可以删除所有任务的依据。</p>
+<h3>9.4 什么任务不会被普通自动清理</h3>
+<p>程序只管理自己添加并持久登记的任务。归属、标签、哈希或路径不一致，保种义务未知，手动永久保护，观察不足，尚在下载，暂停、排队、校验、错误等情况都会阻止普通低效清理。</p>
+<p>清理文件前还核对专属目录、原始文件清单、共享路径及链接等；不确定就保留。每轮最多清理一项，之后确认真实结果、重新读空间再判断是否补种。<strong>本版不承诺每次删后一定有替代种</strong>，也不能把回执成功当成已释放空间。</p>
+<p>新任务的保种声明入池时会保存。后来改配置不会解除旧任务的未知义务保护。需永久保留的资源在 <strong>归属与永久保护</strong> 中登记；取消显式保护也不会绕过其他限制。</p>
+<h3>9.5 自动任务停了，下载会怎样</h3>
+<p><strong>停止并停用</strong> 停的是该自动化后续动作，不是要求下载器把已加入的种子全部暂停或删除。需要暂停某个下载，仍去下载任务详情操作。结果不确定时先看日志和原运行编号，不重复建立任务。</p>
+</section><section id="section-10"><h2 id="heading-10">10. 在外面怎么访问</h2>
+<p>第一次先在家里验证成功，再处理远程访问。家庭局域网 IP 在外面的 Wi-Fi 上通常不能直接访问。</p>
+<p>如果你已经部署了 Tailscale，让 NAS 与手机加入同一个受信网络，App 可填写 NAS 的 <strong>Tailscale 数字 IP</strong> 服务地址。HTTP 地址只支持代码允许的本地或 Tailscale 数字 IP，不支持任意 HTTP 域名。公网域名使用带有效证书的 HTTPS 地址。</p>
+<p>App 不会自动安装 Tailscale、配置路由器、办理公网 IP 或打通入站端口。不要将未加密的 <code>7120</code> 登录入口直接转发到公网。网页能打开也不等于 BT 入站已打通，下载速度仍取决于对端、网络、磁盘和带宽。</p>
+</section><section id="section-11"><h2 id="heading-11">11. 高级：接入已经安装的下载器</h2>
+<p>首次安装模式选 <strong>高级：接入已有下载器</strong> 时，产品不启动自己的下载引擎。安装完成后去 <strong>更多 → 下载器管理 → ＋ 添加下载器</strong>，填下载器类型、名称、地址、用户名、密码和默认保存目录，先点 <strong>测试连接</strong> 再保存。</p>
+<p>地址由 <strong>NAS 服务</strong> 访问。一个容器里的 <code>localhost</code> 不是另一个容器；要填从服务所在网络可访问的真实地址。第一次不要用已有下载器做自动删文件试验。</p>
+<p>自动清理外部下载器的数据，需要管理员另行配置对应下载目录的只读核验挂载；没有时保持“删除文件”关闭。挂载方法见项目开发文档 <code>docs/AUTOMATION.md</code>，与普通内置安装无关。</p>
+<p>安装模式不是原地搬迁任务的开关。同一安装目录不能随意从内置改成已有模式，或者反过来；需要规划迁移，不能为绕过提示就删掉配置目录。</p>
+</section><section id="section-12"><h2 id="heading-12">12. 高级：不用手机，在 NAS 手动安装</h2>
+<p>普通安卓用户完成第 3 章后不用再执行本章。下面是给能使用 NAS 终端的管理员的备用方法；不要在 Windows 本机终端直接运行 Linux 安装命令。</p>
+<ol>
+<li>将 <code>Nas-Download-Standalone-1.3.0-install.tar.gz</code> 上传到 NAS 上一个<strong>临时空目录</strong>。</li>
+<li>在 NAS 终端进入那个目录，解压安装包。临时解压目录与最终安装目录必须分开，否则安装器会认为目标已有其他文件。</li>
+<li>核对下列路径属于这台 NAS 后执行。本例仅适用于有 <code>/volume1</code> 的 NAS；否则把整条安装路径换成实际存储盘路径。</li>
+</ol>
+<pre><code class="language-sh">tar -xzf Nas-Download-Standalone-1.3.0-install.tar.gz
+sh install.sh --dir /volume1/docker/nas-download --port 7120 --mode bundled
+</code></pre>
+<p>若希望下载文件另存，并且 NAS 确实有且当前账号可写 <code>/volume2/Downloads</code>，第二条命令改成：</p>
+<pre><code class="language-sh">sh install.sh --dir /volume1/docker/nas-download --port 7120 --mode bundled --downloads /volume2/Downloads
+</code></pre>
+<p>两种安装命令选一种执行，不是接连装两次。完整安装包内置镜像，不必另外取得开发用镜像压缩包。</p>
+<p>成功时输出三个重要字段：</p>
+<table>
+<thead>
+<tr>
+<th>输出</th>
+<th>怎么使用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NAS_DOWNLOAD_READY</code></td>
+<td>网页服务入口；显示 <code>0.0.0.0</code> 时换成 NAS 的实际 IP</td>
+</tr>
+<tr>
+<td><code>NAS_DOWNLOAD_SETUP_CODE</code></td>
+<td>首次创建管理员的初始化码；私下保存</td>
+</tr>
+<tr>
+<td><code>NAS_DOWNLOAD_PROJECT</code></td>
+<td>此安装对应的容器项目名；保留作后续维护定位</td>
+</tr>
+</tbody>
+</table>
+<p>浏览器打开正确服务地址，按第 4 章创建管理员。终端退出、网页能打开都不代表文件已下载，仍需完成第 5 章的真实下载验证。</p>
+<h3>安装参数参考</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认 / 作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--dir</code></td>
+<td>必填，空的新目录或此产品已标记的原安装目录</td>
+</tr>
+<tr>
+<td><code>--port</code></td>
+<td><code>7120</code>；范围 1024–65534，内置模式另用下一端口 TCP/UDP</td>
+</tr>
+<tr>
+<td><code>--bind</code></td>
+<td><code>0.0.0.0</code>；须为有效 IPv4 绑定地址</td>
+</tr>
+<tr>
+<td><code>--mode</code></td>
+<td><code>bundled</code> 内置；<code>existing</code> 接入已有下载器</td>
+</tr>
+<tr>
+<td><code>--downloads</code></td>
+<td>新内置安装默认 <code>安装目录/downloads</code>；升级时省略会沿用已有记录的下载路径</td>
+</tr>
+</tbody>
+</table>
+</section><section id="section-13"><h2 id="heading-13">13. 升级、备份、停用和移除</h2>
+<h3>13.1 升级手机 App</h3>
+<p>同一发布签名的新 APK 可以覆盖安装，不必先卸载。覆盖升级已验证保留登录会话。若系统提示签名冲突，先核对是否装过调试/预览包；不要直接卸载后才发现没有保留待确认操作记录。</p>
+<p><strong>更新手机 APK 不会自动更新 NAS 服务。</strong> NAS 端需要在原安装目录再次执行新版安装流程。升级前记住原来的目录、模式、端口和下载路径；不要改用新目录来“升级”，否则会变成另一个独立实例。</p>
+<h3>13.2 NAS 服务升级</h3>
+<ol>
+<li>先记录当前服务地址和安装目录，处理未确定的操作结果。</li>
+<li>备份，或请管理员安排一致的停机备份；不要只复制正在写入的一个数据库文件。</li>
+<li>用新版 App 的“自动安装”或新版手动安装包，指定<strong>同一安装目录、同一模式和原端口/下载路径</strong>。</li>
+<li>安装器准备镜像后短暂停止所属实例，保存匹配的配置和状态，再切换验证。失败会尝试恢复匹配旧版本。</li>
+<li>完成后重新登录/刷新，核对任务数量、路径和重要文件；不要马上清掉回滚备份。</li>
+</ol>
+<h3>13.3 备份哪些东西</h3>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>为什么要留</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>整个 <code>data</code> 目录</td>
+<td>账号、加密密钥、配置、操作回执与任务记录；丢密钥会影响已有凭据解密</td>
+</tr>
+<tr>
+<td><code>engine-config</code></td>
+<td>内置引擎的设置、种子和恢复状态</td>
+</tr>
+<tr>
+<td><code>.env</code>、安装标记、Compose 文件</td>
+<td>原来的路径、模式、项目和连接设置；包含秘密信息，不公开分享</td>
+</tr>
+<tr>
+<td>实际下载目录</td>
+<td>真实下载文件；它可能在另一块盘，不一定在安装目录里</td>
+</tr>
+<tr>
+<td><code>installer-backups</code></td>
+<td>安装器产生的配套回滚记录；占空间但不要未验证就删</td>
+</tr>
+</tbody>
+</table>
+<p>给别人分享软件，只分享发布包和说明书。<strong>不要打包你安装后的整个目录</strong>，里面有你自己的账号、密钥与任务状态。</p>
+<h3>13.4 暂时不用，或想卸载</h3>
+<p>暂时不用时，在 NAS 容器管理器找到安装输出对应的项目，只停止这一个产品项目。停止后网页、下载和自动化都会暂停；别停错旧系统的 qB 或其他容器。</p>
+<p>想移除程序，先停用自动化、确认回执、备份，再移除这个明确识别的产品容器，<strong>保留配置和下载目录</strong>。软件没有自动迁移文件或一键可靠撤销文件删除的按钮；清理文件要另行明确决定。不要使用面向全部 Docker 的清空命令。</p>
+</section><section id="section-14"><h2 id="heading-14">14. 出问题时对照这张表</h2>
+<table>
+<thead>
+<tr>
+<th>情况或提示</th>
+<th>可能原因</th>
+<th>先做什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>APK 无法安装</td>
+<td>系统低于 Android 8.0、安装来源权限或签名冲突</td>
+<td>核对系统版本、包是否完整及是否安装过其他签名版本</td>
+</tr>
+<tr>
+<td>SSH 连接超时 / 拒绝</td>
+<td>IP 或端口错、SSH 未开、网络隔离</td>
+<td>同一局域网重试，核对 NAS 开关和端口；不用网页 <code>7120</code> 代替 SSH 端口</td>
+</tr>
+<tr>
+<td>SSH 认证失败</td>
+<td>NAS 账号密码错，或账号不允许 SSH</td>
+<td>用 NAS 自己的账号核对；不要填软件账号</td>
+</tr>
+<tr>
+<td>SSH 指纹改变</td>
+<td>NAS 重装、换主机、密钥变更或连接目标不符</td>
+<td>先确认原因和新指纹，不绕过校验、不盲目清除记录</td>
+</tr>
+<tr>
+<td>NAS 尚未安装 Docker / Compose</td>
+<td>缺少运行环境</td>
+<td>在 NAS 容器管理环境中补齐；App 不会自动代装</td>
+</tr>
+<tr>
+<td>当前账户没有 Docker 权限</td>
+<td>SSH 账号无容器权限</td>
+<td>请管理员授权合适账号，或由管理员手动安装；不要把 Docker 接口公开到网络</td>
+</tr>
+<tr>
+<td>目标目录已有其他文件</td>
+<td>选了已有项目或解压目录</td>
+<td>新装换一个真正的空专用目录；升级核对原产品标记，不清空现有目录</td>
+</tr>
+<tr>
+<td>已有安装正在进行 / 安装锁</td>
+<td>前一流程未结束或中断</td>
+<td>等待并让管理员确认安装进程；不要看到锁就直接删除</td>
+</tr>
+<tr>
+<td>目录不可写 / 路径不安全</td>
+<td>权限不足、路径不属于实际盘、符号链接或状态目录重叠</td>
+<td>核对真实路径及账号权限，不使用全盘开放权限来绕过</td>
+</tr>
+<tr>
+<td>安装端口被占用</td>
+<td><code>7120</code> 或 <code>7121</code> 已被使用，或绑定地址不存在</td>
+<td>查冲突；新装可使用一对已确认空闲的相邻端口，例如 <code>7130/7131</code></td>
+</tr>
+<tr>
+<td>服务或引擎未就绪</td>
+<td>引擎启动、权限、资源或配置异常</td>
+<td>保留错误及安装记录，检查该产品容器；不要连续创建多个实例</td>
+</tr>
+<tr>
+<td>安装后网页打不开</td>
+<td>地址写成 <code>0.0.0.0</code>，端口错，NAS 不在线</td>
+<td>填真实 NAS IP 与服务端口，先在同一网络用浏览器试</td>
+</tr>
+<tr>
+<td>公网 / 域名 HTTP 被拒绝</td>
+<td>App 不接受任意不加密的远程地址</td>
+<td>本地用允许的数字 IP；公网使用正确 HTTPS 服务地址</td>
+</tr>
+<tr>
+<td>初始化码无效 / 已初始化</td>
+<td>用错实例的码，或已有管理员</td>
+<td>确认地址和对应安装目录；已初始化就用账号登录</td>
+</tr>
+<tr>
+<td>登录已失效</td>
+<td>会话被撤销或过期</td>
+<td>重新登录；无需重装 NAS 服务</td>
+</tr>
+<tr>
+<td>列表为空</td>
+<td>新安装、筛选条件、选错下载器或连接错误</td>
+<td>先选“全部下载器”和“全部”，清掉搜索词并看错误提示</td>
+</tr>
+<tr>
+<td>下载速度 0</td>
+<td>暂停、排队、无活跃对端、Tracker/网络/磁盘问题</td>
+<td>只选一个任务看详情；检查状态、空间、Tracker，不反复加同一任务</td>
+</tr>
+<tr>
+<td>100% 还在上传</td>
+<td>正常做种</td>
+<td>已经完成；PT 用户按站点要求继续保种</td>
+</tr>
+<tr>
+<td>删任务后空间没变</td>
+<td>没勾选删除文件，或其他数据仍占空间</td>
+<td>先确认删除选项、回执和实际文件；不要凭种子大小认定空间已释放</td>
+</tr>
+<tr>
+<td>站点保存成功但搜索失败</td>
+<td>API Key、URL、站点连接有问题</td>
+<td>看对应站点错误；浏览器登录与 API 认证不是一回事</td>
+</tr>
+<tr>
+<td>签到没执行</td>
+<td>未启用、未到窗口、当天已尝试或认证失效</td>
+<td>查看任务的下次运行时间和日志；M-Team 账户检查不是签到</td>
+</tr>
+<tr>
+<td>刷流不开新种</td>
+<td>并发满、空间预留不足、没有合格候选或认证异常</td>
+<td>只读预演看原因，不随意下调保留空间</td>
+</tr>
+<tr>
+<td>刷流长期不清理</td>
+<td>未开清理、未知保种义务、观察不足或永久保护等</td>
+<td>看保留原因；不要为了换种就取消不理解的保护</td>
+</tr>
+<tr>
+<td>提交超时，结果未知</td>
+<td>请求可能已经执行，返回消息丢失</td>
+<td>查原回执和真实任务，禁止盲目再发一遍</td>
+</tr>
+</tbody>
+</table>
+<h3>反馈问题时带什么</h3>
+<p>提供：App 版本、NAS 型号与架构、手机系统版本、使用的是内置还是已有下载器、出错步骤、错误文字、发生时间以及操作编号。可附已遮盖敏感内容的截图。</p>
+<p>不要提供：密码、Cookie、API Key、初始化码、配对码、完整 <code>.env</code>、<code>secret.key</code>、数据库，或含 passkey 的 Tracker URL。它们不是普通诊断材料。</p>
+</section><section id="section-15"><h2 id="heading-15">15. 几个常见疑问</h2>
+<h3>一定要有 PT 账号吗？</h3>
+<p>不需要。普通磁力和种子下载不要求你配置 PT 站点；站点搜索和签到才需要自己的相应账号与凭据。</p>
+<h3>手机关机后还能下载吗？</h3>
+<p>可以，只要 NAS、网络和产品容器继续运行。下载文件不经过手机存储。</p>
+<h3>为什么还要 NAS 用户名密码？不是傻瓜安装吗？</h3>
+<p>手机需要获得你授权的 NAS 安装入口，不能绕过设备权限。默认安装已把下载引擎、内部连接和镜像一起准备好，但 SSH、Docker 和存储权限仍属于 NAS 本身的设置。</p>
+<h3>一个容器是不是不用 qB 了？</h3>
+<p>仍然使用成熟的 qBittorrent 下载引擎，只是由产品一起管理，普通用户不用单独安装它、登录它或配置内部密码。</p>
+<h3>安装后就一定高速吗？</h3>
+<p>不保证。速度受资源热度、对端、家庭上传/下载带宽、磁盘和网络连接影响。网页可访问、端口有映射，不等于已验证公网 Peer 入站。</p>
+<h3>能把我的安装目录直接压缩给朋友吗？</h3>
+<p>不要。把干净的 APK / 手动安装包与本说明分享给对方，对方填写自己的 NAS 和站点信息。你安装后的目录含自己的登录、密钥和任务。</p>
+<h3>安装在 SSD，下载在机械硬盘可以吗？</h3>
+<p>可以，通过分别选择安装目录和下载保存目录实现。安装时确认两者真实路径；不要安装后直接在文件管理器搬目录，既有挂载与下载任务不会自动跟着改。</p>
+<h3>我现在最少需要做什么？</h3>
+<p>准备 NAS 的 SSH 与 Docker → 打开 APK 的“自动安装” → 选择内置下载 → 创建管理员 → 添加一个种子。完成后再考虑第 7–9 章的可选功能。</p>
+<p>回到 <a href="QUICK_START_ZH.html">第一次使用：快速上手</a>。</p>
+</section>
+<footer>本文件可离线阅读，无外部字体、脚本或统计请求。示例 IP 和路径须替换成自己的值。打印前会恢复显示全部章节。</footer></main></div><script>
+const box=document.querySelector('#q'),result=document.querySelector('#result');
+box.addEventListener('input',()=>{const q=box.value.trim().toLowerCase();let n=0;
+ document.querySelectorAll('main section').forEach(s=>{const hit=!q||s.textContent.toLowerCase().includes(q);s.hidden=!hit;if(hit)n++;const a=document.querySelector('[data-section="'+s.id+'"]');if(a)a.hidden=!hit;});
+ result.textContent=q?'找到 '+n+' 个相关章节':'输入关键词筛选章节，例如：密码、文件、签到';});
+document.querySelector('#print').addEventListener('click',()=>{box.value='';box.dispatchEvent(new Event('input'));window.print();});
+</script></body></html>

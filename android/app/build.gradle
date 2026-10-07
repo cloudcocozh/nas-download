@@ -1,0 +1,36 @@
+plugins { id 'com.android.application' }
+def releaseSigning = new Properties()
+def releaseSigningFile = file(System.getenv('NAS_DOWNLOAD_SIGNING_FILE') ?: 'signing.properties')
+if (releaseSigningFile.exists()) releaseSigningFile.withInputStream { releaseSigning.load(it) }
+android {
+ namespace 'com.nasdownload.app'
+ compileSdk 35
+ defaultConfig { applicationId 'com.nasdownload.app'; minSdk 26; targetSdk 35; versionCode 6; versionName '1.3.0'; testInstrumentationRunner 'com.nasdownload.app.SmokeInstrumentation' }
+ compileOptions { sourceCompatibility JavaVersion.VERSION_1_8; targetCompatibility JavaVersion.VERSION_1_8 }
+ sourceSets { main { assets.srcDirs = [layout.buildDirectory.dir('generated/installerAssets').get().asFile] } }
+ androidResources { noCompress += ['bundle'] }
+ packaging { resources.excludes += ['META-INF/versions/**','META-INF/*.SF','META-INF/*.RSA','META-INF/*.DSA'] }
+ signingConfigs {
+  release {
+   if (releaseSigningFile.exists()) {
+    storeFile file(releaseSigning['storeFile']); storePassword releaseSigning['storePassword']
+    keyAlias releaseSigning['keyAlias']; keyPassword releaseSigning['keyPassword']
+   }
+  }
+ }
+ buildTypes { release { minifyEnabled false; signingConfig signingConfigs.release }; debug { applicationIdSuffix '.debug'; versionNameSuffix '-debug' } }
+}
+dependencies { implementation 'com.squareup.okhttp3:okhttp:4.12.0'; implementation 'com.github.mwiede:jsch:0.2.26' }
+
+def installerSource = file('src/main/assets/installer.tar.gz')
+def installerOutput = layout.buildDirectory.file('generated/installerAssets/installer.bundle')
+tasks.register('prepareInstallerAsset') {
+ inputs.file(installerSource)
+ outputs.file(installerOutput)
+ doLast {
+  def output = installerOutput.get().asFile
+  output.parentFile.mkdirs()
+  output.bytes = installerSource.bytes
+ }
+}
+tasks.named('preBuild').configure { dependsOn tasks.named('prepareInstallerAsset') }
