@@ -1,0 +1,800 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Nas Download 1.3.0: complete user manual</title><style>
+:root{--ink:#172b3a;--muted:#566b79;--green:#086b5c;--line:#dce7e8;--paper:#fff;--bg:#f3f7f7}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+a{color:var(--green);text-underline-offset:3px;overflow-wrap:anywhere}button,input{font:inherit}button{cursor:pointer}header{background:#153f3b;color:white;padding:32px max(24px,calc((100vw - 1280px)/2));border-bottom:5px solid #60c7a9}header .tag{color:#bfe6da;font-size:12px;letter-spacing:2px}header strong{display:block;font-size:30px;line-height:1.4;margin-top:8px}header p{margin:8px 0 0;color:#dcece7}header a{color:#c2f5e5}nav.top{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}.top a,.top button{padding:6px 12px;border:1px solid #80a59c;border-radius:6px;background:transparent;color:white;text-decoration:none}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:32px;max-width:1280px;margin:30px auto;padding:0 24px 60px}aside{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;background:var(--paper);padding:20px;border:1px solid var(--line);border-radius:10px}aside label{font-weight:700;font-size:14px}input{width:100%;padding:10px;margin:8px 0;border:1px solid #b7cacc;border-radius:6px;font-size:14px}#result{font-size:13px;color:var(--muted)}aside ul{padding:0;list-style:none;margin:10px 0 0}aside a{display:block;font-size:14px;line-height:1.5;padding:8px 0;text-decoration:none;border-bottom:1px solid #edf2f2}main{min-width:0;background:white;padding:30px 38px;border:1px solid var(--line);border-radius:10px}h1{font-size:30px;line-height:1.5;margin-top:0}h2{font-size:24px;line-height:1.5;margin:38px 0 14px;border-top:1px solid var(--line);padding-top:24px;color:#075d51}h3{font-size:19px;line-height:1.6;margin:25px 0 10px}p{margin:12px 0}li{padding-left:2px;margin:8px 0}ul,ol{padding-left:25px}strong{font-weight:700}code{font:14px/1.65 ui-monospace,Consolas,monospace;background:#edf5f4;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}pre{overflow-x:auto;background:#15352f;color:#e7fff3;padding:18px;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere}pre code{background:none;padding:0;color:inherit}table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.75;table-layout:fixed;margin:18px 0}th{text-align:left;background:#edf5f3;color:#174d43}th,td{border:1px solid var(--line);padding:12px;vertical-align:top;overflow-wrap:anywhere}th:first-child{width:26%}tr:nth-child(even) td{background:#fafcfc}blockquote{margin:20px 0;padding:12px 20px;background:#edf7f3;border-left:4px solid #18826c}.route{display:flex;gap:10px;margin:22px 0;align-items:center;flex-wrap:wrap}.route span{padding:12px 18px;background:#ecf5f1;border:1px solid #c0ded0;border-radius:8px}.route b{color:#83a099}footer{margin:30px 0 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:20px}[hidden]{display:none!important}
+@media(max-width:850px){.layout{grid-template-columns:1fr;gap:16px;margin-top:16px;padding:0 12px 32px}aside{position:static;max-height:300px}main{padding:22px 18px}header{padding:24px 20px}header strong,h1{font-size:25px}h2{font-size:21px}table{font-size:13px}th,td{padding:8px}th:first-child{width:28%}}
+@media print{body{background:white;font-size:10pt}header{background:white;color:#172b3a;border-bottom:2px solid #086b5c;padding:0 0 12px}header .tag,header p{color:#566b79}nav.top,aside,.route{display:none}.layout{display:block;margin:0;padding:0}main{border:0;padding:10px 0}h1{font-size:21pt}h2{font-size:16pt;break-after:avoid}h3{font-size:12pt;break-after:avoid}p,li{orphans:3;widows:3}table{font-size:9pt;table-layout:auto}tr{break-inside:avoid}pre{background:#eef3f2;color:#172b3a}a{color:inherit}section[hidden]{display:block!important}}
+</style></head><body>
+<header><div class="tag">NAS DOWNLOAD / 1.3.0 BETA</div><strong>Nas Download 1.3.0: complete user manual</strong><p>Your own NAS downloader · Built-in engine · Phone and web management</p><nav class="top"><a href="QUICK_START_EN.html">Quick start</a><a href="USER_MANUAL_EN.html">Full manual</a><a href="ACCEPTANCE_1_3_EN.html">Validation</a><button id="print" type="button">Print / Save PDF</button></nav></header>
+<div class="layout"><aside><label for="q">Find a chapter</label><input id="q" type="search" placeholder="Find a chapter"><div id="result" aria-live="polite" data-found="{n} matching chapters" data-help="Filter chapters by keyword, e.g. password, files, check-in.">Filter chapters by keyword, e.g. password, files, check-in.</div><ul><li data-section="section-1"><a href="#section-1">1. What is this for?</a></li><li data-section="section-2"><a href="#section-2">2. What to prepare before you start</a></li><li data-section="section-3"><a href="#section-3">3. Install on the NAS from an Android phone</a></li><li data-section="section-4"><a href="#section-4">4. First sign-in, or connecting from a new phone</a></li><li data-section="section-5"><a href="#section-5">5. Complete your first download</a></li><li data-section="section-6"><a href="#section-6">6. Daily management: view, pause, resume, and delete</a></li><li data-section="section-7"><a href="#section-7">7. Optional: search your own PT / Torznab sites</a></li><li data-section="section-8"><a href="#section-8">8. Optional: check-in and account checks</a></li><li data-section="section-9"><a href="#section-9">9. Optional: unattended downloads and automatic cleanup</a></li><li data-section="section-10"><a href="#section-10">10. Access from outside your home</a></li><li data-section="section-11"><a href="#section-11">11. Advanced: connect an installed downloader</a></li><li data-section="section-12"><a href="#section-12">12. Advanced: manual NAS installation without a phone</a></li><li data-section="section-13"><a href="#section-13">13. Upgrade, back up, stop, and remove</a></li><li data-section="section-14"><a href="#section-14">14. Troubleshooting</a></li><li data-section="section-15"><a href="#section-15">15. Frequently asked questions</a></li></ul></aside><main><h1>Nas Download 1.3.0: complete user manual</h1>
+<p><a href="USER_MANUAL_ZH.html">中文</a> | <strong>English</strong></p>
+<p><strong>For people using a NAS download tool for the first time.</strong> Follow the first five chapters to go from preparing your devices to completing your first download. Site search, check-in, and automated torrent downloading/seeding are optional; you do not need to configure everything at once.</p>
+<p>Version: 1.3.0 beta · Document date: 2026-10-08. Button names were checked against this version of the Android app. NAS system menus vary by brand and version. <strong>The app interface is currently Chinese.</strong> This guide explains controls in English and retains their actual Chinese labels so you can find them; it does not indicate an English app interface.</p>
+<section id="section-1"><h2 id="heading-1">1. What is this for?</h2>
+<p>Nas Download runs downloads on your own NAS. Use your phone or the web interface to add torrents, check progress, pause, and resume. Files are stored on the NAS hard drive. Your phone is a remote control: its screen does not have to stay on, and your computer does not have to keep running.</p>
+<p><strong>How it works: phone / web interface → your own NAS → NAS hard drive.</strong> The default installation uses one product container with the qBittorrent download engine included. You do not need to configure a separate qB address and password.</p>
+<table>
+<thead>
+<tr>
+<th>What you want to do</th>
+<th>What this version supports</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regular downloads</td>
+<td>Add magnet links, torrent download URLs, and <code>.torrent</code> files</td>
+</tr>
+<tr>
+<td>Manage downloads</td>
+<td>View progress, live speeds, states, file lists, and Trackers; pause, resume, and delete</td>
+</tr>
+<tr>
+<td>Use multiple devices</td>
+<td>Android and the web interface connect to the same NAS service and share tasks; one-time pairing codes and device access revocation are supported</td>
+</tr>
+<tr>
+<td>Search your own sites</td>
+<td>Configure M-Team or Torznab sites, then search, view details, and manually add downloads</td>
+</tr>
+<tr>
+<td>Daily tasks</td>
+<td>Configure the HDFans check-in template, custom HTTP check-in, or an M-Team account API check</td>
+</tr>
+<tr>
+<td>Unattended downloads</td>
+<td>Automatically select resources according to configuration; remove low-performing tasks and add new ones when all protection and verification requirements are met</td>
+</tr>
+<tr>
+<td>Connect an existing downloader</td>
+<td>Advanced mode supports existing qBittorrent 4/5 and Transmission 4 instances</td>
+</tr>
+</tbody>
+</table>
+<p>This is not a resource-site account, a cloud-storage subscription, or a video player. It does not provide private-tracker (PT) invitations, API Keys, or Cookies. A regular video webpage URL is not a torrent download URL. It does not automatically add files to NAS media-center collections or take over your earlier NAS-tools tasks. Built-in download mode uses its own engine and configuration.</p>
+<h3>Version scope</h3>
+<ul>
+<li>NAS: Linux, x86_64/amd64, with Docker and Docker Compose installed. This version's offline image does not support ARM NAS devices.</li>
+<li>Phone: Android 8.0 or later is the minimum installation requirement, not a claim that every model has been tested. There is no native iPhone app in this release; use a browser to access the service.</li>
+<li>Verified: actual downloads, removal and replacement, failure recovery, migration from the old version, and rollback on an isolated NAS, plus Android emulator tests.</li>
+<li>Not covered: the complete first-installation flow from a real phone to a NAS, continuous operation over multiple days, and every brand or model. Initial sharing is as a beta release. See the <a href="ACCEPTANCE_1_3_EN.html">acceptance report</a> for detailed limits.</li>
+</ul>
+</section><section id="section-2"><h2 id="heading-2">2. What to prepare before you start</h2>
+<h3>2.1 Prepare the NAS first</h3>
+<ol>
+<li><strong>Turn it on and connect it to your home network.</strong> Keep your phone and NAS on the same network for your first attempt so remote-network issues do not complicate installation.</li>
+<li><strong>Check the processor architecture.</strong> Look in the NAS system information. If you cannot find it, ask an administrator to run <code>uname -m</code>. This version requires <code>x86_64</code> or <code>amd64</code>; architectures such as <code>aarch64</code> and <code>armv7l</code> are not supported.</li>
+<li><strong>Install Docker / container management and Compose.</strong> Brands use different names for these features; a menu path for one brand should not be assumed to apply to every device.</li>
+<li><strong>Enable SSH.</strong> This is the connection the phone temporarily uses to sign in to the NAS and install the software. Record the account, port, and password.</li>
+<li><strong>Check that this account can operate Docker.</strong> Being able to sign in to the NAS website does not necessarily mean SSH works or the account has container permissions. Ask an administrator to check instead of repeatedly trying different passwords in the app.</li>
+<li><strong>Choose storage for installation and downloads.</strong> The installation directory stores configuration and task state; the download directory stores actual files. Leave room for the image, configuration, logs, upgrade backups, and downloaded files.</li>
+</ol>
+<p>An administrator can check readiness with these read-only commands. They do not enable tasks or change configuration:</p>
+<pre><code class="language-sh">uname -m
+docker compose version
+docker info
+</code></pre>
+<p>If any of these three checks reports “command not found,” “permission denied,” or cannot connect to Docker, fix the NAS environment first. The app does not automatically install Docker, enable SSH, or elevate permissions.</p>
+<h3>2.2 Keep these four types of information separate</h3>
+<table>
+<thead>
+<tr>
+<th>Information</th>
+<th>Purpose</th>
+<th>Where it comes from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NAS SSH account and password</td>
+<td>Install the software on the NAS</td>
+<td>NAS administration settings; used for this connection only, and the app does not save the SSH password</td>
+</tr>
+<tr>
+<td>Nas Download administrator account and password</td>
+<td>Use the app or web interface day to day</td>
+<td>You create these after the first installation</td>
+</tr>
+<tr>
+<td>Setup code</td>
+<td>Create the first administrator only</td>
+<td>Generated by the installer; the app normally fills it in automatically</td>
+</tr>
+<tr>
+<td>Phone pairing code</td>
+<td>Add another device to an existing service</td>
+<td>Generated by a signed-in device; valid for 5 minutes and usable once</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Do not mix them up.</strong> If sign-in fails, first check whether you are signing in to the NAS itself or to Nas Download.</p>
+<h3>2.3 Which package files should you use?</h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Who uses it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Nas-Download-Standalone-1.3.0.apk</code></td>
+<td>Android users: install on the phone; includes the offline image needed for NAS installation</td>
+</tr>
+<tr>
+<td><code>Nas-Download-Standalone-1.3.0-install.tar.gz</code></td>
+<td>Administrators installing manually on the NAS; do not install again after successful automatic installation from the phone</td>
+</tr>
+<tr>
+<td><code>Nas-Download-1.3.0-source.zip</code></td>
+<td>Developers inspecting or modifying source; ordinary users do not need it</td>
+</tr>
+<tr>
+<td><code>SHA256SUMS.txt</code></td>
+<td>Check that the original packages received are intact; not an installation file</td>
+</tr>
+</tbody>
+</table>
+<p>If you received a sharing bundle with manuals, extract it first and open <strong>START_HERE.html</strong> or <strong>“先看这里.html”</strong> (Start here) in its root directory. Do not install directly from an archive preview or use that preview to follow links between files. The older combined sharing bundle still includes Chinese guides; the latest standalone <code>Nas-Download-1.3.0-manuals.zip</code> provides bilingual guides. The original source release ZIP remains unchanged; the latest English documentation is also available on the repository’s main branch.</p>
+</section><section id="section-3"><h2 id="heading-3">3. Install on the NAS from an Android phone</h2>
+<h3>3.1 Install the phone app</h3>
+<p>Save the APK on your phone and open it with the file manager. Android may ask you to allow that file manager to install apps; follow your phone's instructions. Then open <strong>Nas Download</strong>.</p>
+<p>The welcome page has two options:</p>
+<ul>
+<li><strong>自动安装</strong> (Automatic installation): use this when the NAS does not yet have this product's service.</li>
+<li><strong>连接已有 NAS</strong> (Connect to an existing NAS): use this when the service is already installed or you are signing in from a new phone.</li>
+</ul>
+<p>The package name is <code>com.nasdownload.app</code>, which differs from the earlier three-in-one app. Installing this APK does not replace the three-in-one app with this product.</p>
+<h3>3.2 Fill in the automatic-installation form</h3>
+<p>The examples below use the fictional NAS <code>192.168.50.20</code>. Replace it with your own information; the example is not an existing server you can connect to.</p>
+<table>
+<thead>
+<tr>
+<th>Actual field label</th>
+<th>What to enter</th>
+<th>Common mistake</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSH 主机（IP / 主机名） — SSH host (IP / hostname)</td>
+<td><code>192.168.50.20</code></td>
+<td>Entering <code>http://192.168.50.20:7120</code>; that is a service URL, not an SSH host</td>
+</tr>
+<tr>
+<td>SSH 端口 — SSH port</td>
+<td>Usually <code>22</code>; use the NAS's actual setting</td>
+<td>Entering web-service port <code>7120</code></td>
+</tr>
+<tr>
+<td>SSH 用户名 — SSH username</td>
+<td>A NAS account with SSH and Docker permissions</td>
+<td>Entering the software administrator account, which has not yet been created</td>
+</tr>
+<tr>
+<td>SSH 密码（只在内存使用） — SSH password (used only in memory)</td>
+<td>That NAS account's password</td>
+<td>Entering an API Key, pairing code, or setup code</td>
+</tr>
+<tr>
+<td>安装目录（绝对路径） — Installation directory (absolute path)</td>
+<td>A new dedicated directory, such as <code>/volume1/docker/nas-download</code> if <code>/volume1</code> actually exists</td>
+<td>Entering a Windows drive letter, shared-folder display name, another app's directory, or drive root</td>
+</tr>
+<tr>
+<td>服务监听地址 — Service bind address</td>
+<td>Usually keep <code>0.0.0.0</code></td>
+<td>Treating it as the browser sign-in address</td>
+</tr>
+<tr>
+<td>服务端口（1024–65534） — Service port</td>
+<td>Usually <code>7120</code>; reserve the next port, <code>7121</code>, too</td>
+<td>Checking only <code>7120</code> and forgetting that <code>7121</code> must also be available</td>
+</tr>
+<tr>
+<td>下载模式 — Download mode</td>
+<td><strong>内置下载（推荐）</strong> (Built-in download, recommended)</td>
+<td>Selecting advanced mode without an existing downloader</td>
+</tr>
+<tr>
+<td>下载保存目录（可留空） — Download directory (optional)</td>
+<td>Blank: <code>downloads</code> under the installation directory; otherwise a real directory on your download drive</td>
+<td>Using program-state directories such as <code>data</code> or <code>engine-config</code></td>
+</tr>
+</tbody>
+</table>
+<p>An “absolute path” is the full path starting with <code>/</code>. A name such as “Downloads” or “Shared folder” shown by the NAS website may not be the full path. Check properties in the NAS file manager, or ask an administrator. No component of the installation path may be a symbolic link.</p>
+<p><strong>For your first installation, a separate new download directory is recommended.</strong> Files are easier to find and distinguish from your existing download system. An existing directory must also be writable by the SSH account and pass the installer's path checks.</p>
+<h3>3.3 Verify the SSH fingerprint</h3>
+<p>After you tap <strong>验证并安装</strong> (Verify and install), the first connection shows <strong>确认 NAS 的 SSH 指纹</strong> (Confirm the NAS SSH fingerprint). This acts like an identity number for the NAS on the connection. Compare it with the host public-key fingerprint shown by a trusted NAS terminal or supplied by your administrator. Tap <strong>已核对，信任</strong> (Verified; trust) only after it matches.</p>
+<p>An administrator can list host public-key fingerprints locally on the NAS or through an already trusted terminal:</p>
+<pre><code class="language-sh">for key in /etc/ssh/ssh_host_*_key.pub; do
+  [ -f &quot;$key&quot; ] &amp;&amp; ssh-keygen -lf &quot;$key&quot; -E sha256
+done
+</code></pre>
+<p>Compare the fingerprint after <code>SHA256:</code>. Different host-key algorithms have different fingerprints; match the one corresponding to the dialog. If unsure, cancel and ask an administrator. A later fingerprint change causes the connection to be refused. Disabling verification is not a solution.</p>
+<h3>3.4 Wait for installation to finish</h3>
+<p>The full package is about 96 MB. Progress covers connection, upload, extraction, installation, and verification. The offline image reduces dependency downloads during the initial NAS build; it does not mean future downloads or site queries work offline.</p>
+<p>Keep the app in the foreground and maintain the network connection during installation. Do not tap repeatedly or choose another directory and reinstall because progress briefly pauses. Slow Wi-Fi and a slow NAS increase waiting time; stopping the old service during an upgrade may also take time.</p>
+<p>Successful installation normally opens <strong>创建管理员</strong> (Create administrator). If the service is installed but the phone cannot connect, try the manual connection in Chapter 4 before installing again.</p>
+</section><section id="section-4"><h2 id="heading-4">4. First sign-in, or connecting from a new phone</h2>
+<h3>4.1 Create the first administrator</h3>
+<ol>
+<li>Check the service address, for example <code>http://192.168.50.20:7120</code>. It uses the NAS IP and selected service port.</li>
+<li>Choose an administrator username you can remember and a password of at least <strong>10 characters</strong>.</li>
+<li>Check that <strong>安装生成的初始化码</strong> (Setup code generated during installation) is filled in, then tap <strong>创建并进入</strong> (Create and enter).</li>
+<li>Seeing <strong>下载任务</strong> (Download tasks) and the built-in downloader in the selector means the basic connection is working.</li>
+</ol>
+<p>If the app does not redirect automatically, tap <strong>连接已有 NAS</strong> (Connect to an existing NAS) on the welcome page, enter the service address, then tap <strong>首次安装：创建管理员</strong> (First installation: create administrator). An administrator can find <code>ND_SETUP_TOKEN</code> in <code>.env</code> in the corresponding installation directory. Share only that setup code privately with the actual installer; do not publish the whole file. The setup code works only before an administrator is created. If one already exists, sign in instead of initializing again.</p>
+<h3>4.2 Sign in with an existing account</h3>
+<p>Choose <strong>连接已有 NAS</strong> (Connect to an existing NAS), enter the service address and Nas Download administrator username/password, leave the pairing code blank, and tap <strong>连接</strong> (Connect). Do not enter the NAS SSH password, unless you happened to use the same password for both accounts.</p>
+<p>This version has no beginner-friendly one-tap “forgot password” flow. Preserve data and contact the service administrator if you forget it. Do not delete the <code>data</code> folder to create an account again.</p>
+<h3>4.3 Add another phone</h3>
+<ol>
+<li>On a signed-in phone, tap <strong>更多 → 手机配对码</strong> (More → Phone pairing code), or generate a code in the signed-in web interface.</li>
+<li>Install the app on the new phone and tap <strong>连接已有 NAS</strong> (Connect to an existing NAS).</li>
+<li>Enter the same service address, enter the code in <strong>配对码（可代替账号密码）</strong> (Pairing code, can replace username/password), and connect.</li>
+<li>Codes are <strong>valid for 5 minutes and usable only once</strong>. Generate a new one after expiry rather than repeatedly trying the old code.</li>
+</ol>
+<p>Use <strong>更多 → 已登录设备</strong> (More → Signed-in devices) to revoke device access. Pairing grants management access, not read-only guest access. Give it only to people you trust.</p>
+<h3>4.4 Use a computer or iPhone browser</h3>
+<p>Open the same address in a browser, for example <code>http://192.168.50.20:7120</code>, and sign in with the same administrator account. The web interface and Android app manage the same NAS service, tasks, and automation settings.</p>
+<p>Do not enter <code>0.0.0.0</code> or <code>localhost</code>. On a phone, <code>localhost</code> means the phone, not the NAS. Do not append paths such as <code>/api/v1</code> to the app's service address.</p>
+</section><section id="section-5"><h2 id="heading-5">5. Complete your first download</h2>
+<h3>5.1 Use a magnet link or torrent file</h3>
+<ol>
+<li>On <strong>下载任务</strong> (Download tasks), tap <strong>＋ 添加</strong> (Add).</li>
+<li>Select the built-in downloader. If several are connected, check that you selected the correct one.</li>
+<li>Paste a complete link into <strong>磁力链接 / 种子 URL</strong> (Magnet link / torrent URL), or tap <strong>选择 .torrent 文件</strong> (Choose a .torrent file). Use one method, not both. Torrent files selected on the phone have a <strong>2 MB</strong> limit.</li>
+<li><strong>Leave 保存目录 (Save directory) blank initially</strong> to use the downloader's default directory.</li>
+<li>To start immediately, leave <strong>添加后暂停</strong> (Pause after adding) unchecked. Tap <strong>添加</strong> (Add).</li>
+<li>Read the operation receipt, return to the list, and tap <strong>刷新</strong> (Refresh). Tap the task once it appears to inspect progress, files, and Trackers.</li>
+</ol>
+<p>For your first test, choose a resource you are entitled to download that still has active seeders. These fields accept magnet or torrent inputs; pasting an arbitrary movie webpage does not start a download.</p>
+<h3>5.2 How do you know it has finished?</h3>
+<p>Successful submission means the task was accepted, not that the file is complete. Check progress and completion state in the list and actual NAS files. A magnet task must first obtain torrent metadata; this can take time with a poor network or no peers.</p>
+<table>
+<thead>
+<tr>
+<th>State shown in the UI</th>
+<th>Meaning / what to do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>下载中 — Downloading</td>
+<td>Files are being received; check whether progress increases</td>
+</tr>
+<tr>
+<td>做种中 — Seeding</td>
+<td>Files are complete and shared with other downloaders; this does not mean downloading is unfinished</td>
+</tr>
+<tr>
+<td>已完成 — Completed</td>
+<td>Downloading has finished; look in the NAS save directory</td>
+</tr>
+<tr>
+<td>已暂停 — Paused</td>
+<td>No transfer; open details and tap 继续 (Resume) to run it</td>
+</tr>
+<tr>
+<td>排队中 — Queued</td>
+<td>No running slot assigned yet; do not add it again</td>
+</tr>
+<tr>
+<td>校验中 — Checking</td>
+<td>Checking existing files, including after restart recovery; wait for completion</td>
+</tr>
+<tr>
+<td>错误 — Error</td>
+<td>Open details for the cause, such as directory permissions, disk, or Tracker problems</td>
+</tr>
+</tbody>
+</table>
+<h3>5.3 Where are the files actually stored?</h3>
+<p>Suppose the installation directory is <code>/volume1/docker/nas-download</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Installation choice</th>
+<th>Where to find files on the NAS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Download directory blank</td>
+<td><code>/volume1/docker/nas-download/downloads</code></td>
+</tr>
+<tr>
+<td>Download directory <code>/volume2/Downloads</code></td>
+<td><code>/volume2/Downloads</code></td>
+</tr>
+<tr>
+<td>Tasks added by automated torrent downloading/seeding</td>
+<td>Subdirectories <code>nd-brush/task-ID/info-hash</code> under that download root</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Seeing <code>/downloads</code> in task details is normal.</strong> It is the path inside the downloader container; the installer connects it to your selected NAS download directory. Ordinary users can leave it blank when adding tasks. Do not copy the NAS host path <code>/volume2/Downloads</code> directly into an individual built-in task's save directory.</p>
+<p>For built-in downloader subdirectories, use a path below the default root, such as <code>/downloads/movies</code>, after checking your requirements. The automated task's save path must match the downloader default directory; leaving it blank is recommended.</p>
+</section><section id="section-6"><h2 id="heading-6">6. Daily management: view, pause, resume, and delete</h2>
+<ul>
+<li><strong>全部 / 下载 / 完成 / 暂停</strong> (All / Downloading / Completed / Paused) filters the list; it does not change tasks.</li>
+<li>The downloader selector at the top switches between one downloader and all of them. The search box searches task names.</li>
+<li>Tap a task to open details, inspect its files, save directory, and Trackers, then pause or resume it.</li>
+<li>A <strong>Tracker</strong> helps downloaders find each other. Errors can identify site-authentication or network problems. Hide private passkeys in its address before sharing screenshots.</li>
+</ul>
+<h3>Distinguish these operations before deleting</h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Delete a task with <strong>同时删除下载文件（不可恢复）</strong> (Also delete downloaded files, irreversible) <strong>unchecked</strong></td>
+<td>Removes the task from the downloader but keeps files; keeping files does not mean they are still being seeded</td>
+</tr>
+<tr>
+<td>Delete a task with that option <strong>checked</strong></td>
+<td>Requests deletion of both task and files by the downloader; this app has no file-recycle-bin restore button</td>
+</tr>
+<tr>
+<td>更多 → 下载器管理 → 移除接入 (More → Downloader management → Remove connection)</td>
+<td>Removes only this product's connection configuration; does not delete the downloader or its tasks</td>
+</tr>
+</tbody>
+</table>
+<p>Manual deletion is a direct instruction from you. <strong>Do not treat automated seeding/retention protection as a safeguard for manual deletion.</strong> Check PT seeding obligations before acting.</p>
+<h3>If submission times out, do not tap again</h3>
+<p>A result such as <strong>响应未知 / 待确认 / uncertain</strong> (Response unknown / awaiting confirmation / uncertain) may mean the request arrived but its response did not reach the phone. Go to <strong>更多 → 操作记录与待确认回执</strong> (More → Operation history and pending receipts), query the original ID, and check the actual list. Do not submit a new request to repeat an add or delete.</p>
+<p><code>已登记</code> (Recorded), <code>queued</code>, and <code>running</code> mean waiting or in progress. Continue checking the result; they do not prove a download is complete or files have been deleted.</p>
+</section><section id="section-7"><h2 id="heading-7">7. Optional: search your own PT / Torznab sites</h2>
+<p>Regular downloads in Chapter 5 work without site search. The software does not include other people's site accounts or keys.</p>
+<h3>7.1 Add a site</h3>
+<p>Go to <strong>更多 → 站点配置 → ＋ 添加站点</strong> (More → Site configuration → Add site). Enter the name, type, API URL, and your own API Key, then save.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>What to enter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M-Team</td>
+<td>Obtain your own access token from your site account and enter it separately as the API Key. The app currently suggests <code>https://api.m-team.cc/api</code>, and the code also accepts <code>https://api.m-team.io/api</code>. These are supported configuration values in this version, not a guarantee of future site addresses</td>
+</tr>
+<tr>
+<td>Torznab / Jackett / Prowlarr</td>
+<td>Copy the site's complete Torznab API path from your configured indexer. Enter the API Key separately; the URL must not include <code>?apikey=...</code>, a username, or a password</td>
+</tr>
+</tbody>
+</table>
+<p>Saving stores inputs; it does not prove the site is reachable. An actual search checks credentials and connectivity. HDFans search uses a configured Torznab source, not a native HDFans search API provided directly by this product.</p>
+<h3>7.2 Search and download</h3>
+<ol>
+<li>Return to <strong>下载任务</strong> (Download tasks) and tap <strong>站点搜索</strong> (Site search).</li>
+<li>Enter keywords and tap <strong>搜索</strong> (Search). Use <strong>停止当前搜索</strong> (Stop current search) to cancel the query.</li>
+<li>Tap a result's <strong>详情 / 下载</strong> (Details / Download), check the resource, then tap <strong>选择下载器并下载</strong> (Choose downloader and download).</li>
+<li>Select the downloader, usually leave the save directory blank, and tap <strong>下载</strong> (Download). Return to the list to check the receipt and actual task.</li>
+</ol>
+<p>Manual downloads do not use the automated FREE filter. Check whether download traffic will be counted first. Signing in to a site in your browser does not automatically make its API Key available here; these are separate authentication methods.</p>
+</section><section id="section-8"><h2 id="heading-8">8. Optional: check-in and account checks</h2>
+<p>Open <strong>更多 → 签到与刷流</strong> (More → Check-in and automated torrent downloading/seeding). Tasks are stored in the NAS service and, when enabled, run on schedule even when the phone is off. New tasks are disabled by default and do not import old-system tasks.</p>
+<h3>8.1 Understand the three functions first</h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>What it actually does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HDFans check-in</td>
+<td>Uses your supplied Cookie to access the check-in endpoint; expiry, captchas, and similar issues are logged as errors</td>
+</tr>
+<tr>
+<td>Custom site check-in</td>
+<td>Sends a configured HTTP request and judges success using explicit response text</td>
+</tr>
+<tr>
+<td>M-Team account check</td>
+<td>Checks the account API and VIP expiry; <strong>it is not a website sign-in/check-in or an account-retention action</strong></td>
+</tr>
+</tbody>
+</table>
+<p>A Cookie is part of a website login session, not the password. Being signed in through a browser does not mean the app has your Cookie. Never put API Keys, Cookies, setup codes, or pairing codes in a sharing bundle or public screenshot.</p>
+<h3>8.2 Recommended sequence for beginners</h3>
+<ol>
+<li>Choose the task type, enter a task name, and supply your own site-authentication information.</li>
+<li>Leave <strong>启用 NAS 后台定时任务</strong> (Enable scheduled NAS background task) unchecked and save first.</li>
+<li>Tap <strong>只读预演（默认）</strong> (Read-only dry run, default) and inspect configuration-check results. A custom HTTP check-in dry run does not actually request the site, so it cannot prove authentication works or check-in succeeds.</li>
+<li>Check that another application is not already running the same check-in task, then edit and enable it.</li>
+<li>To test the real result, tap <strong>实际运行</strong> (Actual run) and confirm. Check <strong>运行日志 / 刷新状态</strong> (Run logs / Refresh status), and verify on the site if needed.</li>
+</ol>
+<p>By default, tasks run randomly during the daily <strong>08:00–10:00 Beijing time</strong> window; you can change it. At most one actual check-in attempt is allowed per day. An uncertain result is not retried automatically. Missing today's automatic window schedules the next day, not a late-night catch-up request. Manual actual runs also obey the once-per-day limit.</p>
+<p>Custom check-in needs the correct request method, URL, parameters, and success marker. If you do not understand them, ask the site administrator for an integration method instead of arbitrarily using “success” as the criterion. Sites requiring captchas, dynamic tokens, or complex web sign-in cannot be automated with this single-request template alone.</p>
+<p><strong>停止并停用</strong> (Stop and disable) prevents future automatic write operations. A request already sent may still complete; check logs. Updating the Cookie does not reset that day's already-used check-in attempt.</p>
+</section><section id="section-9"><h2 id="heading-9">9. Optional: unattended downloads and automatic cleanup</h2>
+<p>This is an advanced feature for people familiar with downloads and site rules. <strong>Complete one manual download before enabling an automatic task.</strong> Automation is configurable; it does not guarantee maximum speed or a particular upload total.</p>
+<h3>9.1 The safest enabling sequence</h3>
+<ol>
+<li>Check that site search works and the selected downloader is correct.</li>
+<li>Create an automated torrent downloading/seeding task in <strong>签到与刷流</strong>; initially leave the save directory blank.</li>
+<li>Keep <strong>仅 FREE</strong> (FREE only), leave automatic cleanup and file deletion disabled, and choose <strong>未知：保持保护，不自动清理</strong> (Unknown: keep protected, no automatic cleanup) if you cannot confirm seeding obligations.</li>
+<li>Review concurrency, capacity, and reserved space. Save and run <strong>只读预演</strong> (Read-only dry run) to inspect candidates and retention reasons.</li>
+<li>Enable only after everything is correct. You can also use <strong>实际运行</strong> (Actual run), then confirm actual additions in the task list.</li>
+<li>After operation is stable, configure cleanup only if you understand site seeding requirements and accept deletion. Protection when information is unknown is expected behavior.</li>
+</ol>
+<h3>9.2 Common fields in this version</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Default</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>检查间隔 — Check interval</td>
+<td>10 minutes</td>
+<td>How often this task runs; configurable from 2–1440 minutes</td>
+</tr>
+<tr>
+<td>全部未完成任务并发上限 — Limit on all incomplete tasks</td>
+<td>8</td>
+<td>Admission limit for automatic additions to the selected downloader; manual, paused, and queued incomplete tasks count too. It does not forcibly constrain every qB running behavior to 8 tasks</td>
+</tr>
+<tr>
+<td>保留磁盘空间 — Reserved disk space</td>
+<td>100 GiB</td>
+<td>Space kept for the system and other uses; outstanding bytes of incomplete tasks are also reserved before additions</td>
+</tr>
+<tr>
+<td>本任务容量上限 — Capacity limit for this task</td>
+<td>500 GiB</td>
+<td>Limits torrent capacity managed by this automated task, not total NAS capacity</td>
+</tr>
+<tr>
+<td>最低做种人数 / 最低下载人数 — Minimum seeders / downloading peers</td>
+<td>2 / 3</td>
+<td>Candidates need sufficient evidence of participant counts; not a speed guarantee</td>
+</tr>
+<tr>
+<td>清理前观察小时 — Observation before cleanup</td>
+<td>6 hours</td>
+<td>Observe new tasks first; unfinished downloads are not rotated out as low-performing torrents</td>
+</tr>
+<tr>
+<td>低上传阈值 — Low-upload threshold</td>
+<td>32 KiB/s</td>
+<td>Requires roughly one hour of complete samples; retained if current upload speed or the hourly average meets the threshold</td>
+</tr>
+<tr>
+<td>低需求人数阈值 — Low-demand participant threshold</td>
+<td>0</td>
+<td>Extra condition disabled by default; enabling it also requires continuous supporting samples</td>
+</tr>
+<tr>
+<td>仅 FREE / 促销白名单 — FREE only / promotion allowlist</td>
+<td>Enabled / FREE</td>
+<td>Add only resources matching verified promotion conditions; FREE means a download-traffic exemption</td>
+</tr>
+<tr>
+<td>自动清理 — Automatic cleanup</td>
+<td>Disabled</td>
+<td>Only when enabled can owned tasks meeting every condition be removed</td>
+</tr>
+<tr>
+<td>同时删除已验证文件 — Also delete verified files</td>
+<td>Disabled</td>
+<td>Requires automatic cleanup enabled and successful file/directory verification too</td>
+</tr>
+<tr>
+<td>新任务保种条件 — Seeding requirements for new tasks</td>
+<td>Unknown</td>
+<td>Protected by default; after confirming rules, declare no obligation or require both seeding hours and share ratio to be met</td>
+</tr>
+</tbody>
+</table>
+<p>Capacity is used only for safe space calculations, not as a per-torrent size cutoff or ranking bonus. By default, the number of downloading peers is prioritized, then the demand-to-supply ratio. These are this standalone product's defaults. It does not automatically import another app's automated torrent rules, task pools, or dynamic concurrency settings.</p>
+<h3>9.3 VIP and non-FREE resources</h3>
+<p>New non-FREE M-Team resources are allowed only when you turn off “FREE only,” include the promotion in the allowlist, and the program confirms VIP status and a future expiry during that run. Expired or unverifiable VIP status falls back to FREE. Torznab does not use M-Team VIP privileges.</p>
+<p>This is only a <strong>condition for adding new tasks</strong>. It does not guarantee a resource stays FREE throughout downloading or that VIP exempts you from seeding. “I am VIP” is not a reason to delete all tasks.</p>
+<h3>9.4 Which tasks are excluded from ordinary automatic cleanup?</h3>
+<p>The program manages only tasks it added and durably registered itself. Ownership, tag, hash, or path mismatches; unknown seeding obligations; manual permanent protection; insufficient observation; downloads in progress; and paused, queued, checking, or error states all block ordinary low-performance cleanup.</p>
+<p>Before deleting files, it also verifies the dedicated directory, original file list, shared paths, links, and other conditions. Uncertainty means retention. Each cycle removes at most one item, then confirms the result and rereads free space before deciding whether to add a replacement. <strong>This version does not promise a replacement after every deletion.</strong> A successful receipt does not prove space has been freed.</p>
+<p>A new task's seeding declaration is saved when it enters the managed pool. Later configuration changes do not remove unknown-obligation protection from old tasks. Register resources you want to retain permanently under <strong>归属与永久保护</strong> (Ownership and permanent protection). Removing explicit protection does not bypass other restrictions.</p>
+<h3>9.5 What happens to downloads when an automatic task stops?</h3>
+<p><strong>停止并停用</strong> (Stop and disable) stops that automation's future actions; it does not tell the downloader to pause or delete every torrent already added. To pause a particular download, use task details. If a result is uncertain, check logs and the original run ID instead of creating a duplicate task.</p>
+</section><section id="section-10"><h2 id="heading-10">10. Access from outside your home</h2>
+<p>Get it working at home first, then configure remote access. A home LAN IP usually cannot be reached directly from an outside Wi-Fi network.</p>
+<p>If you already use Tailscale, join the NAS and phone to the same trusted network and enter the NAS's <strong>numeric Tailscale IP</strong> service address. HTTP accepts only local or numeric Tailscale IPs allowed by the code, not arbitrary HTTP domains. For a public domain, use HTTPS with a valid certificate.</p>
+<p>The app does not automatically install Tailscale, configure your router, obtain a public IP, or open inbound ports. Do not forward the unencrypted <code>7120</code> sign-in endpoint directly to the internet. Opening the web interface does not prove BT inbound connectivity; speed still depends on peers, network, disks, and bandwidth.</p>
+</section><section id="section-11"><h2 id="heading-11">11. Advanced: connect an installed downloader</h2>
+<p>When the initial mode is <strong>高级：接入已有下载器</strong> (Advanced: connect an existing downloader), the product does not start its own download engine. After installation, go to <strong>更多 → 下载器管理 → ＋ 添加下载器</strong> (More → Downloader management → Add downloader). Enter the type, name, address, username, password, and default save directory. Tap <strong>测试连接</strong> (Test connection) before saving.</p>
+<p>The address is accessed by the <strong>NAS service</strong>. <code>localhost</code> in one container is not another container. Use an address reachable from the service's network. Do not use your existing downloader for first-time automatic file-deletion experiments.</p>
+<p>Automatic cleanup of external-downloader data requires an administrator to configure the corresponding download directory as a read-only verification mount. Without it, leave file deletion disabled. Mount instructions are in the developer guide <a href="AUTOMATION_EN.html">docs/AUTOMATION_EN.md</a>; they do not concern ordinary built-in installation.</p>
+<p>Installation mode is not a switch that migrates tasks in place. Do not arbitrarily change an installation directory from built-in to existing mode, or the reverse. Plan a migration; do not delete configuration to bypass a warning.</p>
+</section><section id="section-12"><h2 id="heading-12">12. Advanced: manual NAS installation without a phone</h2>
+<p>Ordinary Android users who completed Chapter 3 do not need this chapter. It is an alternative for administrators who can use a NAS terminal. Do not run Linux installation commands directly in a local Windows terminal.</p>
+<ol>
+<li>Upload <code>Nas-Download-Standalone-1.3.0-install.tar.gz</code> to a <strong>temporary empty directory</strong> on the NAS.</li>
+<li>Enter that directory in a NAS terminal and extract the package. The temporary extraction directory must be separate from the final installation directory; otherwise the installer treats the target as containing other files.</li>
+<li>Verify that the paths below belong to this NAS before running them. This example applies only to NAS devices with <code>/volume1</code>; otherwise replace the entire installation path with your actual storage path.</li>
+</ol>
+<pre><code class="language-sh">tar -xzf Nas-Download-Standalone-1.3.0-install.tar.gz
+sh install.sh --dir /volume1/docker/nas-download --port 7120 --mode bundled
+</code></pre>
+<p>To store downloads separately, if <code>/volume2/Downloads</code> really exists and is writable by your current NAS account, replace the second command with:</p>
+<pre><code class="language-sh">sh install.sh --dir /volume1/docker/nas-download --port 7120 --mode bundled --downloads /volume2/Downloads
+</code></pre>
+<p>Choose one installation command, not both in succession. The full package includes the image; no separate development image archive is required.</p>
+<p>Successful installation outputs three important fields:</p>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>How to use it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NAS_DOWNLOAD_READY</code></td>
+<td>Web-service entry point; replace <code>0.0.0.0</code> with the actual NAS IP if shown</td>
+</tr>
+<tr>
+<td><code>NAS_DOWNLOAD_SETUP_CODE</code></td>
+<td>Setup code for the first administrator; keep private</td>
+</tr>
+<tr>
+<td><code>NAS_DOWNLOAD_PROJECT</code></td>
+<td>Container project name for this installation; keep to identify it during maintenance</td>
+</tr>
+</tbody>
+</table>
+<p>Open the correct service URL in a browser and create the administrator as in Chapter 4. A terminal exiting or webpage opening does not mean files have downloaded; still complete the real-download check in Chapter 5.</p>
+<h3>Installation parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default / purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--dir</code></td>
+<td>Required: a new empty directory, or this product's original marked installation directory</td>
+</tr>
+<tr>
+<td><code>--port</code></td>
+<td><code>7120</code>; range 1024–65534, with the next TCP/UDP port also used in built-in mode</td>
+</tr>
+<tr>
+<td><code>--bind</code></td>
+<td><code>0.0.0.0</code>; must be a valid IPv4 bind address</td>
+</tr>
+<tr>
+<td><code>--mode</code></td>
+<td><code>bundled</code> for built-in; <code>existing</code> for an existing downloader</td>
+</tr>
+<tr>
+<td><code>--downloads</code></td>
+<td>New built-in installation: <code>installation-directory/downloads</code>; omitting it during upgrade retains the recorded download path</td>
+</tr>
+</tbody>
+</table>
+</section><section id="section-13"><h2 id="heading-13">13. Upgrade, back up, stop, and remove</h2>
+<h3>13.1 Upgrade the phone app</h3>
+<p>A new APK with the same release signing certificate can replace the installed app; uninstalling first is unnecessary. Retention of the signed-in session through upgrade has been verified. If Android reports a signing conflict, check whether you installed a debug/preview package. Do not uninstall first and only then discover that pending operation records were not preserved.</p>
+<p><strong>Updating the phone APK does not automatically update the NAS service.</strong> Rerun the new installation flow against the original NAS installation directory. Before upgrading, record the directory, mode, port, and download path. A new directory creates another independent instance rather than upgrading the old one.</p>
+<h3>13.2 Upgrade the NAS service</h3>
+<ol>
+<li>Record the current service address and installation directory, and resolve uncertain operation results.</li>
+<li>Back up, or ask an administrator to arrange a consistent backup while stopped. Do not copy just one database file while it is being written.</li>
+<li>Use automatic installation from the new app or the new manual installation package, specifying <strong>the same installation directory, same mode, and original port/download path</strong>.</li>
+<li>After preparing the image, the installer briefly stops its owned instance, saves matching configuration and state, then switches and verifies. Failure triggers an attempt to restore the matching old version.</li>
+<li>After completion, sign in/refresh and check task counts, paths, and important files. Do not immediately remove rollback backups.</li>
+</ol>
+<h3>13.3 What to back up</h3>
+<table>
+<thead>
+<tr>
+<th>Contents</th>
+<th>Why to keep them</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entire <code>data</code> directory</td>
+<td>Accounts, encryption keys, configuration, operation receipts, and task records; losing keys affects decryption of existing credentials</td>
+</tr>
+<tr>
+<td><code>engine-config</code></td>
+<td>Built-in engine settings, torrents, and recovery state</td>
+</tr>
+<tr>
+<td><code>.env</code>, installation marker, Compose files</td>
+<td>Original paths, mode, project, and connection settings; contain secrets and must not be shared publicly</td>
+</tr>
+<tr>
+<td>Actual download directory</td>
+<td>Real files; may be on another drive rather than inside the installation directory</td>
+</tr>
+<tr>
+<td><code>installer-backups</code></td>
+<td>Matching rollback records generated by the installer; use space, but do not delete before verification</td>
+</tr>
+</tbody>
+</table>
+<p>Share only release packages and manuals with others. <strong>Do not archive your entire installed directory</strong>; it contains your accounts, keys, and task state.</p>
+<h3>13.4 Stop using it temporarily, or uninstall</h3>
+<p>To stop temporarily, find the project identified in the installation output in the NAS container manager and stop only that product project. Its web interface, downloads, and automation stop with it. Do not accidentally stop the old system's qB or other containers.</p>
+<p>To remove the program, first disable automation, confirm receipts, and back up. Then remove the explicitly identified product container while <strong>keeping configuration and download directories</strong>. The software has no automatic file-migration or reliably reversible one-click file-deletion feature. Decide separately whether to remove files. Do not use commands that clear all Docker resources.</p>
+</section><section id="section-14"><h2 id="heading-14">14. Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Situation or message</th>
+<th>Possible cause</th>
+<th>First action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>APK will not install</td>
+<td>Android older than 8.0, installation-source permission, or signing conflict</td>
+<td>Check Android version, package integrity, and whether another signing variant is installed</td>
+</tr>
+<tr>
+<td>SSH connection times out / is refused</td>
+<td>Wrong IP/port, SSH disabled, or network isolation</td>
+<td>Retry on the same LAN; check NAS SSH settings and port. Do not substitute web port <code>7120</code> for the SSH port</td>
+</tr>
+<tr>
+<td>SSH authentication fails</td>
+<td>Wrong NAS credentials or account not allowed to use SSH</td>
+<td>Verify the NAS account, not the software account</td>
+</tr>
+<tr>
+<td>SSH fingerprint changes</td>
+<td>NAS reinstall, different host, changed keys, or wrong target</td>
+<td>Verify cause and new fingerprint; do not bypass verification or blindly erase the saved record</td>
+</tr>
+<tr>
+<td>Docker / Compose not installed</td>
+<td>Missing runtime environment</td>
+<td>Install the NAS container environment; the app will not do it for you</td>
+</tr>
+<tr>
+<td>Current account lacks Docker permission</td>
+<td>SSH account lacks container permission</td>
+<td>Ask an administrator to authorize an appropriate account or install manually; do not expose Docker to the network</td>
+</tr>
+<tr>
+<td>Target directory contains other files</td>
+<td>Existing project or extraction directory selected</td>
+<td>For a fresh install, choose a truly empty dedicated directory. For upgrade, check the product marker; do not empty an existing directory</td>
+</tr>
+<tr>
+<td>Installation already running / installation lock</td>
+<td>Earlier process unfinished or interrupted</td>
+<td>Wait and ask an administrator to check the process; do not simply delete a lock</td>
+</tr>
+<tr>
+<td>Directory not writable / unsafe path</td>
+<td>Insufficient permission, nonexistent storage path, symbolic link, or state-directory overlap</td>
+<td>Check real paths and permissions; do not grant whole-drive access to bypass checks</td>
+</tr>
+<tr>
+<td>Installation port occupied</td>
+<td><code>7120</code> or <code>7121</code> in use, or bind address unavailable</td>
+<td>Identify the conflict. A fresh install can use a confirmed available adjacent pair such as <code>7130/7131</code></td>
+</tr>
+<tr>
+<td>Service or engine not ready</td>
+<td>Engine startup, permission, resource, or configuration problem</td>
+<td>Keep errors and installation records and inspect this product's container; do not continuously create more instances</td>
+</tr>
+<tr>
+<td>Webpage inaccessible after installation</td>
+<td>Address is <code>0.0.0.0</code>, wrong port, or NAS offline</td>
+<td>Use actual NAS IP and service port; test in a browser on the same network first</td>
+</tr>
+<tr>
+<td>Public / domain HTTP address refused</td>
+<td>App rejects arbitrary unencrypted remote addresses</td>
+<td>Use an allowed numeric IP locally; use the correct HTTPS service URL publicly</td>
+</tr>
+<tr>
+<td>Setup code invalid / already initialized</td>
+<td>Code from another instance, or administrator already exists</td>
+<td>Check address and matching installation directory; if initialized, sign in with the account</td>
+</tr>
+<tr>
+<td>Sign-in expired</td>
+<td>Session revoked or expired</td>
+<td>Sign in again; no NAS service reinstallation needed</td>
+</tr>
+<tr>
+<td>Empty list</td>
+<td>New installation, filters, wrong downloader, or connection error</td>
+<td>Select 全部下载器 (All downloaders) and 全部 (All), clear search, and inspect errors</td>
+</tr>
+<tr>
+<td>Download speed 0</td>
+<td>Paused, queued, no active peers, or Tracker/network/disk problems</td>
+<td>Inspect one task's details: state, space, and Tracker. Do not repeatedly add it</td>
+</tr>
+<tr>
+<td>Still uploading at 100%</td>
+<td>Normal seeding</td>
+<td>Download complete; PT users should continue seeding as required</td>
+</tr>
+<tr>
+<td>Space unchanged after task deletion</td>
+<td>File deletion not selected, or other data still uses space</td>
+<td>Verify deletion options, receipt, and files; do not infer freed space from torrent size</td>
+</tr>
+<tr>
+<td>Site saves but search fails</td>
+<td>API Key, URL, or connectivity problem</td>
+<td>Inspect that site's error; browser sign-in and API authentication are separate</td>
+</tr>
+<tr>
+<td>Check-in did not run</td>
+<td>Disabled, window not reached, today's attempt already used, or authentication expired</td>
+<td>Check next-run time and logs; an M-Team account check is not check-in</td>
+</tr>
+<tr>
+<td>Automation adds no new torrents</td>
+<td>Concurrency limit reached, insufficient reserved space, no eligible candidates, or authentication problem</td>
+<td>Run a read-only dry run to see why; do not arbitrarily lower reserved space</td>
+</tr>
+<tr>
+<td>Automation never cleans up</td>
+<td>Cleanup disabled, unknown seeding obligations, insufficient observation, permanent protection, etc.</td>
+<td>Inspect retention reasons; do not remove protection you do not understand just to rotate torrents</td>
+</tr>
+<tr>
+<td>Submission times out; result unknown</td>
+<td>Request may have executed but response was lost</td>
+<td>Query the original receipt and actual task; do not blindly send it again</td>
+</tr>
+</tbody>
+</table>
+<h3>What to include in a problem report</h3>
+<p>Provide app version, NAS model/architecture, phone OS version, built-in or existing-downloader mode, failing step, exact error, time, and operation ID. Screenshots with sensitive information hidden can be attached.</p>
+<p>Do not provide passwords, Cookies, API Keys, setup codes, pairing codes, complete <code>.env</code>, <code>secret.key</code>, databases, or Tracker URLs with passkeys. These are not ordinary diagnostic materials.</p>
+</section><section id="section-15"><h2 id="heading-15">15. Frequently asked questions</h2>
+<h3>Do I need a PT account?</h3>
+<p>No. Ordinary magnet and torrent downloads do not require PT site configuration. Site search and check-in require your own corresponding accounts and credentials.</p>
+<h3>Will downloads continue when the phone is off?</h3>
+<p>Yes, as long as the NAS, network, and product container keep running. Downloaded files do not pass through phone storage.</p>
+<h3>Why do I still need a NAS username and password? Is this not automatic installation?</h3>
+<p>Your phone needs an installation connection authorized by you; it cannot bypass device permissions. Default installation includes the engine, internal connection, and image, but SSH, Docker, and storage permissions remain NAS settings.</p>
+<h3>Does one container mean qB is no longer used?</h3>
+<p>It still uses the established qBittorrent engine, managed as part of the product. Ordinary users do not need to install it separately, sign in to it, or configure its internal password.</p>
+<h3>Will installation guarantee high speed?</h3>
+<p>No. Speed depends on resource demand, peers, home upload/download bandwidth, disks, and connectivity. An accessible webpage or mapped port does not prove public Peer inbound connectivity has been verified.</p>
+<h3>Can I compress my installation directory and give it to a friend?</h3>
+<p>No. Share the clean APK / manual installation package and this guide. Your friend enters their own NAS and site information. Your installed directory contains your sign-ins, keys, and tasks.</p>
+<h3>Can I install on an SSD and download to a mechanical hard drive?</h3>
+<p>Yes. Choose separate installation and download directories. Verify real paths during installation. Do not simply move directories in a file manager afterward; existing mounts and download tasks do not update automatically.</p>
+<h3>What is the minimum I need to do now?</h3>
+<p>Prepare NAS SSH and Docker → open 自动安装 (Automatic installation) in the APK → choose built-in download → create an administrator → add one torrent. Then consider optional features in Chapters 7–9.</p>
+<p>Return to <a href="QUICK_START_EN.html">First use: quick start</a>.</p>
+</section><footer>Works offline, with no external fonts, scripts, or analytics. Replace example addresses and paths with your own. Printing shows every chapter.</footer></main></div><script>
+const box=document.querySelector('#q'),result=document.querySelector('#result');
+box.addEventListener('input',()=>{const q=box.value.trim().toLowerCase();let n=0;
+ document.querySelectorAll('main section').forEach(s=>{const hit=!q||s.textContent.toLowerCase().includes(q);s.hidden=!hit;if(hit)n++;const a=document.querySelector('[data-section="'+s.id+'"]');if(a)a.hidden=!hit;});
+ result.textContent=q?result.dataset.found.replace('{n}',n):result.dataset.help;});
+document.querySelector('#print').addEventListener('click',()=>{box.value='';box.dispatchEvent(new Event('input'));window.print();});
+</script></body></html>

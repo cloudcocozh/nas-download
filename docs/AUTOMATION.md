@@ -1,5 +1,7 @@
 # 后台自动化 API
 
+**简体中文** | [English](AUTOMATION_EN.md)
+
 所有地址位于 `/api/v1`，要求现有登录会话。任务在 NAS 服务中运行，手机关闭不影响调度。默认不创建、不启用任何任务，不读取旧容器或旧配置。
 
 ## 接口
@@ -31,7 +33,7 @@
 - `kind="hdfans_signin"`：`cookie` 必填，只访问固定 `https://hdfans.org/attendance.php`。成功、已签到、Cookie 失效、防护/验证码、未知页面分别记录。禁止重定向，不处理或绕过验证码。更换 Cookie 后翌日生效；当天失败须在站点人工核查。
 - `kind="http_signin"`：自定义 HTTP 签到，无需先创建搜索站点。`signin_url` 为最终签到地址；`method=GET/POST`；`request_format=form/json/text`。`cookie`、`headers_json`、`request_body` 可选并加密保存，不回显。请求头使用 JSON 对象；form/json 正文使用 JSON 对象；GET 参数也填在正文栏，不能直接写进地址。`success_contains` 必填，`already_contains/failure_contains` 可空，`expected_status=200`。只有状态符合预期且正文匹配成功或已签到文字才确认成功；失败标志优先。公网要求 HTTPS；局域网 HTTP 须使用数字地址。禁止重定向、脚本、验证码处理及自动重试。需要动态 CSRF、网页登录流程或验证码的站点，尚不能用单次 HTTP 模板完成。预演不发送签到请求，只检查配置；真实验证会占用当天一次票据。
 - `kind="mteam_check"`：`site_id` 指向 M-Team。只调用账户 API 检查连接与 VIP 到期时间；不实现网页登录、不宣称签到或保号。
-- `kind="brush"`：`site_id`（M-Team 或 Torznab）、`downloader_id`、`save_path`（默认下载器默认路径）、`interval_minutes=10`（2–1440）；`concurrent=8`、`reserve_gib=100`、`capacity_gib=500`、`min_seeders=2`、`min_leechers=3`、`only_free=true`、`promotions=["FREE"]`、`observe_hours=6`、`low_upload_kib=32`、`auto_delete=false`、`delete_data=false`。所有下载器未完成任务（包括手动、暂停、排队）达到并发上限时，不再添加。容量按此任务持有种子的完整大小计算；磁盘预算扣除全部未完成任务剩余空间。优先下载人数，其次供需比；一次最多添加一个，避免堆积。
+- `kind="brush"`：`site_id`（M-Team 或 Torznab）、`downloader_id`、`save_path`（默认下载器默认路径）、`interval_minutes=10`（2–1440）；`concurrent=8`、`reserve_gib=100`、`capacity_gib=500`、`min_seeders=2`、`min_leechers=3`、`only_free=true`、`promotions=["FREE"]`、`observe_hours=6`、`low_upload_kib=32`、`auto_delete=false`、`delete_data=false`。选中下载器的全部未完成任务（包括手动、暂停、排队）达到并发上限时，不再添加。容量按此任务持有种子的完整大小计算；磁盘预算扣除全部未完成任务剩余空间。优先下载人数，其次供需比；一次最多添加一个，避免堆积。
 
 非 FREE 仅在 `only_free=false`、`promotions` 显式选择且 M-Team API 当次返回 `vip=true` 和可验证的未来 VIP 到期时间时允许；到期、未返回或解析失败自动回落 FREE，提交时剩余 VIP 时间不足一分钟也不添加。新增前重新核实当前促销。此规则仅控制新任务准入，不承诺下载全过程免流量。Torznab 不支持以会员身份放开非免费；只有明确 `downloadvolumefactor=0` 才视为免费，缺失促销信息不推断免费。免费候选仍须有做种人数/下载人数证据。
 

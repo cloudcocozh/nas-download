@@ -1,5 +1,7 @@
 # 1.3.0 发布组件索引
 
+**简体中文** | [English](LICENSE_INVENTORY_EN.md)
+
 本版本准确版本和二进制身份见 [RELEASE_COMPONENTS.json](RELEASE_COMPONENTS.json)。对应上游源码文件和校验值见 [THIRD_PARTY_SOURCES.json](THIRD_PARTY_SOURCES.json)，原始许可正文见 [licenses](../licenses)。
 
 | 组件 | 版本 | 许可材料位置 |

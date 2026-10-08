@@ -1,5 +1,7 @@
 # NASDownload 1.3.0
 
+**简体中文** | [English](RELEASE_1_3_EN.md)
+
 
 Android versionCode 6。默认内置下载引擎，管理服务和 qBittorrent 5.2.4 在同一个产品容器运行；高级模式继续支持已有下载器。手机安装默认内置模式，端口校验与 Linux 安装器一致（1024–65534），上传显示实际百分比并为大安装包延长等待时间。
 

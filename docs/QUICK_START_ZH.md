@@ -1,5 +1,7 @@
 # Nas Download 1.3.0：第一次使用，先看这里
 
+**简体中文** | [English](QUICK_START_EN.md)
+
 **它是装在你自己 NAS 上的下载助手。** 手机负责发指令，NAS 负责下载和保存文件。关掉手机后，NAS 只要继续开机，下载就能继续。软件自带 qB 下载引擎，第一次安装不需要再安装一个 qB。
 
 这是 **1.3.0 测试版**。适用于具备 Docker Compose 和 SSH 的 **x86_64 Linux NAS**；安卓安装包要求 **Android 8.0 或以上**。ARM NAS 暂不支持。本版没有 iPhone 原生安装包，可以在能访问 NAS 的浏览器里使用网页。

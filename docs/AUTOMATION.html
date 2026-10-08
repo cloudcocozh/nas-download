@@ -1,0 +1,108 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>后台自动化 API</title><style>
+:root{--ink:#172b3a;--muted:#566b79;--green:#086b5c;--line:#dce7e8;--paper:#fff;--bg:#f3f7f7}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+a{color:var(--green);text-underline-offset:3px;overflow-wrap:anywhere}button,input{font:inherit}button{cursor:pointer}header{background:#153f3b;color:white;padding:32px max(24px,calc((100vw - 1280px)/2));border-bottom:5px solid #60c7a9}header .tag{color:#bfe6da;font-size:12px;letter-spacing:2px}header strong{display:block;font-size:30px;line-height:1.4;margin-top:8px}header p{margin:8px 0 0;color:#dcece7}header a{color:#c2f5e5}nav.top{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}.top a,.top button{padding:6px 12px;border:1px solid #80a59c;border-radius:6px;background:transparent;color:white;text-decoration:none}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:32px;max-width:1280px;margin:30px auto;padding:0 24px 60px}aside{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;background:var(--paper);padding:20px;border:1px solid var(--line);border-radius:10px}aside label{font-weight:700;font-size:14px}input{width:100%;padding:10px;margin:8px 0;border:1px solid #b7cacc;border-radius:6px;font-size:14px}#result{font-size:13px;color:var(--muted)}aside ul{padding:0;list-style:none;margin:10px 0 0}aside a{display:block;font-size:14px;line-height:1.5;padding:8px 0;text-decoration:none;border-bottom:1px solid #edf2f2}main{min-width:0;background:white;padding:30px 38px;border:1px solid var(--line);border-radius:10px}h1{font-size:30px;line-height:1.5;margin-top:0}h2{font-size:24px;line-height:1.5;margin:38px 0 14px;border-top:1px solid var(--line);padding-top:24px;color:#075d51}h3{font-size:19px;line-height:1.6;margin:25px 0 10px}p{margin:12px 0}li{padding-left:2px;margin:8px 0}ul,ol{padding-left:25px}strong{font-weight:700}code{font:14px/1.65 ui-monospace,Consolas,monospace;background:#edf5f4;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}pre{overflow-x:auto;background:#15352f;color:#e7fff3;padding:18px;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere}pre code{background:none;padding:0;color:inherit}table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.75;table-layout:fixed;margin:18px 0}th{text-align:left;background:#edf5f3;color:#174d43}th,td{border:1px solid var(--line);padding:12px;vertical-align:top;overflow-wrap:anywhere}th:first-child{width:26%}tr:nth-child(even) td{background:#fafcfc}blockquote{margin:20px 0;padding:12px 20px;background:#edf7f3;border-left:4px solid #18826c}.route{display:flex;gap:10px;margin:22px 0;align-items:center;flex-wrap:wrap}.route span{padding:12px 18px;background:#ecf5f1;border:1px solid #c0ded0;border-radius:8px}.route b{color:#83a099}footer{margin:30px 0 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:20px}[hidden]{display:none!important}
+@media(max-width:850px){.layout{grid-template-columns:1fr;gap:16px;margin-top:16px;padding:0 12px 32px}aside{position:static;max-height:300px}main{padding:22px 18px}header{padding:24px 20px}header strong,h1{font-size:25px}h2{font-size:21px}table{font-size:13px}th,td{padding:8px}th:first-child{width:28%}}
+@media print{body{background:white;font-size:10pt}header{background:white;color:#172b3a;border-bottom:2px solid #086b5c;padding:0 0 12px}header .tag,header p{color:#566b79}nav.top,aside,.route{display:none}.layout{display:block;margin:0;padding:0}main{border:0;padding:10px 0}h1{font-size:21pt}h2{font-size:16pt;break-after:avoid}h3{font-size:12pt;break-after:avoid}p,li{orphans:3;widows:3}table{font-size:9pt;table-layout:auto}tr{break-inside:avoid}pre{background:#eef3f2;color:#172b3a}a{color:inherit}section[hidden]{display:block!important}}
+</style></head><body>
+<header><div class="tag">NAS DOWNLOAD / 1.3.0 测试版</div><strong>后台自动化 API</strong><p>自己的 NAS 下载助手 · 内置下载引擎 · 手机与网页同步管理</p><nav class="top"><a href="QUICK_START_ZH.html">第一次使用</a><a href="USER_MANUAL_ZH.html">完整说明书</a><a href="ACCEPTANCE_1_3.html">测试范围</a><button id="print" type="button">打印 / 保存 PDF</button></nav></header>
+<div class="layout"><aside><label for="q">查找章节</label><input id="q" type="search" placeholder="查找章节"><div id="result" aria-live="polite" data-found="找到 {n} 个相关章节" data-help="输入关键词筛选章节，例如：密码、文件、签到">输入关键词筛选章节，例如：密码、文件、签到</div><ul><li data-section="section-1"><a href="#section-1">接口</a></li><li data-section="section-2"><a href="#section-2">配置</a></li><li data-section="section-3"><a href="#section-3">保护与限制</a></li><li data-section="section-4"><a href="#section-4">验证</a></li></ul></aside><main><h1>后台自动化 API</h1>
+<p><strong>简体中文</strong> | <a href="AUTOMATION_EN.html">English</a></p>
+<p>所有地址位于 <code>/api/v1</code>，要求现有登录会话。任务在 NAS 服务中运行，手机关闭不影响调度。默认不创建、不启用任何任务，不读取旧容器或旧配置。</p>
+<section id="section-1"><h2 id="heading-1">接口</h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>路径</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET / POST</td>
+<td><code>/automations</code></td>
+<td>列表 / 创建任务，返回 <code>{ok,items}</code> / <code>{ok,item}</code></td>
+</tr>
+<tr>
+<td>GET / PATCH / DELETE</td>
+<td><code>/automations/{id}</code></td>
+<td>读取 / 更新 / 停用并删除配置（保留审计和归属记录）</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/automations/{id}/run</code></td>
+<td><code>{request_id: UUID, dry_run: true}</code>，返回 <code>{ok,run_id,status}</code>；同 UUID 不重复执行</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/automations/{id}/stop</code></td>
+<td>取消运行并设置 <code>enabled=false</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/automations/{id}/logs?limit=50</code></td>
+<td><code>{ok,items}</code>，最近运行与脱敏结果</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/automations/{id}/owned</code></td>
+<td><code>{ok,items}</code>，本任务添加且有持久归属证据的资源</td>
+</tr>
+<tr>
+<td>GET / POST</td>
+<td><code>/automations/{id}/protections</code></td>
+<td>永久保护列表 / 添加 <code>{info_hash,reason}</code></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/automations/{id}/protections/{info_hash}</code></td>
+<td>取消显式保护（仍保留 HR、未知义务等其他保护）</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/automation-runs/{run_id}</code></td>
+<td><code>{ok,item}</code>，含状态、时间和结果</td>
+</tr>
+</tbody>
+</table>
+<p>创建和更新直接提交配置字段。返回 <code>item</code> 包含配置、<code>next_run</code>（Unix 秒）、<code>last_status</code>、<code>last_run_at</code>（Unix 秒，未运行时 null）、<code>has_cookie/has_headers_json/has_request_body</code>；不返回 Cookie、请求头和正文。PATCH 空认证字段保留已保存值。<code>kind</code> 创建后不可修改。<code>run</code> 默认是只读预演；真实运行要求先启用任务。停止确认后不会发起后续写操作；已发出的请求会完成或记录为不确定。HTTP 请求只登记运行，后台执行，不等待站点响应。</p>
+<p>创建 <code>POST /automations</code> 支持可选 <code>request_id: UUID</code>。客户端应为一次创建保留同一 UUID 和相同请求内容，结果不确定时复用，不能换 UUID 重新创建。同 UUID、同配置返回第一次创建的公开 <code>item</code> 回执；相同 UUID、不同配置返回 <code>409 REQUEST_ID_CONFLICT</code>。回执与任务配置在同一 SQLite 事务保存，服务重启后仍有效；任务删除后重放原请求不会重建。旧客户端不传此字段仍可创建，但不享有创建去重。PATCH 不使用这个创建回执。</p>
+<p>运行状态：<code>queued</code>、<code>running</code>、<code>completed</code>、<code>failed</code>、<code>cancelled</code>、<code>interrupted</code>、<code>needs_review</code>。运行对象包含 <code>id,automation_id,generation,dry_run,scheduled,status,created_at,started_at,finished_at,result</code>；<code>scheduled</code> 是只读布尔值，区分后台计划与手动运行，任务初始 <code>last_status=idle</code>。<code>result.reason</code> 表达准入原因，<code>result.retention</code> 数组记录逐个保留原因，不表示已经删除。<code>owned</code> 对象为 <code>automation_id,downloader_id,info_hash,task_id,marker,added_at,size,obligations,state</code>；<code>state</code> 是 <code>active/removed</code>。</p>
+</section><section id="section-2"><h2 id="heading-2">配置</h2>
+<p>公共字段：<code>name</code>、<code>kind</code>、<code>enabled=false</code>。签到和账户检查使用北京时间每日随机窗口 <code>window_start=&quot;08:00&quot;</code>、<code>window_end=&quot;10:00&quot;</code>，时间在 SQLite 中持久保存，重启不会重新抽签。每个北京时间自然日最多一个实际签到尝试；不确定结果不自动重试。</p>
+<p>自动计划只在当前自然日的 <code>[window_start, window_end)</code> 内发起请求。停机后恢复：当前窗口前安排当天窗口，窗口内可补跑，窗口后安排次日窗口，绝不深夜补发早晨任务。已排队的自动任务在执行前再次检查；错过窗口时记录 <code>result.reason=&quot;outside_window&quot;</code>，不占用当天签到票据。旧版本遗留的队列来源未知时，保守按自动计划窗口约束迁移。用户明确点击真实“立即运行”属于手动请求，可以在窗口外执行，仍受每日一次票据限制。</p>
+<ul>
+<li><code>kind=&quot;hdfans_signin&quot;</code>：<code>cookie</code> 必填，只访问固定 <code>https://hdfans.org/attendance.php</code>。成功、已签到、Cookie 失效、防护/验证码、未知页面分别记录。禁止重定向，不处理或绕过验证码。更换 Cookie 后翌日生效；当天失败须在站点人工核查。</li>
+<li><code>kind=&quot;http_signin&quot;</code>：自定义 HTTP 签到，无需先创建搜索站点。<code>signin_url</code> 为最终签到地址；<code>method=GET/POST</code>；<code>request_format=form/json/text</code>。<code>cookie</code>、<code>headers_json</code>、<code>request_body</code> 可选并加密保存，不回显。请求头使用 JSON 对象；form/json 正文使用 JSON 对象；GET 参数也填在正文栏，不能直接写进地址。<code>success_contains</code> 必填，<code>already_contains/failure_contains</code> 可空，<code>expected_status=200</code>。只有状态符合预期且正文匹配成功或已签到文字才确认成功；失败标志优先。公网要求 HTTPS；局域网 HTTP 须使用数字地址。禁止重定向、脚本、验证码处理及自动重试。需要动态 CSRF、网页登录流程或验证码的站点，尚不能用单次 HTTP 模板完成。预演不发送签到请求，只检查配置；真实验证会占用当天一次票据。</li>
+<li><code>kind=&quot;mteam_check&quot;</code>：<code>site_id</code> 指向 M-Team。只调用账户 API 检查连接与 VIP 到期时间；不实现网页登录、不宣称签到或保号。</li>
+<li><code>kind=&quot;brush&quot;</code>：<code>site_id</code>（M-Team 或 Torznab）、<code>downloader_id</code>、<code>save_path</code>（默认下载器默认路径）、<code>interval_minutes=10</code>（2–1440）；<code>concurrent=8</code>、<code>reserve_gib=100</code>、<code>capacity_gib=500</code>、<code>min_seeders=2</code>、<code>min_leechers=3</code>、<code>only_free=true</code>、<code>promotions=[&quot;FREE&quot;]</code>、<code>observe_hours=6</code>、<code>low_upload_kib=32</code>、<code>auto_delete=false</code>、<code>delete_data=false</code>。选中下载器的全部未完成任务（包括手动、暂停、排队）达到并发上限时，不再添加。容量按此任务持有种子的完整大小计算；磁盘预算扣除全部未完成任务剩余空间。优先下载人数，其次供需比；一次最多添加一个，避免堆积。</li>
+</ul>
+<p>非 FREE 仅在 <code>only_free=false</code>、<code>promotions</code> 显式选择且 M-Team API 当次返回 <code>vip=true</code> 和可验证的未来 VIP 到期时间时允许；到期、未返回或解析失败自动回落 FREE，提交时剩余 VIP 时间不足一分钟也不添加。新增前重新核实当前促销。此规则仅控制新任务准入，不承诺下载全过程免流量。Torznab 不支持以会员身份放开非免费；只有明确 <code>downloadvolumefactor=0</code> 才视为免费，缺失促销信息不推断免费。免费候选仍须有做种人数/下载人数证据。</p>
+<p>qBittorrent 的空闲磁盘接口只覆盖其真正默认下载目录，因此自动化 <code>save_path</code> 必须与 qBittorrent 的默认目录一致；不能拿另一个挂载的剩余空间代替。Transmission 使用指定目录的 <code>free-space</code> 接口。新增前按种子元数据实际总大小重算预算，并第二次读取空间。</p>
+</section><section id="section-3"><h2 id="heading-3">保护与限制</h2>
+<p>新增前解析种子信息哈希，核查下载器已有任务，再持久登记 UUID 操作票据，以唯一标签关联新任务。不使用标题匹配，不接管原有任务；相同哈希已有任务不添加。不确定新增/删除不会自动重发，也不会通过重启绕过。下次运行只读核验：只有哈希、唯一标签和提交后添加时间全部吻合，才补记迟到的新增结果；删除则只能通过确认任务已不存在补记。仍不确定时阻止该下载器继续新增，记录 <code>needs_review</code>。绑定后的下载器任务编号、哈希、标签与添加时间全部匹配才允许管理。仅支持具有 v1 信息哈希的种子；纯 v2 元数据拒绝自动添加。</p>
+<p>上传效率用持久样本计算最近一小时平均上传速度；缺少完整窗口不淘汰。至少观察六小时，且必须已经下载完成。当前上传或小时均速达到 <code>low_upload_kib</code> 时保留。<code>low_leechers=0</code> 默认关闭人数条件，开启后还要求完整一小时样本中的 Tracker 下载人数均已知且不高于阈值；不把本机连接人数当作全站需求，Transmission 无此人数证据时保留。暂停、校验、排队、错误、永久保护、归属变化的任务不会按低速清理。每轮最多淘汰一个，没有总种子数量上限，仍受未完成并发、容量与真实剩余空间约束。</p>
+<p><code>retention_policy</code> 由用户按站点实际规则选择：<code>unknown</code>（默认，保种义务未知，保留）、<code>no_obligation</code>（用户确认没有额外保种义务）、<code>seed_hours_ratio</code>（同时满足 <code>min_seed_hours=72</code> 和 <code>min_ratio=1.0</code>）。程序不替用户判断站点是否有 HR 或 VIP 是否豁免保种。规则在每个新任务入池时保存快照；更改配置不会解除旧任务的保护。可以在保护名单中单独保留资源。</p>
+<p>1.2 支持 <code>auto_delete=true</code> 且 <code>delete_data=true</code> 时清理已淘汰任务的数据。新增资源使用 <code>&lt;保存路径&gt;/nd-brush/&lt;自动任务编号&gt;/&lt;信息哈希&gt;</code> 专属目录，并登记原始文件清单。清理前核查下载器归属、标签、添加时间、路径、文件名与大小，并检查符号链接、硬链接、跨盘挂载、多余文件及同下载器其他任务共享的路径；有一项不确定就保留。只通过下载器的删除接口清理数据，不直接删除 NAS 目录。旧任务缺少登记证据时不能自动清理。</p>
+<p>完整清理要求服务能只读查看同一下载目录。内置下载器的安装模式已设置：</p>
+<pre><code class="language-yaml">environment:
+  ND_BRUSH_VERIFY_ROOT: /downloads
+  ND_BRUSH_VERIFY_MOUNT: /managed-downloads
+volumes:
+  - /你的实际下载目录:/managed-downloads:ro
+</code></pre>
+<p>接入现有下载器时，需要管理员把其下载目录配置为相同数据的只读验证挂载，再启用删除数据；未配置时接口明确拒绝。目录映射只能证明配置的存储，不能为另一块盘或另一台 NAS 提供证明。</p>
+<p>删除后同时确认下载器任务已消失、登记文件已消失，再重新读取任务和真实剩余磁盘空间，决定是否补种。不会把 HTTP 成功、种子标称大小当作已释放空间。不确定删除保留回执，下一轮只读核验，禁止重复删除和继续补种。保留数据模式仍计入原占用。以前已完整清理的种子可以重新入池，但要求当前下载人数及供需比都优于上次入池，不按固定冷却时间放行。</p>
+<p>SQLite WAL、进程内锁、单调度器租约、每任务唯一活动运行约束负责并发。重启后遗留运行标为 <code>interrupted</code>，未确定的写操作和每日签到票据保留。调度租约丢失时停止后续动作。日志不保存 Cookie、API Key、种子下载 URL 或站点响应原文。</p>
+</section><section id="section-4"><h2 id="heading-4">验证</h2>
+<p><code>python -m unittest discover -s tests -v</code>：包括真实本地 HTTP 适配器测试与后台线程/SQLite 测试，覆盖异步响应、离线手机场景、重启后归属、重复 UUID、并发配额、VIP 到期回落、促销变化、磁盘预算、未知义务、人工任务保护、低效样本窗口和不确定写操作。测试不使用真实站点 Cookie/API Key，不运行真实刷流。Linux 安装脚本测试应在 Linux staging 单独运行，Windows 下会明确跳过。</p>
+<p>规则来源于产品本地保守策略，并非站点承诺。2026-10-06 核查 <a href="https://t.me/s/M_Team">M-Team 官方公告</a>：官方已发布 72 小时长期做种率与 7 天平均保种指标；这不构成免除 HR/保种要求的证明。<a href="https://wiki.m-team.cc/zh-tw/faq">官方 FAQ</a> 未向本次访问提供可读取条文，故不硬编码“无 HR”或“VIP 免除全部义务”。</p>
+</section><footer>本文件可离线阅读，无外部字体、脚本或统计请求。示例地址和路径须替换成自己的值。打印前会显示全部章节。</footer></main></div><script>
+const box=document.querySelector('#q'),result=document.querySelector('#result');
+box.addEventListener('input',()=>{const q=box.value.trim().toLowerCase();let n=0;
+ document.querySelectorAll('main section').forEach(s=>{const hit=!q||s.textContent.toLowerCase().includes(q);s.hidden=!hit;if(hit)n++;const a=document.querySelector('[data-section="'+s.id+'"]');if(a)a.hidden=!hit;});
+ result.textContent=q?result.dataset.found.replace('{n}',n):result.dataset.help;});
+document.querySelector('#print').addEventListener('click',()=>{box.value='';box.dispatchEvent(new Event('input'));window.print();});
+</script></body></html>

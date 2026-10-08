@@ -1,0 +1,94 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Nas Download</title><style>
+:root{--ink:#172b3a;--muted:#566b79;--green:#086b5c;--line:#dce7e8;--paper:#fff;--bg:#f3f7f7}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+a{color:var(--green);text-underline-offset:3px;overflow-wrap:anywhere}button,input{font:inherit}button{cursor:pointer}header{background:#153f3b;color:white;padding:32px max(24px,calc((100vw - 1280px)/2));border-bottom:5px solid #60c7a9}header .tag{color:#bfe6da;font-size:12px;letter-spacing:2px}header strong{display:block;font-size:30px;line-height:1.4;margin-top:8px}header p{margin:8px 0 0;color:#dcece7}header a{color:#c2f5e5}nav.top{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}.top a,.top button{padding:6px 12px;border:1px solid #80a59c;border-radius:6px;background:transparent;color:white;text-decoration:none}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:32px;max-width:1280px;margin:30px auto;padding:0 24px 60px}aside{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;background:var(--paper);padding:20px;border:1px solid var(--line);border-radius:10px}aside label{font-weight:700;font-size:14px}input{width:100%;padding:10px;margin:8px 0;border:1px solid #b7cacc;border-radius:6px;font-size:14px}#result{font-size:13px;color:var(--muted)}aside ul{padding:0;list-style:none;margin:10px 0 0}aside a{display:block;font-size:14px;line-height:1.5;padding:8px 0;text-decoration:none;border-bottom:1px solid #edf2f2}main{min-width:0;background:white;padding:30px 38px;border:1px solid var(--line);border-radius:10px}h1{font-size:30px;line-height:1.5;margin-top:0}h2{font-size:24px;line-height:1.5;margin:38px 0 14px;border-top:1px solid var(--line);padding-top:24px;color:#075d51}h3{font-size:19px;line-height:1.6;margin:25px 0 10px}p{margin:12px 0}li{padding-left:2px;margin:8px 0}ul,ol{padding-left:25px}strong{font-weight:700}code{font:14px/1.65 ui-monospace,Consolas,monospace;background:#edf5f4;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}pre{overflow-x:auto;background:#15352f;color:#e7fff3;padding:18px;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere}pre code{background:none;padding:0;color:inherit}table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.75;table-layout:fixed;margin:18px 0}th{text-align:left;background:#edf5f3;color:#174d43}th,td{border:1px solid var(--line);padding:12px;vertical-align:top;overflow-wrap:anywhere}th:first-child{width:26%}tr:nth-child(even) td{background:#fafcfc}blockquote{margin:20px 0;padding:12px 20px;background:#edf7f3;border-left:4px solid #18826c}.route{display:flex;gap:10px;margin:22px 0;align-items:center;flex-wrap:wrap}.route span{padding:12px 18px;background:#ecf5f1;border:1px solid #c0ded0;border-radius:8px}.route b{color:#83a099}footer{margin:30px 0 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:20px}[hidden]{display:none!important}
+@media(max-width:850px){.layout{grid-template-columns:1fr;gap:16px;margin-top:16px;padding:0 12px 32px}aside{position:static;max-height:300px}main{padding:22px 18px}header{padding:24px 20px}header strong,h1{font-size:25px}h2{font-size:21px}table{font-size:13px}th,td{padding:8px}th:first-child{width:28%}}
+@media print{body{background:white;font-size:10pt}header{background:white;color:#172b3a;border-bottom:2px solid #086b5c;padding:0 0 12px}header .tag,header p{color:#566b79}nav.top,aside,.route{display:none}.layout{display:block;margin:0;padding:0}main{border:0;padding:10px 0}h1{font-size:21pt}h2{font-size:16pt;break-after:avoid}h3{font-size:12pt;break-after:avoid}p,li{orphans:3;widows:3}table{font-size:9pt;table-layout:auto}tr{break-inside:avoid}pre{background:#eef3f2;color:#172b3a}a{color:inherit}section[hidden]{display:block!important}}
+</style></head><body>
+<header><div class="tag">NAS DOWNLOAD / 1.3.0 BETA</div><strong>Nas Download</strong><p>Your own NAS downloader · Built-in engine · Phone and web management</p><nav class="top"><a href="docs/QUICK_START_EN.html">Quick start</a><a href="docs/USER_MANUAL_EN.html">Full manual</a><a href="docs/ACCEPTANCE_1_3_EN.html">Validation</a><button id="print" type="button">Print / Save PDF</button></nav></header>
+<div class="layout"><aside><label for="q">Find a chapter</label><input id="q" type="search" placeholder="Find a chapter"><div id="result" aria-live="polite" data-found="{n} matching chapters" data-help="Filter chapters by keyword, e.g. password, files, check-in.">Filter chapters by keyword, e.g. password, files, check-in.</div><ul><li data-section="section-1"><a href="#section-1">Download and get started</a></li><li data-section="section-2"><a href="#section-2">What it does</a></li><li data-section="section-3"><a href="#section-3">First installation</a></li><li data-section="section-4"><a href="#section-4">Automation and protection</a></li><li data-section="section-5"><a href="#section-5">Validation and limitations</a></li><li data-section="section-6"><a href="#section-6">Documentation and source</a></li></ul></aside><main><h1>Nas Download</h1>
+<p><a href="README.html">简体中文</a> | <strong>English</strong></p>
+<p><strong>Let your NAS handle downloads. Manage them from your phone or browser.</strong> The default installation runs in one container with qBittorrent built in, so you do not need to install, sign in to, or configure qBittorrent separately.</p>
+<p>Current public release: <strong>1.3.0 beta</strong>. Requires a Linux x86_64 NAS; the Android app requires <strong>Android 8.0 or later</strong>. ARM is not supported yet.</p>
+<p>These English documents describe the existing release. <strong>The app interface is currently in Chinese</strong>; the guides include the actual Chinese button labels alongside English explanations.</p>
+<section id="section-1"><h2 id="heading-1">Download and get started</h2>
+<p><strong><a href="https://github.com/cloudcocozh/nas-download/releases/tag/v1.3.0-beta.1">Open the download page: v1.3.0-beta.1</a></strong></p>
+<table>
+<thead>
+<tr>
+<th>What you want to do</th>
+<th>What to download</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Get everything in one download</td>
+<td><strong>Nas-Download-1.3.0-share.zip</strong>. Extract it and open <code>先看这里.html</code>. This original bundle includes Chinese guides; download the updated bilingual manuals below for English.</td>
+</tr>
+<tr>
+<td>Install on your NAS from an Android phone</td>
+<td><strong>Nas-Download-Standalone-1.3.0.apk</strong></td>
+</tr>
+<tr>
+<td>Install from a NAS terminal as an administrator</td>
+<td><strong>Nas-Download-Standalone-1.3.0-install.tar.gz</strong></td>
+</tr>
+<tr>
+<td>Read the instructions first</td>
+<td><a href="docs/QUICK_START_EN.html">Quick start</a> / <a href="docs/USER_MANUAL_EN.html">Full user manual</a></td>
+</tr>
+<tr>
+<td>Read offline in Chinese or English</td>
+<td><strong>Nas-Download-1.3.0-manuals.zip</strong>; extract it and open <code>START_HERE.html</code></td>
+</tr>
+</tbody>
+</table>
+<p>The green <strong>Code → Download ZIP</strong> button downloads source code, not the Android installer. For ready-to-use downloads, use the release page above.</p>
+</section><section id="section-2"><h2 id="heading-2">What it does</h2>
+<ul>
+<li>Add magnet links, torrent URLs, or <code>.torrent</code> files; view actual progress, transfer speeds, files, and trackers.</li>
+<li>Pause, resume, and remove tasks. Deleting downloaded files requires a separate selection.</li>
+<li>Manage the same tasks from Android and the web, pair another phone, and revoke device sessions.</li>
+<li>Optionally connect your own M-Team or Torznab sites to search, view details, and choose downloads.</li>
+<li>Optionally run daily check-ins, account checks, and unattended downloads on the NAS. Automation is disabled by default.</li>
+<li>Connect an existing qBittorrent 4/5 or Transmission 4 instance in advanced mode.</li>
+</ul>
+<p>Files are stored on the NAS. Downloads can continue with your phone switched off. The software does not provide private-tracker accounts, invitations, API keys, cookies, or content.</p>
+</section><section id="section-3"><h2 id="heading-3">First installation</h2>
+<ol>
+<li>Prepare <strong>SSH, Docker, and Docker Compose</strong> on the NAS. The SSH account must have permission to use Docker. Connect your phone and NAS to the same home network for the first installation.</li>
+<li>Install the APK → choose <strong>自动安装 (Automatic installation)</strong> → enter your NAS address, SSH account, and a dedicated installation directory → keep <strong>内置下载（推荐） (Built-in downloader, recommended)</strong> selected.</li>
+<li>Verify the NAS SSH host fingerprint, wait for installation, create the application administrator account, and select <strong>＋ 添加 (Add)</strong> to start your first download.</li>
+</ol>
+<p><strong><a href="docs/QUICK_START_EN.html">The quick start explains every field and where to find your files.</a></strong></p>
+<p>The default web service port is 7120; the built-in downloader also uses 7121 over TCP/UDP. Both ports must be available. The app does not enable SSH, install Docker, or grant itself additional permissions. Your NAS SSH account and the application's administrator account serve different purposes.</p>
+<p>Administrators can download the full installer from the release page, upload it to an empty temporary directory on the NAS, and run these commands in the NAS terminal:</p>
+<pre><code class="language-sh">tar -xzf Nas-Download-Standalone-1.3.0-install.tar.gz
+sh install.sh --dir /volume1/docker/nas-download --port 7120 --mode bundled
+</code></pre>
+<p>The path is an example: use a dedicated, writable directory on your own NAS. Keep the extraction directory separate from the installation directory. Choose either phone installation or manual installation; you do not need both. See chapter 12 of the user manual.</p>
+</section><section id="section-4"><h2 id="heading-4">Automation and protection</h2>
+<p>Check-ins and automated torrent downloading/seeding are disabled by default. Start with a read-only dry run. Automation only manages tasks it added and recorded. Tasks are retained if seeding obligations are unknown, permanent protection applies, the observation period is incomplete, or identity/file verification fails. Automatic removal and file deletion must each be explicitly enabled.</p>
+<p>An M-Team account check is not a website check-in or an account-retention guarantee. Verified VIP status only controls admission of new non-FREE torrents; it does not waive seeding obligations or guarantee a download remains exempt from traffic accounting throughout its duration. This product does not import other software's automation rules. See the <a href="docs/AUTOMATION_EN.html">automation reference</a>.</p>
+</section><section id="section-5"><h2 id="heading-5">Validation and limitations</h2>
+<p>Actual downloads, pause/resume, automated removal and replacement, engine recovery, upgrades from the older version, and failure rollback passed on an isolated x86_64 NAS. All 145 Linux acceptance tests passed. Android emulator UI checks, full-package SSH/SFTP transfer, and upgrades signed with the same certificate passed.</p>
+<p>A complete first installation from a physical phone to a NAS, multi-day operation, and compatibility across all devices have not been verified. This is a beta release, with no guarantee of maximum transfer speed or public inbound connectivity. See the <a href="docs/ACCEPTANCE_1_3_EN.html">acceptance record</a>.</p>
+</section><section id="section-6"><h2 id="heading-6">Documentation and source</h2>
+<ul>
+<li><a href="docs/QUICK_START_EN.html">Quick start</a> / <a href="docs/USER_MANUAL_EN.html">Full user manual</a></li>
+<li><a href="docs/BUILDING_EN.html">Development and building</a></li>
+<li><a href="docs/AUTOMATION_EN.html">Automation reference</a> / <a href="docs/SITES_EN.html">Site integration</a></li>
+<li><a href="docs/INSTALL_RELEASE_EN.html">Installation and release reference</a> / <a href="docs/RELEASE_1_3_EN.html">Release notes</a></li>
+<li><a href="PRIVACY.en.html">Privacy</a> / <a href="THIRD_PARTY.en.html">Third-party components</a></li>
+</ul>
+<p>The manuals archive on the release page contains offline HTML guides in both languages, with chapter search and printing/PDF support.</p>
+<p>The project's original management service, web interface, Android client, and documentation use the <a href="LICENSE">MIT License</a>. Third-party components such as qBittorrent, Qt, and Python retain their own licenses; adopting MIT for this project does not relicense them. Third-party licenses and corresponding source materials are available on the same release page.</p>
+<p>No private NAS configuration, site credentials, download data, or release signing keys are included. When reporting an <a href="https://github.com/cloudcocozh/nas-download/issues">issue</a>, include the version, steps, and sanitized errors. Do not upload passwords, cookies, API keys, or URLs containing a passkey.</p>
+</section><footer>Works offline, with no external fonts, scripts, or analytics. Replace example addresses and paths with your own. Printing shows every chapter.</footer></main></div><script>
+const box=document.querySelector('#q'),result=document.querySelector('#result');
+box.addEventListener('input',()=>{const q=box.value.trim().toLowerCase();let n=0;
+ document.querySelectorAll('main section').forEach(s=>{const hit=!q||s.textContent.toLowerCase().includes(q);s.hidden=!hit;if(hit)n++;const a=document.querySelector('[data-section="'+s.id+'"]');if(a)a.hidden=!hit;});
+ result.textContent=q?result.dataset.found.replace('{n}',n):result.dataset.help;});
+document.querySelector('#print').addEventListener('click',()=>{box.value='';box.dispatchEvent(new Event('input'));window.print();});
+</script></body></html>

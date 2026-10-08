@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>安装与使用完整说明书</title><style>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Nas Download 1.3.0 完整使用说明书</title><style>
 :root{--ink:#172b3a;--muted:#566b79;--green:#086b5c;--line:#dce7e8;--paper:#fff;--bg:#f3f7f7}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
 a{color:var(--green);text-underline-offset:3px;overflow-wrap:anywhere}button,input{font:inherit}button{cursor:pointer}header{background:#153f3b;color:white;padding:32px max(24px,calc((100vw - 1280px)/2));border-bottom:5px solid #60c7a9}header .tag{color:#bfe6da;font-size:12px;letter-spacing:2px}header strong{display:block;font-size:30px;line-height:1.4;margin-top:8px}header p{margin:8px 0 0;color:#dcece7}header a{color:#c2f5e5}nav.top{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}.top a,.top button{padding:6px 12px;border:1px solid #80a59c;border-radius:6px;background:transparent;color:white;text-decoration:none}
@@ -6,11 +6,11 @@ a{color:var(--green);text-underline-offset:3px;overflow-wrap:anywhere}button,inp
 @media(max-width:850px){.layout{grid-template-columns:1fr;gap:16px;margin-top:16px;padding:0 12px 32px}aside{position:static;max-height:300px}main{padding:22px 18px}header{padding:24px 20px}header strong,h1{font-size:25px}h2{font-size:21px}table{font-size:13px}th,td{padding:8px}th:first-child{width:28%}}
 @media print{body{background:white;font-size:10pt}header{background:white;color:#172b3a;border-bottom:2px solid #086b5c;padding:0 0 12px}header .tag,header p{color:#566b79}nav.top,aside,.route{display:none}.layout{display:block;margin:0;padding:0}main{border:0;padding:10px 0}h1{font-size:21pt}h2{font-size:16pt;break-after:avoid}h3{font-size:12pt;break-after:avoid}p,li{orphans:3;widows:3}table{font-size:9pt;table-layout:auto}tr{break-inside:avoid}pre{background:#eef3f2;color:#172b3a}a{color:inherit}section[hidden]{display:block!important}}
 </style></head><body>
-<header><div class="tag">NAS DOWNLOAD / 1.3.0 测试版</div><strong>安装与使用完整说明书</strong><p>自己的 NAS 下载助手 · 内置下载引擎 · 手机与网页同步管理</p><nav class="top"><a href="QUICK_START_ZH.html">第一次使用</a><a href="USER_MANUAL_ZH.html">完整说明书</a><a href="ACCEPTANCE_1_3.html">测试范围</a><button id="print" type="button">打印 / 保存 PDF</button></nav></header>
-<div class="layout"><aside><label for="q">查找章节</label><input id="q" type="search" placeholder="输入：密码、下载目录、签到…"><div id="result" aria-live="polite">输入关键词筛选章节，例如：密码、文件、签到</div><ul><li data-section="section-1"><a href="#section-1">1. 这是干什么的</a></li><li data-section="section-2"><a href="#section-2">2. 开始前需要准备什么</a></li><li data-section="section-3"><a href="#section-3">3. 用安卓手机安装到 NAS</a></li><li data-section="section-4"><a href="#section-4">4. 第一次登录，或者换手机连接</a></li><li data-section="section-5"><a href="#section-5">5. 完成第一个下载</a></li><li data-section="section-6"><a href="#section-6">6. 日常管理：查看、暂停、继续、删除</a></li><li data-section="section-7"><a href="#section-7">7. 可选：搜索自己的 PT / Torznab 站点</a></li><li data-section="section-8"><a href="#section-8">8. 可选：签到与账户检查</a></li><li data-section="section-9"><a href="#section-9">9. 可选：无人值守下载与自动清理</a></li><li data-section="section-10"><a href="#section-10">10. 在外面怎么访问</a></li><li data-section="section-11"><a href="#section-11">11. 高级：接入已经安装的下载器</a></li><li data-section="section-12"><a href="#section-12">12. 高级：不用手机，在 NAS 手动安装</a></li><li data-section="section-13"><a href="#section-13">13. 升级、备份、停用和移除</a></li><li data-section="section-14"><a href="#section-14">14. 出问题时对照这张表</a></li><li data-section="section-15"><a href="#section-15">15. 几个常见疑问</a></li></ul></aside><main>
-<div class="route" aria-label="使用流程"><span>准备 NAS</span><b>→</b><span>安装并登录</span><b>→</b><span>添加第一个下载</span></div><h1>Nas Download 1.3.0 完整使用说明书</h1>
+<header><div class="tag">NAS DOWNLOAD / 1.3.0 测试版</div><strong>Nas Download 1.3.0 完整使用说明书</strong><p>自己的 NAS 下载助手 · 内置下载引擎 · 手机与网页同步管理</p><nav class="top"><a href="QUICK_START_ZH.html">第一次使用</a><a href="USER_MANUAL_ZH.html">完整说明书</a><a href="ACCEPTANCE_1_3.html">测试范围</a><button id="print" type="button">打印 / 保存 PDF</button></nav></header>
+<div class="layout"><aside><label for="q">查找章节</label><input id="q" type="search" placeholder="查找章节"><div id="result" aria-live="polite" data-found="找到 {n} 个相关章节" data-help="输入关键词筛选章节，例如：密码、文件、签到">输入关键词筛选章节，例如：密码、文件、签到</div><ul><li data-section="section-1"><a href="#section-1">1. 这是干什么的</a></li><li data-section="section-2"><a href="#section-2">2. 开始前需要准备什么</a></li><li data-section="section-3"><a href="#section-3">3. 用安卓手机安装到 NAS</a></li><li data-section="section-4"><a href="#section-4">4. 第一次登录，或者换手机连接</a></li><li data-section="section-5"><a href="#section-5">5. 完成第一个下载</a></li><li data-section="section-6"><a href="#section-6">6. 日常管理：查看、暂停、继续、删除</a></li><li data-section="section-7"><a href="#section-7">7. 可选：搜索自己的 PT / Torznab 站点</a></li><li data-section="section-8"><a href="#section-8">8. 可选：签到与账户检查</a></li><li data-section="section-9"><a href="#section-9">9. 可选：无人值守下载与自动清理</a></li><li data-section="section-10"><a href="#section-10">10. 在外面怎么访问</a></li><li data-section="section-11"><a href="#section-11">11. 高级：接入已经安装的下载器</a></li><li data-section="section-12"><a href="#section-12">12. 高级：不用手机，在 NAS 手动安装</a></li><li data-section="section-13"><a href="#section-13">13. 升级、备份、停用和移除</a></li><li data-section="section-14"><a href="#section-14">14. 出问题时对照这张表</a></li><li data-section="section-15"><a href="#section-15">15. 几个常见疑问</a></li></ul></aside><main><h1>Nas Download 1.3.0 完整使用说明书</h1>
+<p><strong>简体中文</strong> | <a href="USER_MANUAL_EN.html">English</a></p>
 <p><strong>给第一次接触 NAS 下载的人。</strong> 按前五章操作，可以从准备设备一直做到第一个下载完成。后面的站点、签到、刷流是可选功能，不用一次全部设置。</p>
-<p>版本：1.3.0 测试版 · 文档日期：2026-10-07。按钮名称按此版本 Android App 核对；NAS 自带系统的菜单因品牌和版本不同而不同。</p>
+<p>版本：1.3.0 测试版 · 文档更新：2026-10-08。按钮名称按此版本 Android App 核对；NAS 自带系统的菜单因品牌和版本不同而不同。</p>
 <section id="section-1"><h2 id="heading-1">1. 这是干什么的</h2>
 <p>Nas Download 把下载工作放在你自己的 NAS 上。你可以在手机或网页添加种子、查看进度、暂停和继续下载；真正的文件保存在 NAS 硬盘里。手机只是遥控器，不需要一直亮屏，也不需要让电脑一直开机。</p>
 <p><strong>工作方式：手机 / 网页 → 你自己的 NAS → NAS 硬盘。</strong> 默认安装一个产品容器，里面已经带 qBittorrent 下载引擎；不用另外给 qB 配一套地址和密码。</p>
@@ -127,16 +127,17 @@ docker info
 <td>管理员手动在 NAS 上安装；手机自动安装成功后不必再装一次</td>
 </tr>
 <tr>
-<td><code>Nas-Download-Standalone-1.3.0-source.zip</code></td>
+<td><code>Nas-Download-1.3.0-source.zip</code></td>
 <td>开发者查看与修改源码；普通用户不需要</td>
 </tr>
 <tr>
-<td><code>SHA256-1.3.0.txt</code></td>
+<td><code>SHA256SUMS.txt</code></td>
 <td>检查收到的原始程序包是否完整；不是安装文件</td>
 </tr>
 </tbody>
 </table>
 <p>如果拿到“含说明书分享包”，先解压，打开根目录 <strong>“先看这里.html”</strong>。不要在压缩包预览窗口里直接安装或阅读跨文件链接。</p>
+<p>原完整分享包仍附中文指南。最新中英文离线说明书为 <code>Nas-Download-1.3.0-manuals.zip</code>，解压后打开 <code>START_HERE.html</code> 或“先看这里.html”。Release 中原源码 ZIP 保持发布时快照，最新双语文档在 GitHub 的 <code>main</code> 分支。</p>
 </section><section id="section-3"><h2 id="heading-3">3. 用安卓手机安装到 NAS</h2>
 <h3>3.1 安装手机 App</h3>
 <p>把 APK 保存到手机，用手机文件管理器打开。系统可能要求允许当前文件管理器安装应用，按手机提示操作。安装完成后打开 <strong>Nas Download</strong>。</p>
@@ -791,11 +792,10 @@ sh install.sh --dir /volume1/docker/nas-download --port 7120 --mode bundled
 <h3>我现在最少需要做什么？</h3>
 <p>准备 NAS 的 SSH 与 Docker → 打开 APK 的“自动安装” → 选择内置下载 → 创建管理员 → 添加一个种子。完成后再考虑第 7–9 章的可选功能。</p>
 <p>回到 <a href="QUICK_START_ZH.html">第一次使用：快速上手</a>。</p>
-</section>
-<footer>本文件可离线阅读，无外部字体、脚本或统计请求。示例 IP 和路径须替换成自己的值。打印前会恢复显示全部章节。</footer></main></div><script>
+</section><footer>本文件可离线阅读，无外部字体、脚本或统计请求。示例地址和路径须替换成自己的值。打印前会显示全部章节。</footer></main></div><script>
 const box=document.querySelector('#q'),result=document.querySelector('#result');
 box.addEventListener('input',()=>{const q=box.value.trim().toLowerCase();let n=0;
  document.querySelectorAll('main section').forEach(s=>{const hit=!q||s.textContent.toLowerCase().includes(q);s.hidden=!hit;if(hit)n++;const a=document.querySelector('[data-section="'+s.id+'"]');if(a)a.hidden=!hit;});
- result.textContent=q?'找到 '+n+' 个相关章节':'输入关键词筛选章节，例如：密码、文件、签到';});
+ result.textContent=q?result.dataset.found.replace('{n}',n):result.dataset.help;});
 document.querySelector('#print').addEventListener('click',()=>{box.value='';box.dispatchEvent(new Event('input'));window.print();});
 </script></body></html>

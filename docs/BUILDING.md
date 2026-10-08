@@ -1,5 +1,7 @@
 # 从源码测试和构建
 
+**简体中文** | [English](BUILDING_EN.md)
+
 普通用户直接使用 [Release 安装包](https://github.com/cloudcocozh/nas-download/releases/tag/v1.3.0-beta.1)。本页面向开发者。
 
 ## 结构
@@ -74,3 +76,12 @@ gradle -p android assembleRelease lintRelease
 签名配置和密钥禁止提交 Git。你自己的签名不能直接覆盖官方同包名安装版；开发优先用 Debug 包。缺少签名配置不代表生成了已签名可发布包。
 
 公开源码与 1.3.0 已验收运行代码一致；仅移除了开发机专用签名路径，并增加公开文档、许可和测试流程。二进制放在 Releases，不放 Git 历史。
+
+## 更新双语离线说明书
+
+中英文 Markdown 分开维护，顶部提供语言切换。修改后重新生成 HTML；说明书使用独立依赖，不增加 NAS 运行依赖。
+
+```sh
+python -m pip install -r deploy/docs-requirements.txt
+python deploy/render_guides.py --archive ../outputs/Nas-Download-1.3.0-manuals.zip
+```

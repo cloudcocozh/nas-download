@@ -1,5 +1,7 @@
 # NASDownload 1.3.0 验收记录
 
+**简体中文** | [English](ACCEPTANCE_1_3_EN.md)
+
 日期：2026-10-07。独立产品包名 `com.nasdownload.app`，版本码 6。
 
 ## 已完成
@@ -35,4 +37,4 @@
 
 本次验证环境是 Linux x86_64 NAS、Docker Compose、具有对应 Docker 权限的 SSH 账号，以及 Android 模拟器。ARM NAS 不在当前离线镜像支持范围。未完成多日 PT 持续运行、所有 NAS/手机型号兼容性或公网入站验证；容器减少本身不承诺提高上传速度。
 
-这是可交付的安装包与源码，公开测试发行入口为本仓库 Releases；未上传应用商店或公共镜像仓库。当前实际文件摘要见输出目录 SHA256-1.3.0.txt。
+这是可交付的安装包与源码，公开测试发行入口为本仓库 Releases；未上传应用商店或公共镜像仓库。公开下载文件摘要见同一 Release 的 `SHA256SUMS.txt`。

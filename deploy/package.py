@@ -27,7 +27,13 @@ for folder in ('server','web','deploy','licenses'):
     members += [p for p in (root/folder).rglob('*') if clean_source(p) and 'tests' not in p.parts]
 members += [root/p for p in ('install.sh','Dockerfile','compose.yaml','compose.bundled.yaml','.dockerignore')]
 members += [root/p for p in ('README.md','PRIVACY.md','THIRD_PARTY.md','docs/INSTALL_RELEASE.md','docs/LICENSE_INVENTORY.md','docs/AUTOMATION.md','docs/SITES.md','docs/RELEASE_1_2.md','docs/RELEASE_1_2_1.md','docs/RELEASE_1_3.md','docs/ACCEPTANCE_1_3.md','docs/ACCEPTANCE_1_3.html','docs/QUICK_START_ZH.md','docs/QUICK_START_ZH.html','docs/USER_MANUAL_ZH.md','docs/USER_MANUAL_ZH.html','docs/BUILDING.md','docs/RELEASE_COMPONENTS.json','docs/THIRD_PARTY_SOURCES.json','docs/DEBIAN_PACKAGES.json') if (root/p).is_file()]
+# Include both documentation languages and their offline HTML counterparts.
+for pattern in ('*.en.md', '*.html'):
+    members.extend(root.glob(pattern))
+for pattern in ('*_EN.md', '*.html'):
+    members.extend((root/'docs').glob(pattern))
 if (root/'LICENSE').is_file(): members.append(root/'LICENSE')
+members = sorted(set(members))
 with tarfile.open(installer,'w:gz') as archive:
     for path in sorted(members): archive.add(path,arcname=path.relative_to(root).as_posix())
     if args.image: archive.add(args.image,arcname='nas-download-image.tar.gz')

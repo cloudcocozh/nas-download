@@ -1,0 +1,92 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Nas Download</title><style>
+:root{--ink:#172b3a;--muted:#566b79;--green:#086b5c;--line:#dce7e8;--paper:#fff;--bg:#f3f7f7}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+a{color:var(--green);text-underline-offset:3px;overflow-wrap:anywhere}button,input{font:inherit}button{cursor:pointer}header{background:#153f3b;color:white;padding:32px max(24px,calc((100vw - 1280px)/2));border-bottom:5px solid #60c7a9}header .tag{color:#bfe6da;font-size:12px;letter-spacing:2px}header strong{display:block;font-size:30px;line-height:1.4;margin-top:8px}header p{margin:8px 0 0;color:#dcece7}header a{color:#c2f5e5}nav.top{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}.top a,.top button{padding:6px 12px;border:1px solid #80a59c;border-radius:6px;background:transparent;color:white;text-decoration:none}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:32px;max-width:1280px;margin:30px auto;padding:0 24px 60px}aside{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;background:var(--paper);padding:20px;border:1px solid var(--line);border-radius:10px}aside label{font-weight:700;font-size:14px}input{width:100%;padding:10px;margin:8px 0;border:1px solid #b7cacc;border-radius:6px;font-size:14px}#result{font-size:13px;color:var(--muted)}aside ul{padding:0;list-style:none;margin:10px 0 0}aside a{display:block;font-size:14px;line-height:1.5;padding:8px 0;text-decoration:none;border-bottom:1px solid #edf2f2}main{min-width:0;background:white;padding:30px 38px;border:1px solid var(--line);border-radius:10px}h1{font-size:30px;line-height:1.5;margin-top:0}h2{font-size:24px;line-height:1.5;margin:38px 0 14px;border-top:1px solid var(--line);padding-top:24px;color:#075d51}h3{font-size:19px;line-height:1.6;margin:25px 0 10px}p{margin:12px 0}li{padding-left:2px;margin:8px 0}ul,ol{padding-left:25px}strong{font-weight:700}code{font:14px/1.65 ui-monospace,Consolas,monospace;background:#edf5f4;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}pre{overflow-x:auto;background:#15352f;color:#e7fff3;padding:18px;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere}pre code{background:none;padding:0;color:inherit}table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.75;table-layout:fixed;margin:18px 0}th{text-align:left;background:#edf5f3;color:#174d43}th,td{border:1px solid var(--line);padding:12px;vertical-align:top;overflow-wrap:anywhere}th:first-child{width:26%}tr:nth-child(even) td{background:#fafcfc}blockquote{margin:20px 0;padding:12px 20px;background:#edf7f3;border-left:4px solid #18826c}.route{display:flex;gap:10px;margin:22px 0;align-items:center;flex-wrap:wrap}.route span{padding:12px 18px;background:#ecf5f1;border:1px solid #c0ded0;border-radius:8px}.route b{color:#83a099}footer{margin:30px 0 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:20px}[hidden]{display:none!important}
+@media(max-width:850px){.layout{grid-template-columns:1fr;gap:16px;margin-top:16px;padding:0 12px 32px}aside{position:static;max-height:300px}main{padding:22px 18px}header{padding:24px 20px}header strong,h1{font-size:25px}h2{font-size:21px}table{font-size:13px}th,td{padding:8px}th:first-child{width:28%}}
+@media print{body{background:white;font-size:10pt}header{background:white;color:#172b3a;border-bottom:2px solid #086b5c;padding:0 0 12px}header .tag,header p{color:#566b79}nav.top,aside,.route{display:none}.layout{display:block;margin:0;padding:0}main{border:0;padding:10px 0}h1{font-size:21pt}h2{font-size:16pt;break-after:avoid}h3{font-size:12pt;break-after:avoid}p,li{orphans:3;widows:3}table{font-size:9pt;table-layout:auto}tr{break-inside:avoid}pre{background:#eef3f2;color:#172b3a}a{color:inherit}section[hidden]{display:block!important}}
+</style></head><body>
+<header><div class="tag">NAS DOWNLOAD / 1.3.0 测试版</div><strong>Nas Download</strong><p>自己的 NAS 下载助手 · 内置下载引擎 · 手机与网页同步管理</p><nav class="top"><a href="docs/QUICK_START_ZH.html">第一次使用</a><a href="docs/USER_MANUAL_ZH.html">完整说明书</a><a href="docs/ACCEPTANCE_1_3.html">测试范围</a><button id="print" type="button">打印 / 保存 PDF</button></nav></header>
+<div class="layout"><aside><label for="q">查找章节</label><input id="q" type="search" placeholder="查找章节"><div id="result" aria-live="polite" data-found="找到 {n} 个相关章节" data-help="输入关键词筛选章节，例如：密码、文件、签到">输入关键词筛选章节，例如：密码、文件、签到</div><ul><li data-section="section-1"><a href="#section-1">直接下载使用</a></li><li data-section="section-2"><a href="#section-2">能做什么</a></li><li data-section="section-3"><a href="#section-3">新手安装</a></li><li data-section="section-4"><a href="#section-4">自动化与保护</a></li><li data-section="section-5"><a href="#section-5">验证范围</a></li><li data-section="section-6"><a href="#section-6">文档与源码</a></li></ul></aside><main><h1>Nas Download</h1>
+<p><strong>简体中文</strong> | <a href="README.en.html">English</a></p>
+<p><strong>把下载交给自己的 NAS，手机和网页只负责操作。</strong> 默认一个容器，内置 qBittorrent；不需要单独安装、登录和配置 qB。</p>
+<p>当前公开版本：<strong>1.3.0 测试版</strong>。Linux x86_64 NAS；Android 8.0 或以上。ARM 暂不支持。</p>
+<section id="section-1"><h2 id="heading-1">直接下载使用</h2>
+<p><strong><a href="https://github.com/cloudcocozh/nas-download/releases/tag/v1.3.0-beta.1">打开下载页：v1.3.0-beta.1</a></strong></p>
+<table>
+<thead>
+<tr>
+<th>想怎么使用</th>
+<th>下载什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一次使用</td>
+<td><strong>完整分享包</strong>，解压后打开“先看这里.html”；包内为原中文指南，英文请另下最新双语说明书</td>
+</tr>
+<tr>
+<td>安卓手机自动安装到 NAS</td>
+<td><strong>Nas-Download-Standalone-1.3.0.apk</strong></td>
+</tr>
+<tr>
+<td>管理员在 NAS 终端安装</td>
+<td><strong>Nas-Download-Standalone-1.3.0-install.tar.gz</strong></td>
+</tr>
+<tr>
+<td>离线中英文说明书</td>
+<td><strong>Nas-Download-1.3.0-manuals.zip</strong>，解压后打开 <code>START_HERE.html</code></td>
+</tr>
+<tr>
+<td>先看使用方法</td>
+<td><a href="docs/QUICK_START_ZH.html">快速上手</a> / <a href="docs/USER_MANUAL_ZH.html">完整说明书</a></td>
+</tr>
+</tbody>
+</table>
+<p>绿色 <strong>Code → Download ZIP</strong> 是工程源码，不是手机安装包。普通用户请使用下载页。</p>
+</section><section id="section-2"><h2 id="heading-2">能做什么</h2>
+<ul>
+<li>添加磁力、种子地址或 <code>.torrent</code> 文件，查看真实进度、速度、文件与 Tracker。</li>
+<li>暂停、继续、删除任务；删除文件需要单独选择。</li>
+<li>Android 与网页管理同一套任务，支持手机配对和撤销设备登录。</li>
+<li>可选配置自己的 M-Team / Torznab 站点，搜索、看详情并主动下载。</li>
+<li>可选签到、账户检查和无人值守下载；在 NAS 后台运行，默认停用。</li>
+<li>高级模式接入已有 qBittorrent 4/5 或 Transmission 4。</li>
+</ul>
+<p>文件保存在 NAS 硬盘，手机关闭后 NAS 可继续下载。软件不提供 PT 账号、邀请、API Key、Cookie 或资源。</p>
+</section><section id="section-3"><h2 id="heading-3">新手安装</h2>
+<ol>
+<li>NAS 准备好 <strong>SSH、Docker 和 Docker Compose</strong>；SSH 账号须有 Docker 权限。首次让手机与 NAS 在同一家庭网络。</li>
+<li>安装 APK → “自动安装” → 填自己的 NAS 地址、SSH 账号和专用安装目录 → 保留“内置下载（推荐）”。</li>
+<li>核对 NAS SSH 指纹并等待安装，创建软件管理员，再点“＋ 添加”完成第一个下载。</li>
+</ol>
+<p><strong>每一格怎么填、文件在哪里：<a href="docs/QUICK_START_ZH.html">逐步快速上手</a>。</strong></p>
+<p>默认网页端口 7120，内置下载另用 7121 TCP/UDP。两个端口都不能冲突。App 不会替你开启 SSH、安装 Docker 或提权。NAS SSH 账号与软件管理员账号是两种用途。</p>
+<p>管理员可从 Release 获取完整安装包，上传到 NAS 的临时空目录，在 NAS 终端执行：</p>
+<pre><code class="language-sh">tar -xzf Nas-Download-Standalone-1.3.0-install.tar.gz
+sh install.sh --dir /volume1/docker/nas-download --port 7120 --mode bundled
+</code></pre>
+<p>路径只是示例，须替换成你自己的可写专用目录。解压目录和安装目录要分开。手机自动安装与手动安装选一种，不必重复。详情见说明书第 12 章。</p>
+</section><section id="section-4"><h2 id="heading-4">自动化与保护</h2>
+<p>签到、刷流默认不开启，可先只读预演。自动化只管理自己添加并登记的任务；保种义务未知、永久保护、观察不足或身份/文件核验失败时保留。自动删除和删除文件均须明确开启。</p>
+<p>M-Team 账户检查不是网页登录签到或保号。可验证 VIP 只决定非免费新种准入，不代表豁免保种或整个下载期间免费。本产品不导入其他软件的刷流规则。见 <a href="docs/AUTOMATION.html">自动化参考</a>。</p>
+</section><section id="section-5"><h2 id="heading-5">验证范围</h2>
+<p>隔离 x86_64 NAS 真实下载、暂停/恢复、自动删补、引擎恢复、旧版迁移、失败回滚通过；Linux 验收测试 145 项通过。Android 模拟器原生操作、完整包 SSH/SFTP 和同签名覆盖升级通过。</p>
+<p>尚未完成真实手机到 NAS 的完整首次安装、多日运行或所有机型兼容验证。当前是测试版，不承诺满速或公网入站可达。<a href="docs/ACCEPTANCE_1_3.html">验收记录</a>。</p>
+</section><section id="section-6"><h2 id="heading-6">文档与源码</h2>
+<ul>
+<li><a href="docs/QUICK_START_ZH.html">快速上手</a> / <a href="docs/USER_MANUAL_ZH.html">完整说明书</a></li>
+<li><a href="docs/BUILDING.html">开发与构建</a></li>
+<li><a href="docs/AUTOMATION.html">自动化参考</a> / <a href="docs/SITES.html">站点接入</a></li>
+<li><a href="PRIVACY.html">隐私说明</a> / <a href="THIRD_PARTY.html">第三方组件</a></li>
+</ul>
+<p>离线中英文 HTML 说明书在 Release 的说明书压缩包里，可切换语言、搜索章节、打印或保存 PDF。当前 App 界面仍为中文，英文指南对照原中文按钮名称。</p>
+<p>本项目原创管理服务、网页、Android 客户端和文档采用 <a href="LICENSE">MIT License</a>。qBittorrent、Qt、Python 等第三方组件保留各自许可，不因项目采用 MIT 而改为 MIT。第三方许可与对应源码材料见同一版本 Release。</p>
+<p>不包含私人 NAS 配置、站点账号、下载数据或正式签名密钥。通过 <a href="https://github.com/cloudcocozh/nas-download/issues">Issues</a> 反馈时请提供版本、步骤和脱敏错误，不要上传密码、Cookie、API Key 或带 passkey 的地址。</p>
+</section><footer>本文件可离线阅读，无外部字体、脚本或统计请求。示例地址和路径须替换成自己的值。打印前会显示全部章节。</footer></main></div><script>
+const box=document.querySelector('#q'),result=document.querySelector('#result');
+box.addEventListener('input',()=>{const q=box.value.trim().toLowerCase();let n=0;
+ document.querySelectorAll('main section').forEach(s=>{const hit=!q||s.textContent.toLowerCase().includes(q);s.hidden=!hit;if(hit)n++;const a=document.querySelector('[data-section="'+s.id+'"]');if(a)a.hidden=!hit;});
+ result.textContent=q?result.dataset.found.replace('{n}',n):result.dataset.help;});
+document.querySelector('#print').addEventListener('click',()=>{box.value='';box.dispatchEvent(new Event('input'));window.print();});
+</script></body></html>

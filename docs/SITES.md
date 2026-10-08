@@ -1,6 +1,8 @@
 # 独立站点与搜索 API
 
-所有接口采用 PLAN.md 的认证、安全请求头、错误格式和 `/api/v1` 前缀。服务不依赖 NAS-tools，不导入旧账号或凭据，不自动搜索、不自动刷流。
+**简体中文** | [English](SITES_EN.md)
+
+所有接口沿用服务的认证、安全请求头和错误格式，地址使用 `/api/v1` 前缀。服务不依赖 NAS-tools，不导入旧账号或凭据，不自动搜索、不自动刷流。
 
 - `GET /sites` → `{ok,items:[{id,name,type,url,enabled,has_api_key}]}`。
 - `POST /sites` → `{name,type:"mteam"|"torznab",url,api_key,enabled:true}`；返回 `{ok,item}`。最多 16 个。保存仅校验配置，真实搜索才验证凭据。

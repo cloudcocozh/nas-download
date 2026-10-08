@@ -1,5 +1,7 @@
 # Nas Download
 
+**简体中文** | [English](README.en.md)
+
 **把下载交给自己的 NAS，手机和网页只负责操作。** 默认一个容器，内置 qBittorrent；不需要单独安装、登录和配置 qB。
 
 当前公开版本：**1.3.0 测试版**。Linux x86_64 NAS；Android 8.0 或以上。ARM 暂不支持。
@@ -10,9 +12,10 @@
 
 | 想怎么使用 | 下载什么 |
 |---|---|
-| 第一次使用 | **完整分享包**，解压后打开“先看这里.html” |
+| 第一次使用 | **完整分享包**，解压后打开“先看这里.html”；包内为原中文指南，英文请另下最新双语说明书 |
 | 安卓手机自动安装到 NAS | **Nas-Download-Standalone-1.3.0.apk** |
 | 管理员在 NAS 终端安装 | **Nas-Download-Standalone-1.3.0-install.tar.gz** |
+| 离线中英文说明书 | **Nas-Download-1.3.0-manuals.zip**，解压后打开 `START_HERE.html` |
 | 先看使用方法 | [快速上手](docs/QUICK_START_ZH.md) / [完整说明书](docs/USER_MANUAL_ZH.md) |
 
 绿色 **Code → Download ZIP** 是工程源码，不是手机安装包。普通用户请使用下载页。
@@ -66,7 +69,7 @@ M-Team 账户检查不是网页登录签到或保号。可验证 VIP 只决定�
 - [自动化参考](docs/AUTOMATION.md) / [站点接入](docs/SITES.md)
 - [隐私说明](PRIVACY.md) / [第三方组件](THIRD_PARTY.md)
 
-离线 HTML 说明书在 Release 的说明书压缩包里，可搜索章节、打印或保存 PDF。
+离线中英文 HTML 说明书在 Release 的说明书压缩包里，可切换语言、搜索章节、打印或保存 PDF。当前 App 界面仍为中文，英文指南对照原中文按钮名称。
 
 本项目原创管理服务、网页、Android 客户端和文档采用 [MIT License](LICENSE)。qBittorrent、Qt、Python 等第三方组件保留各自许可，不因项目采用 MIT 而改为 MIT。第三方许可与对应源码材料见同一版本 Release。
 

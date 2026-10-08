@@ -1,0 +1,65 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>从源码测试和构建</title><style>
+:root{--ink:#172b3a;--muted:#566b79;--green:#086b5c;--line:#dce7e8;--paper:#fff;--bg:#f3f7f7}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+a{color:var(--green);text-underline-offset:3px;overflow-wrap:anywhere}button,input{font:inherit}button{cursor:pointer}header{background:#153f3b;color:white;padding:32px max(24px,calc((100vw - 1280px)/2));border-bottom:5px solid #60c7a9}header .tag{color:#bfe6da;font-size:12px;letter-spacing:2px}header strong{display:block;font-size:30px;line-height:1.4;margin-top:8px}header p{margin:8px 0 0;color:#dcece7}header a{color:#c2f5e5}nav.top{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}.top a,.top button{padding:6px 12px;border:1px solid #80a59c;border-radius:6px;background:transparent;color:white;text-decoration:none}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:32px;max-width:1280px;margin:30px auto;padding:0 24px 60px}aside{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;background:var(--paper);padding:20px;border:1px solid var(--line);border-radius:10px}aside label{font-weight:700;font-size:14px}input{width:100%;padding:10px;margin:8px 0;border:1px solid #b7cacc;border-radius:6px;font-size:14px}#result{font-size:13px;color:var(--muted)}aside ul{padding:0;list-style:none;margin:10px 0 0}aside a{display:block;font-size:14px;line-height:1.5;padding:8px 0;text-decoration:none;border-bottom:1px solid #edf2f2}main{min-width:0;background:white;padding:30px 38px;border:1px solid var(--line);border-radius:10px}h1{font-size:30px;line-height:1.5;margin-top:0}h2{font-size:24px;line-height:1.5;margin:38px 0 14px;border-top:1px solid var(--line);padding-top:24px;color:#075d51}h3{font-size:19px;line-height:1.6;margin:25px 0 10px}p{margin:12px 0}li{padding-left:2px;margin:8px 0}ul,ol{padding-left:25px}strong{font-weight:700}code{font:14px/1.65 ui-monospace,Consolas,monospace;background:#edf5f4;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}pre{overflow-x:auto;background:#15352f;color:#e7fff3;padding:18px;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere}pre code{background:none;padding:0;color:inherit}table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.75;table-layout:fixed;margin:18px 0}th{text-align:left;background:#edf5f3;color:#174d43}th,td{border:1px solid var(--line);padding:12px;vertical-align:top;overflow-wrap:anywhere}th:first-child{width:26%}tr:nth-child(even) td{background:#fafcfc}blockquote{margin:20px 0;padding:12px 20px;background:#edf7f3;border-left:4px solid #18826c}.route{display:flex;gap:10px;margin:22px 0;align-items:center;flex-wrap:wrap}.route span{padding:12px 18px;background:#ecf5f1;border:1px solid #c0ded0;border-radius:8px}.route b{color:#83a099}footer{margin:30px 0 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:20px}[hidden]{display:none!important}
+@media(max-width:850px){.layout{grid-template-columns:1fr;gap:16px;margin-top:16px;padding:0 12px 32px}aside{position:static;max-height:300px}main{padding:22px 18px}header{padding:24px 20px}header strong,h1{font-size:25px}h2{font-size:21px}table{font-size:13px}th,td{padding:8px}th:first-child{width:28%}}
+@media print{body{background:white;font-size:10pt}header{background:white;color:#172b3a;border-bottom:2px solid #086b5c;padding:0 0 12px}header .tag,header p{color:#566b79}nav.top,aside,.route{display:none}.layout{display:block;margin:0;padding:0}main{border:0;padding:10px 0}h1{font-size:21pt}h2{font-size:16pt;break-after:avoid}h3{font-size:12pt;break-after:avoid}p,li{orphans:3;widows:3}table{font-size:9pt;table-layout:auto}tr{break-inside:avoid}pre{background:#eef3f2;color:#172b3a}a{color:inherit}section[hidden]{display:block!important}}
+</style></head><body>
+<header><div class="tag">NAS DOWNLOAD / 1.3.0 测试版</div><strong>从源码测试和构建</strong><p>自己的 NAS 下载助手 · 内置下载引擎 · 手机与网页同步管理</p><nav class="top"><a href="QUICK_START_ZH.html">第一次使用</a><a href="USER_MANUAL_ZH.html">完整说明书</a><a href="ACCEPTANCE_1_3.html">测试范围</a><button id="print" type="button">打印 / 保存 PDF</button></nav></header>
+<div class="layout"><aside><label for="q">查找章节</label><input id="q" type="search" placeholder="查找章节"><div id="result" aria-live="polite" data-found="找到 {n} 个相关章节" data-help="输入关键词筛选章节，例如：密码、文件、签到">输入关键词筛选章节，例如：密码、文件、签到</div><ul><li data-section="section-1"><a href="#section-1">结构</a></li><li data-section="section-2"><a href="#section-2">后端与网页测试</a></li><li data-section="section-3"><a href="#section-3">Linux 镜像</a></li><li data-section="section-4"><a href="#section-4">准备 Android 内置资源</a></li><li data-section="section-5"><a href="#section-5">Android 构建</a></li><li data-section="section-6"><a href="#section-6">更新双语离线说明书</a></li></ul></aside><main><h1>从源码测试和构建</h1>
+<p><strong>简体中文</strong> | <a href="BUILDING_EN.html">English</a></p>
+<p>普通用户直接使用 <a href="https://github.com/cloudcocozh/nas-download/releases/tag/v1.3.0-beta.1">Release 安装包</a>。本页面向开发者。</p>
+<section id="section-1"><h2 id="heading-1">结构</h2>
+<p><code>server/</code> 是 Python 服务，<code>web/</code> 是网页，<code>deploy/</code> 与 <code>install.sh</code> 管理安装、引擎和升级，<code>android/</code> 是原生 Java 客户端，<code>tests/</code> 是后端与 Linux 安装器测试。</p>
+</section><section id="section-2"><h2 id="heading-2">后端与网页测试</h2>
+<p>需要 Python 3.11、Node.js；完整安装器测试在 Linux 运行，Windows 会明确跳过部分 Linux 测试。</p>
+<pre><code class="language-sh">python -m venv .venv
+. .venv/bin/activate
+python -m pip install -r server/requirements.txt
+python -m unittest discover -s tests -v
+node web/tests/smoke.cjs
+node web/tests/sites-smoke.cjs
+node web/tests/automations-smoke.cjs
+</code></pre>
+<p>测试使用独立临时数据和适配器，不连接真实 PT 凭据或现有下载器做删除试验。</p>
+</section><section id="section-3"><h2 id="heading-3">Linux 镜像</h2>
+<pre><code class="language-sh">docker build -t nas-download:1.3.0 .
+</code></pre>
+<p>Dockerfile 的引擎复制阶段固定到特定上游镜像摘要，支持 x86_64。Python 基础镜像与系统包未全部固定摘要，源码重建不承诺与发布镜像逐字节相同。用安装器部署到新测试目录，不覆盖现有运行状态。</p>
+</section><section id="section-4"><h2 id="heading-4">准备 Android 内置资源</h2>
+<p>仓库根目录执行：</p>
+<pre><code class="language-sh">python deploy/package.py
+</code></pre>
+<p>生成 <code>android/app/src/main/assets/installer.tar.gz</code>，以及相邻 <code>outputs</code> 目录的源码和安装包。无镜像的源码型资源首次安装会在 NAS 构建，需要网络。</p>
+<p>若有 <code>docker save</code> 导出的 gzip 镜像，可以构建完整离线资源：</p>
+<pre><code class="language-sh">python deploy/package.py --image /实际路径/nas-download-image.tar.gz
+</code></pre>
+<p>APK 的 <code>assets/installer.bundle</code> 必须与资源 gzip 逐字节一致。不要打入真实 NAS 的 <code>.env</code>、<code>data</code>、密钥或下载数据。</p>
+</section><section id="section-5"><h2 id="heading-5">Android 构建</h2>
+<p>使用 JDK 17、Android SDK 35、Build Tools 35.0.0、Gradle 8.10.2，项目插件 AGP 8.7.3。本仓库没有 Gradle Wrapper，请安装 Gradle 或在 Android Studio 配置版本。按自己的环境设置 <code>JAVA_HOME</code>、<code>ANDROID_HOME</code>。</p>
+<pre><code class="language-sh">gradle -p android assembleDebug lintDebug
+</code></pre>
+<p>Debug 包名 <code>com.nasdownload.app.debug</code>，可与正式版并存。设备测试需构建 <code>assembleDebugAndroidTest</code> 并使用独立模拟器，不清理个人设备的数据。</p>
+<p>正式签名从环境变量 <code>NAS_DOWNLOAD_SIGNING_FILE</code> 读取配置文件路径，或使用 Android app 项目目录下的本地 <code>signing.properties</code>：</p>
+<pre><code class="language-properties">storeFile=/absolute/path/to/your-release-keystore.jks
+storePassword=REPLACE_WITH_YOUR_SECRET
+keyAlias=YOUR_ALIAS
+keyPassword=REPLACE_WITH_YOUR_SECRET
+</code></pre>
+<pre><code class="language-sh">gradle -p android assembleRelease lintRelease
+</code></pre>
+<p>签名配置和密钥禁止提交 Git。你自己的签名不能直接覆盖官方同包名安装版；开发优先用 Debug 包。缺少签名配置不代表生成了已签名可发布包。</p>
+<p>公开源码与 1.3.0 已验收运行代码一致；仅移除了开发机专用签名路径，并增加公开文档、许可和测试流程。二进制放在 Releases，不放 Git 历史。</p>
+</section><section id="section-6"><h2 id="heading-6">更新双语离线说明书</h2>
+<p>中英文 Markdown 分开维护，顶部提供语言切换。修改后重新生成 HTML；说明书使用独立依赖，不增加 NAS 运行依赖。</p>
+<pre><code class="language-sh">python -m pip install -r deploy/docs-requirements.txt
+python deploy/render_guides.py --archive ../outputs/Nas-Download-1.3.0-manuals.zip
+</code></pre>
+</section><footer>本文件可离线阅读，无外部字体、脚本或统计请求。示例地址和路径须替换成自己的值。打印前会显示全部章节。</footer></main></div><script>
+const box=document.querySelector('#q'),result=document.querySelector('#result');
+box.addEventListener('input',()=>{const q=box.value.trim().toLowerCase();let n=0;
+ document.querySelectorAll('main section').forEach(s=>{const hit=!q||s.textContent.toLowerCase().includes(q);s.hidden=!hit;if(hit)n++;const a=document.querySelector('[data-section="'+s.id+'"]');if(a)a.hidden=!hit;});
+ result.textContent=q?result.dataset.found.replace('{n}',n):result.dataset.help;});
+document.querySelector('#print').addEventListener('click',()=>{box.value='';box.dispatchEvent(new Event('input'));window.print();});
+</script></body></html>
